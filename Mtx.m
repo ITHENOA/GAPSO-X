@@ -5,7 +5,7 @@ switch MtxCS
     case 0 % None  ok
         outVector = vector;
         
-    case 1 % rnd diagonal   ok
+    case 1 % rnd diagonal    ok
         mtx = rand(d,1).*eye(d);
         outVector = mtx * vector;
 
