@@ -1,0 +1,14 @@
+function perted = pertRnd(vector,x,fit,N,pm,gb)
+global pertRndCS
+global taw delta %(user defined)
+
+switch pertRndCS
+    case 0  % None
+        perted = vector;
+
+    case 1  % rectangular
+            taw * (1-2*rand);
+
+    case 2  % noisy
+
+end

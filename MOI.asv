@@ -1,0 +1,28 @@
+function I = MOI(option, N, xi, fits)
+idxi = find(N==xi);
+
+switch option
+    case 0  % best of neighborhood  ok
+        [~,idx] = min(fit);
+        I(1,:) = N(idx,:);
+        I(2,:) = xi;
+
+    case 1 % fully informed ok
+        I = N;
+
+    case 2 % weighted ranking
+        [~,idx] = sort(fits);
+        lowerPart=2^(size(N,1))-1;
+        upperPart=zeros(1,size(N,2));
+        for i=1:size(N,2)
+            sum=0;
+            for j=0:size(N,1)-1
+                sum=2^(size(N,1)-1-j);
+            end
+            upperPart(i)=sum;
+        end
+        I=[N,upperPart/lowerPart];
+
+    case 3 % random informant   ok
+        I = N(randi(size(N,1)),:);
+end

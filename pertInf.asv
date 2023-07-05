@@ -1,0 +1,40 @@
+function perted = pertInf(vector,x,fit,N,pm,gb)
+global pertInfCS
+global lambda sigma bt %(user defined)
+switch  pertInfCS
+    case 0 % None   ok
+        perted = vector;
+
+    case 1 % gauss
+        perted = zeros(size(vector,2),1);
+        for i = 1:size(vector,2)
+            perted(i) = random(makedist('Stable','alpha',2,'beta',0,'gam',...
+                sigma/sqrt(2),'delta',vector(i)));           
+        end
+         pm = PM(x,fit,N,pm,gb);
+         perted = pm(end)*perted;
+
+    case 2 % levy KH
+        perted = zeros(size(vector,2),1);
+        for i = 1:size(vector,2)
+            perted(i) = random(makedist('Stable','alpha',lambda,'beta',0,'gam',sigma,'delta',sigma+vector(i)));
+            % 1<landa<2
+        end
+         pm = PM(x,fit,N,pm,gb);
+         perted = pm(end)*perted; 
+
+    case 3 % cauchy     +1
+        perted = zeros(size(vector,2),1);
+        for i = 1:size(vector,2)
+            perted(i) = random(makedist('Stable','alpha',1,'beta',0,'gam',sigma,'delta',vector(i)));
+        end
+         pm = PM(x,fit,N,pm,gb);
+         perted = pm(end)*perted;   
+
+    case 4 % uniform
+        rand
+        vector + s * vector
+        
+
+
+end
