@@ -2,7 +2,7 @@ function outVector = Mtx(vector,d,fit,it,itMax)
 global MtxCS
 
 switch MtxCS
-    case 0 % None   ok
+    case 0 % None  ok
         outVector = vector;
         
     case 1 % rnd diagonal   ok
