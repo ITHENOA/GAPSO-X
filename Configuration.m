@@ -6,7 +6,8 @@ global pmCS2 % 1=cte, 2=euclidean, 3=obj.func, 4=success rate
 global moiCS % 0=best, 1=full, 2=rank, 3=rnd
 global pertRndCS % 0=None, 1=rectangular, 2=noisy
 global MtxCS % 0=None, 1=rnd diagonal, 2=rnd linear, 3=exp map, 4=Eul rot, 5=Eul rot_all, 6=increasing group based
-global inertiaCS % 0=cte, 1=linear decreasing, 2=linear increasing, 3=random, 4=self-regulating, 5=adaptive based on velocity, 6=double exponential self-adaptive, 7=rank-based, 8=success-based, 9=convergence-based
+global inertiaW1CS % 0=cte, 1=linear decreasing, 2=linear increasing, 3=random, 4=self-regulating, 5=adaptive based on velocity, 6=double exponential self-adaptive, 7=rank-based, 8=success-based, 9=convergence-based
+global paramW23CS % 0=w1, 1=rnd, 2=cte
 
 % General Parameters
 global finalPopSize
@@ -22,6 +23,11 @@ global PM_cte e m Sc Fc
 global lambda bt
 % pertR
 global taw delta
+% w1
+global inertia_cte w1Max w1Min nu a_w1_cb b_w1_cb lambda_w1_abv
+% w2, w3
+global w2_cte w3_cte
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % component
@@ -32,7 +38,8 @@ moiCS = 0; % [0 1 2 3]
 pertRndCS = 0; % [0 1 2]
 MtxCS = 0; % [0 1 2 3 4 5 6]
 AC_CS = 0; %[0 1 2 3]
-inertiaCS = 0; % [0 1 2 3 4 5 6 7 8 9]
+inertiaW1CS = 0; % [0 1 2 3 4 5 6 7 8 9]
+paramW23CS = 0; % [0 1 2]
 % general param
 finalPopSize = 100; % [2:200]
 itMax = 100;
@@ -60,6 +67,17 @@ ini_alpha_mtx = 0; % int[0:40]
 sigma_alpha =0.1; % [0.01:40]
 z_alpha = 1; % int[1:40]
 ro_alpha = 0.1; % [0.01:0.9]
+% w1
+inertia_cte = .5; % [0:0.9]
+w1Max = .5; % [0:0.9]
+w1Min = .5; % [0:.9] 
+nu = .5; % [0.1:1] 
+a_w1_cb = .5; % [0:1] 
+b_w1_cb = .5; % [0:1] 
+lambda_w1_abv = .5; % [0.1:1]
+% w2, w3
+w2_cte = .5; % [0:1]
+w3_cte = .5; % [0:1]
 %%%%%%%%%%%%%%%% cte %%%%%%%%%%%%%%%%%%%
 pm = 1; % initial pert magnitud
 fit = zeros(popSize,itMax);
@@ -72,6 +90,11 @@ gb.pos %[0:tMix]
 
 pop.fit = ones(finalPopSize,itMax)*inf;
 pop.pos = ones(finalPopSize,d,itMax)*inf;
+
+% pop sorter
+[pop.fit,idx] = sort(pop.fit);
+pop.pos = pop.pos(idx,:,:);
+
 
 v = zeros(finalPopSize,d,itMax);
 
