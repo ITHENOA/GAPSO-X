@@ -83,13 +83,14 @@ lambda_w1_abv = .5; % [0.1:1]
 w2_cte = .5; % [0:1]
 w3_cte = .5; % [0:1]
 %%%%%%%%%%%%%%%% cte %%%%%%%%%%%%%%%%%%%
-pm = 1; % initial pert magnitud
+pm = ?; % initial pert magnitud     = PM_cte? or user define? or cte? = 1
 fit = zeros(popSize,itMax);
 w1 = [];
 
 gb.fit %[0:tMix]
 gb.pos %[0:tMix]
 
+best = 1;? % global???
 
 
 pop.fit = ones(finalPopSize,itMax)*inf;     % (popSize, it)
@@ -97,7 +98,7 @@ pop.pos = ones(finalPopSize,d,itMax)*inf;   % (popSize, d, it)
 v = zeros(finalPopSize,d,itMax);            % (popSize, d, it)
 
 % initialize pop
-if popCS ~= 2
+if popCS ~= 2   % not incrimental
     pop.pos(1:particles,:,1) = ini_pop(particles, bound);
     pop.fit(1:particles,1) = f(pop.pos(1:particles,:,1));
     pop.size(1) = sum(pop.fit(:,1) ~= inf);
@@ -106,34 +107,58 @@ else
     pop.fit(1:initialPopSize,1) = f(pop.pos(1:initialPopSize,:,1)); 
     pop.size(1) = sum(pop.fit(:,1) ~= inf);
 end
-[gb.fit(1), gbidx] = min(pop.fit(:,1));
-gb.pos(1,:) = pop.pos(gbidx,:,1);
+% [gb.fit(1), gbidx] = min(pop.fit(:,1));
+% gb.pos(1,:) = pop.pos(gbidx,:,1);
 % pop sorter
 [pop.fit(:,1),idx] = sort(pop.fit(:,1));
 pop.pos(:,:,1) = pop.pos(idx,:,1);
+% global best
+gb.fit(1) = pop.fit(best,1);
+gb.pos(1,:) = pop.pos(best,:,1);
 
+N = [];%new ?
 % Main 
 for it = 2:itMax
-    pop = populationCS(pop,bound,gb);
+    pop = populationCS(pop,bound,gb);   % pop.(fit & pos & size)
     % pop sorter
     [pop.fit(:,it), idx] = sort(pop.fit(:,it));
     pop.pos(:,:,it) = pop.pos(idx,:,it);
-    % personal best
-    [pb.fit, pbIdx] = min(pop.fit,[],2);
+
+    % personal best & global best
+    [pb.fit, itOfMin] = min(pop.fit,[],2);
     for i=1:pop.size(it)
-        pb.pos(i,:) = pop.pos(i,:,pbIdx(i));
+        pb.pos(i,:) = pop.pos(i,:,itOfMin(i));
     end
+    [gb.fit(it), idx] = min(pb.fit);    %need in AC
+    gb.pos(it,:) = bp.pos(idx,:);%pop.pos(idx,:,itOfMin);
+    % gb.idx = idx;
 
     for i=1:finalPopSize
-        x.pb.fit = pb.fit(i);
-        x.pb.pos = pb.pos(i,:);
+        % x(i).fit
+        N=[];%new ?
+        % Define the Particle
+        [x.pb.fit, pbIdx] = min(pop.fit(i,:));%pb.fit(i); new2
+        x.pb.pos = pop.pos(i,:,pbIdx);%pb.pos(i,:); new2
         x.fit = pop.fit(i,it);
         x.pos = pop.pos(i,:,it);
+        x.idx = i;%new
+        % Neighborhood(N) <== topology
+        x.N = TOP(pop,x,d,N);   % x.N.(pos & fit & idx)   % to it badi bayad N in x ro bedim ??? modify MOI and TOP
+        x.N.size = numel(x.N.fit);  % x.N.(pos & fit & idx & size)
+        [x.N.fit, idx] = sort(x.N.fit); % N.fit sort
+        x.N.pos = x.N.pos(idx,:); % N.pos sort
+        x.N.idx = x.N.idx(idx,:); % N.idx sort
+        % Local best <== N
+        x.lb.fit = x.N.fit(best);% [x.lb.fit, idxlb] = min(x.N.fit);
+        x.lb.pos = x.N.pos(best,:);% x.lb.pos = x.N.pos(idxlb,:);
+        % Influencer(I) <== model of influence
+        x.I = MOI(); % x.I.(pos & fit & idx & size | weight)
+        [x.I.fit, idx] = sort(x.I.fit); % I.fit sort
+        x.I.pos = x.I.pos(idx,:); % I.pos sort
+        x.I.idx = x.I.idx(idx,:); % N.idx sort
 
-        x.N = TOP(pop.pos,x.pos);
-        [x.lb.fit, idxlb] = min(x.N);
-        x.lb.pos = x.N(idxlb,:);
-        popit = 
-        popSize = 
+        x=[];
     end
+    % X(it) = x; 
+    
 end

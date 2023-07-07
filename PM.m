@@ -1,10 +1,10 @@
-function pm = PM(x,pm,N,gb)
+function pm = PM(x,pm,gb)
 global pmCS2
 global PM_cte e m Sc Fc %(user defined)
 
 switch  pmCS2
     case 1 % cte
-        pm = [pm, PM_cte];
+        pm = [pm, PM_cte];%need pm?
 
     case 2 % euclidean
         distance = norm(x.pos - x.pb.pos); % euclidean distance
@@ -17,7 +17,7 @@ switch  pmCS2
 
     case 3 % obj.func
         m = 0; % (0,1]
-        obj_distance = (gb(it) - x.fit)/gb(it);
+        obj_distance = (x.lb.fit - x.fit)/x.lb.fit;%(gb.fit(it) - x.fit)/gb.fit(it);
         if obj_distance == 0
             pm = [pm, m * pm(end)];
         else
@@ -25,15 +25,15 @@ switch  pmCS2
         end
 
     case 4 % success rate
-        Sc = 0; % threshold (user defined)
-        Fc = 0; % threshold (user defined)
+        Sc = 0; % threshold (user defined)  ??
+        Fc = 0; % threshold (user defined)  ??
         flagS=1;
         flagF=1;
         for i = 1:Sc
-            if (gb(it+1-i) > gb(it-i)); flagS=0;break; end
+            if (gb.fit(it+1-i) > gb.fit(it-i)); flagS=0;break; end
         end
         for i = 1:Fc
-            if (gb(it+1-i) < gb(it-i)); flagS=0;break; end
+            if (gb.fit(it+1-i) < gb.fit(it-i)); flagS=0;break; end
         end
 
         if flagS 

@@ -1,40 +1,39 @@
-function perted = pertInf(vector,x,fit,N,pm,gb)
+function perted = pertInf(vector,x,fit,N,pm,gb) % ok +2
 global pertInfCS
-global lambda sigma bt %(user defined)
+global lambda bt %(user defined)
+
 switch  pertInfCS
     case 0 % None   ok
         perted = vector;
 
-    case 1 % gauss
+    case 1 % gauss  ok
         perted = zeros(size(vector,2),1);
+        pm = PM(x,fit,N,pm,gb);
         for i = 1:size(vector,2)
             perted(i) = random(makedist('Stable','alpha',2,'beta',0,'gam',...
-                sigma/sqrt(2),'delta',vector(i)));           
+                pm(end)/sqrt(2),'delta',vector(i)));           
         end
-         pm = PM(x,fit,N,pm,gb);
-         perted = pm(end)*perted;
 
-    case 2 % levy KH
+    case 2 % levy ok
         perted = zeros(size(vector,2),1);
+        pm = PM(x,fit,N,pm,gb);
         for i = 1:size(vector,2)
-            perted(i) = random(makedist('Stable','alpha',lambda,'beta',0,'gam',sigma,'delta',sigma+vector(i)));
+            perted(i) = random(makedist('Stable','alpha',lambda,'beta',0,'gam',pm(end),'delta',pm(end)+vector(i)));
             % 1<landa<2
         end
-         pm = PM(x,fit,N,pm,gb);
-         perted = pm(end)*perted; 
 
     case 3 % cauchy     +1
         perted = zeros(size(vector,2),1);
+        pm = PM(x,fit,N,pm,gb);
         for i = 1:size(vector,2)
-            perted(i) = random(makedist('Stable','alpha',1,'beta',0,'gam',sigma,'delta',vector(i)));
+            perted(i) = random(makedist('Stable','alpha',1,'beta',0,'gam',pm(end),'delta',vector(i)));
         end
-         pm = PM(x,fit,N,pm,gb);
-         perted = pm(end)*perted;   
 
-    case 4 % uniform
-        rand
-        vector + s * vector
-        
-
+    case 4 % uniform +1
+        s = rand(size(vector)) * (2*bt) - bt;
+        perted = vector + s .* vector;
+ 
 
 end
+% pm khoroji bedim ??
+% koja [] konim ??

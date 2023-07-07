@@ -1,19 +1,12 @@
-function dnpp = DNPP(x,pb,I,pop)
+function DNPP(x,pb,I,pop)
 global it itMax
 global dnppCS MtxCS
 
 switch dnppCS
     case 0  % rectangular   
-        dnpp_I = phi(1) * Mtx((prtInf(pb.pos(x.I.idx,:),x,pm,gb) - x.pos),d,pop);
-        otherIdx = [];
-        % for i = 1:x.N.size
-        %     if ~sum(x.N.idx(i) == x.I.idx)
-        %         otherIdx = [otherIdx, x.N.idx(i)];
-        %     end
-        % end
-        % dnpp2 = phi(2) * Mtx((prtInf(pb.pos(otherIdx,:),x,pm,gb) - x.pos),d,pop);
-        dnpp_other = phi(2) * Mtx((prtInf(pb.pos(setdiff(x.N.idx,x.I.idx),:),x,pm,gb) - x.pos),d,pop);
-        dnpp = dnpp_I + dnpp_other;
+        x.I.idx
+        x.I.pos
+        Mtx(prtInf(pb.pos(x.I.idx,:),x,pm,gb) - x.pos)
         %
         idxI = zeros(size(I,1),1);
         for k = 1:size(I,1)

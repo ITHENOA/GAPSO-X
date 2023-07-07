@@ -1,14 +1,13 @@
-function pm = PM(x,pm,gb,pb)
+function pm = PM(x,pm,N,gb)
 global pmCS2
 global PM_cte e m Sc Fc %(user defined)
 
 switch  pmCS2
     case 1 % cte
-        pm = [pm, PM_cte];
+        pm = [pm, PM_cte];%need pm
 
     case 2 % euclidean
-        idxpb = find(prod(pop.pos(:,:,it) == x.pos,2));
-        distance = norm(x.pos - pb.pos(idxpb,:)); % euclidean distance
+        distance = norm(x.pos - x.pb.pos); % euclidean distance
         e = 0; % (0,1] used to weigh the diastance
         if distance == 0
             pm = [pm, e * pm(end)];
