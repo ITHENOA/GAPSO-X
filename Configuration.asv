@@ -105,10 +105,6 @@ for it = 1:itMax
         x.pb.pos = pb.pos(i,:);
         x.fit = pop.fit(i,it);
         x.pos = pop.pos(i,:,it);
-        x.N = TOP(pop.pos,x.pos);
-        [x.lb.fit, idxlb] = min(x.N);
-        x.lb.pos = x.N(idxlb,:);
-        popit = 
-        popSize = 
+        x.N = TOP(x.pos)
     end
 end

@@ -1,21 +1,25 @@
 function DNPP(option,x,pb,I,pop)
+global it itMax
 global MtxCS
 
 switch option
     case 0  % rectangular
-        idx = zeros(size(I,1),1);
+        idxI = zeros(size(I,1),1);
         for k = 1:size(I,1)
-            idx(k) = find(prod(pop.pos(:,:,it) == I(k,:),2));
+            idxI(k) = find(prod(pop.pos(:,:,it) == I(k,:),2));
         end
         popSize = sum(pop.fit(:,it) ~= inf);
+        
+        sumation = 0;
         for i = 1:popSize
-            if idx == i
-                phi1
+            phi = AC(it,itMax,gb.fit(it),pop.fit(i,it));
+            if sumation(idxI == i)
+                sumation = sumation + phi(1)
             else
-                phi2
+                sumation = sumation + phi(2)
             end
         end
-
+    
     case 1  % spherical
     case 2  % standard
         MtxCS = 0;

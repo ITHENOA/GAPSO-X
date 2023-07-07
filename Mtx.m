@@ -1,4 +1,5 @@
-function outVector = Mtx(vector,d,fit,it,itMax)
+function outVector = Mtx(vector,d,fit)
+global it itMax
 global MtxCS
 
 switch MtxCS
@@ -20,14 +21,14 @@ switch MtxCS
         outVector = mtx * vector;
 
     case 4 % Eul rot
-        alpha = alpha_mtx(d,fit,it);    % degree or radian ???
+        alpha = alpha_mtx(d,fit,it);
         plain = randperm(d,2);
         vector(plain(1)) = vector(plain(1)) * cosd(alpha) - vector(plain(2)) * sind(alpha);
         vector(plain(2)) = vector(plain(2)) * cosd(alpha) + vector(plain(1)) * sind(alpha);
         outVector = vector;
 
     case 5 % Eul rot_all
-        alpha = alpha_mtx(d,fit,it);    % degree or radian ???
+        alpha = alpha_mtx(d,fit,it);
         for i=1:d-1
             for j = i+1:d
                 vector(i) = vector(i) * cosd(alpha) - vector(j) * sind(alpha);
