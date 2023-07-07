@@ -8,9 +8,12 @@ global pertRndCS % 0=None, 1=rectangular, 2=noisy
 global MtxCS % 0=None, 1=rnd diagonal, 2=rnd linear, 3=exp map, 4=Eul rot, 5=Eul rot_all, 6=increasing group based
 global inertiaW1CS % 0=cte, 1=linear decreasing, 2=linear increasing, 3=random, 4=self-regulating, 5=adaptive based on velocity, 6=double exponential self-adaptive, 7=rank-based, 8=success-based, 9=convergence-based
 global paramW23CS % 0=w1, 1=rnd, 2=cte
+global popCS
 
 % General Parameters
-global finalPopSize
+global finalPopSize it itMax  
+% inipop
+global particles initialPopSize
 % top
 global bd
 % AC
@@ -27,6 +30,7 @@ global taw delta
 global inertia_cte w1Max w1Min nu a_w1_cb b_w1_cb lambda_w1_abv
 % w2, w3
 global w2_cte w3_cte
+% 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -92,19 +96,40 @@ pop.fit = ones(finalPopSize,itMax)*inf;     % (popSize, it)
 pop.pos = ones(finalPopSize,d,itMax)*inf;   % (popSize, d, it)
 v = zeros(finalPopSize,d,itMax);            % (popSize, d, it)
 
+% initialize pop
+if popCS ~= 2
+    pop.pos(1:particles,:,1) = ini_pop(particles, bound);
+    pop.fit(1:particles,1) = f(pop.pos(1:particles,:,1));
+    pop.size(1) = sum(pop.fit(:,1) ~= inf);
+else
+    pop.pos(1:initialPopSize,:,1) = ini_pop(initialPopSize, bound);
+    pop.fit(1:initialPopSize,1) = f(pop.pos(1:initialPopSize,:,1)); 
+    pop.size(1) = sum(pop.fit(:,1) ~= inf);
+end
+[gb.fit(1), gbidx] = min(pop.fit(:,1));
+gb.pos(1,:) = pop.pos(gbidx,:,1);
+% pop sorter
+[pop.fit(:,1),idx] = sort(pop.fit(:,1));
+pop.pos(:,:,1) = pop.pos(idx,:,1);
+
 % Main 
-for it = 1:itMax
+for it = 2:itMax
+    pop = populationCS(pop,bound,gb);
     % pop sorter
-    [pop.fit,idx] = sort(pop.fit);
-    pop.pos = pop.pos(idx,:,:);
+    [pop.fit(:,it), idx] = sort(pop.fit(:,it));
+    pop.pos(:,:,it) = pop.pos(idx,:,it);
     % personal best
     [pb.fit, pbIdx] = min(pop.fit,[],2);
-    pb.pos = pop.pos(:,:,pbIdx);
+    for i=1:pop.size(it)
+        pb.pos(i,:) = pop.pos(i,:,pbIdx(i));
+    end
+
     for i=1:finalPopSize
         x.pb.fit = pb.fit(i);
         x.pb.pos = pb.pos(i,:);
         x.fit = pop.fit(i,it);
         x.pos = pop.pos(i,:,it);
+
         x.N = TOP(pop.pos,x.pos);
         [x.lb.fit, idxlb] = min(x.N);
         x.lb.pos = x.N(idxlb,:);
