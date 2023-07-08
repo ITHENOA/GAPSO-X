@@ -1,6 +1,6 @@
 function pop = populationCS(pop,bound,gb)
 global it
-global popCS pIntitTypeCS2
+global popCS  pIntitTypeCS2
 global particles initialPopSize finalPopSize particlesToAdd  popTViterations
 
 popSize = pop.size(it-1);

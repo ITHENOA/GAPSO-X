@@ -9,7 +9,7 @@ global MtxCS % 0=None, 1=rnd diagonal, 2=rnd linear, 3=exp map, 4=Eul rot, 5=Eul
 global inertiaW1CS % 0=cte, 1=linear decreasing, 2=linear increasing, 3=random, 4=self-regulating, 5=adaptive based on velocity, 6=double exponential self-adaptive, 7=rank-based, 8=success-based, 9=convergence-based
 global paramW23CS % 0=w1, 1=rnd, 2=cte
 global popCS
-
+global
 % General Parameters
 global finalPopSize it itMax  
 % inipop
