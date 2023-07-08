@@ -1,15 +1,18 @@
-function I = MOI(  x, pop,it,d,best)   % ok+1
+function I = MOI(x)   % ok+1
 global moiCS
 
 switch moiCS
     case 0  % best of neighborhood 
-        if x.idx ~= best
-            I.pos = [x.pos; pop.pos(best,:,it)];   % self and best of N
-            I.fit = [x.fit; pop.fit(best,it)];
+        if x.idx ~= x.N.idx(1)?  % joz N fully and timevar i jozv N nist
+            I.pos = [x.pos; x.N.pos(1,:)];
+            I.fit = [x.fit x.N.fit(1)];
+            I.idx = [x.idx x.N.idx(1)];
+            % I.pos = [x.pos; pop.pos(best,:,it)];   % self and best of N
+            % I.fit = [x.fit; pop.fit(best,it)];
             I.size = 2;
-            I.idx = [x.idx best];
+            % I.idx = [x.idx best];
         else 
-            I.pos = x.pos;   % self and best of N
+            I.pos = x.pos;   % self == best of N
             I.fit = x.fit;
             I.size = 1;
             I.idx = x.idx;

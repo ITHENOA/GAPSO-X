@@ -89,8 +89,9 @@ w1 = [];
 % gb.fit %[0:tMix]
 % gb.pos %[0:tMix]
 
+global best d
 best = 1; 
-
+d = 3;                                                                      ?
 
 % pop.fit = ones(finalPopSize,itMax)*inf;     % (popSize, it)
 % pop.pos = ones(finalPopSize,d,itMax)*inf;   % (popSize, d, it)
@@ -99,87 +100,135 @@ best = 1;
 f = @(x) 3.*(1-x(:,1)).^2.*exp(-(x(:,1).^2)-(x(:,2)+1).^2)-10.*(x(:,1)./5-x(:,1).^3-x(:,2).^5).*exp(-x(:,1).^2-x(:,2).^2)-1./3.*exp(-(x(:,1)+1).^2-x(:,2).^2);
 bound = [-3 3;-4 4]; 
 
+pop.pos = ones(finalPopSize+itMax,d,itMax)*Inf; % if all it pop+1
+pop.fit = ones(finalPopSize+itMax,itMax)*Inf;
 
-% initialize pop ------------------------------
-pop.idx = zeros(itMax,finalPopSize);
+%-----------------------------
+global Didx Aidx newidx
+Didx = [];  % Dead indeces
+% Aidx : Alive indeces
+% newidx : maximum usage of index
+saveIdx = zeros(itMax,finalPopSize);                                        ?
+%-----------------------------
+
+%% initialize pop ------------------------------
 if popCS ~= 2   % not incrimental
+
     pop.pos(1:particles,:,1) = ini_pop(particles, bound);
     pop.fit(1:particles,1) = f(pop.pos(1:particles,:,1));
-    pop.size(1) = particles;
-    pop.idx(1,1:particles) = 1:particles;
-    % pop sorter
     [pop.fit(:,1),idx] = sort(pop.fit(:,1));
     pop.pos(:,:,1) = pop.pos(idx,:,1);
+    Aidx = 1:particles;
+    pop.size(1) = numel(Aidx);
+    newidx = particles;
+    pop.v(1:particles,:,1) = zeros(particles,d,1);                          ?
+
 else
+
     pop.pos(1:initialPopSize,:,1) = ini_pop(initialPopSize, bound);
-    pop.fit(1:initialPopSize,1) = f(pop.pos(1:initialPopSize,:,1)); 
-    pop.size(1) = initialPopSize;
-    pop.idx(1,1:initialPopSize) = 1:initialPopSize;    %(it,idx)
-    % pop sorter
+    pop.fit(1:initialPopSize,1) = f(pop.pos(1:initialPopSize,:,1));     
     [pop.fit(:,1),idx] = sort(pop.fit(:,1));
     pop.pos(:,:,1) = pop.pos(idx,:,1);
+    Aidx = 1:initialPopSize;
+    pop.size(1) = numel(Aidx);
+    newidx = initialPopSize;
+    pop.v(1:initialPopSize,:,1) = zeros(initialPopSize,d,1);                ?
+
 end
+
+saveIdx(1,1:numel(Aidx)) = Aidx; % motmaen sho harbar nemirize ino to eon                ??
+
 for i=1:pop.size
     X(i,1).pm = 1;
+    X(i,1).N.pos = [];
+    X(i,1).N.fit = [];
+    X(i,1).N.idx = [];
+    if inertiaW1CS==4 || inertiaW1CS==5                                     ?
+        X(i,1).w1 =                                                         ?
+    end
+end
+
+% initial N for time varing topology    (start from fully??)
+it=1;                                                                       ?
+if topCS == 5 % timeVar
+    topCS = 1; % fully
+    for i = 1:pop.size
+        X(i,1).N = TOP(pop,[],[]);                                          ?
+    end
+    topCS = 5; % timeVar
 end
 
 % global best
 gb.fit(1) = pop.fit(best,1);
 gb.pos(1,:) = pop.pos(best,:,1);
 
-%  --------------------- Main ----------------------
+%%  --------------------- Main ----------------------
 for it = 2:itMax
     pop = populationCS(pop,bound,gb);   % pop.(fit & pos & size)
-    % pop sorter
-    [pop.fit(:,it), idx] = sort(pop.fit(:,it));
-    pop.pos(:,:,it) = pop.pos(idx,:,it);
+    pop.size(it) = numel(Aidx);
+
+    % idx sorter
+    [~, idx] = sort(pop.fit(Aidx,it));
+    Aidx = Aidx(idx);
 
     % personal best & global best
-    [pb.fit, itOfMin] = min(pop.fit,[],2);
-    for i=1:pop.size(it)
-        pb.pos(i,:) = pop.pos(i,:,itOfMin(i));
-    end
-    [gb.fit(it), idx] = min(pb.fit);
+    pb_it.fit = ones(pop.size(it),1)*inf;
+    pb_it.pos = ones(pop.size(it),d)*inf;
+    [pb_it.fit(Aidx), itOfMin] = min(pop.fit(Aidx,:),[],2);
+    pb_it.pos = pop.pos(Aidx,:,itOfMin);
+
+    [gb.fit(it), idx] = min(pb_it.fit);
     gb.pos(it,:) = bp.pos(idx,:);
-    % gb.idx = idx;
+    gb.idx = idx;
 
     
 
-    for i = pop.idx % -------------- particle ------------------
-        N=[];%new ?
+    for i = Aidx % -------------- particle ------------------
+        x.v = pop.v(i,:,it);                                                ?
         % Define the Particle
-        x.pb.fit = pb.fit(i); 
-        x.pb.pos = pb.pos(i,:);
+        x.pb.fit = pb_it.fit(i); 
+        x.pb.pos = pb_it.pos(i,:);
         x.fit = pop.fit(i,it);
         x.pos = pop.pos(i,:,it);
         x.idx = i;
-        % Neighborhood(N) <== topology
-        x.N = TOP(pop,x,d,N);   % x.N.(pos & fit & idx)   % to it badi bayad N in x ro bedim ??? modify MOI and TOP
-        x.N.size = numel(x.N.fit);  % x.N.(pos & fit & idx & size)
+        % Neighborhood(N) <== TOP(pop{fit,pos,size},x{idx},N(i,it-1))
+        x.N = TOP(pop, x, X(i,it-1).N);   % x.N.(pos & fit & idx)
+        x.N.size = numel(x.N.idx);  % x.N.(pos & fit & idx & size)
         [x.N.fit, idx] = sort(x.N.fit); % N.fit sort
         x.N.pos = x.N.pos(idx,:); % N.pos sort
         x.N.idx = x.N.idx(idx,:); % N.idx sort
         % Local best <== N
         x.lb.fit = x.N.fit(best);
         x.lb.pos = x.N.pos(best,:);
+        x.lb.idx = x.N.idx(best);
         % Influencer(I) <== model of influence
-        x.I = MOI(); % x.I.(pos & fit & idx & size | weight)
+        x.I = MOI(x); % x.I.(pos & fit & idx & size | weight)
         [x.I.fit, idx] = sort(x.I.fit); % I.fit sort
         x.I.pos = x.I.pos(idx,:); % I.pos sort
         x.I.idx = x.I.idx(idx,:); % N.idx sort
-        x.pm = PM(x,X(i,it-1).pm,gb);
+        x.pm = PM(x, X(i,it-1).pm, gb);
+        % if inertiaW1CS==4 || inertiaW1CS==5
+        %     x.w1 = inertiaW1(X(i,it-1).w1 ,gb,x,bound,pop,X,saveIdx);
+        % elseif inertiaW1CS==4 || inertiaW1CS==5
+        %     x.w1 = 
+        % end
         X(i,it) = x;
         x=[];
     end
-    for i = pop.idx
-
+    for i = Aidx % -------------- particle ------------------
+        X(i,it).prtInfo = pertInf(pb_it.pos(i,:), X(i,it).pm);
+        X(i,it).prtRnd = pertRnd(X(i,it).pos, pm);                          ?
+        X(i,it).phi = AC(X(i,it), gb);
+        X(i,it).w1 = inertiaW1(X(i,it-1).w1 ,gb,X(i,it), bound, pop, X, saveIdx); ?
+        [X(i,it).w2, X(i,it).w3] = param_W23(X(i,it).w1);
+        X(i,it).dnpp = DNPP(X(i,it), pop, X(i,it).prtInfo, X(i,it).phi, saveIdx); ?
+        % update velocity
+        X(i,it+1).v = X(i,it).w1 * X(i,it).v + X(i,it).w2 * X(i,it).dnpp + X(i,it).w2 * X(i,it).prtRnd; ?
+        % update position
+        X(i,it+1).pos = X(i,it).pos + X(i,it+1).v;  ??????????
     end
-    for i = pop.idx
-        X(i,it).prtInfo = pertInf(pb.pos(i,:),X(i,it).pm);
-        X(i,it).phi = AC(X(i,it),gb);
-    end
-    for i = pop.idx
-        X(i,it).dnpp = DNPP(X(i,it), pop, X(i,it).prtInfo, X(i,it).phi);
-    end
-    
+    pop.pos(Aidx,:,it+1) = X(Aidx,it+1).pos;    ?????????
+        % biaim tebgh algoritm khodesh berim => akhar berim soragh update
+        % pop na aval
+    saveIdx(it,1:numel(Aidx)) = Aidx;
 end

@@ -1,5 +1,5 @@
-function dnpp = DNPP(x,d,pop,prtInfo,phi)%(i,it)
-global it itMax
+function dnpp = DNPP(x, pop, prtInfo, phi, saveIdx)%(i,it)
+global it itMax d
 global dnppCS MtxCS
 
 switch dnppCS
@@ -7,9 +7,9 @@ switch dnppCS
         dnpp = zeros(1,d);
         for i = x.I.idx
             if i == x.idx
-                dnpp = dnpp + phi(1) * Mtx((prtInfo - x.pos), d, pop);
+                dnpp = dnpp + phi(1) * Mtx((prtInfo - x.pos), pop, saveIdx);         ?
             else
-                dnpp = dnpp + phi(2) * Mtx((prtInfo - x.pos), d, pop);
+                dnpp = dnpp + phi(2) * Mtx((prtInfo - x.pos), pop, saveIdx);
             end
         end 
     case 1  % spherical

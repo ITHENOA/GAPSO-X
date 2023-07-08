@@ -1,5 +1,6 @@
-function N  = TOP(pop,x,d,N)    % ok
-global it
+function N  = TOP(pop,x,N)    % ok    Available_idx : Aidx
+if nargin < 2;end
+global it Aidx
 global topCS popCS
 global finalPopSize bd %(user defined)
 
@@ -8,31 +9,43 @@ popSize = pop.size(it);
 switch topCS
     case 0 % ring   ok
         N=[];
-        if x.idx == 1
-            N.pos = [pop.pos(2,:,it); pop.pos(popSize,:,it)];
-            N.fit = [pop.fit(2,it); pop.fit(popSize,it)];
-            N.idx = [2 popSize];
-        elseif x.idx == popSize
-            N.pos = [pop.pos(1,:,it); pop.pos(popSize-1,:,it)]; 
-            N.fit = [pop.fit(1,it); pop.fit(popSize-1,it)];
-            N.idx = [1 popSize-1];
+        if x.idx == Aidx(1)
+            N.pos = [pop.pos(Aidx(2),:,it); pop.pos(Aidx(end),:,it)];
+            N.fit = [pop.fit(Aidx(2),it); pop.fit(Aidx(end),it)];
+            N.idx = [Aidx(2) Aidx(end)];
+        elseif x.idx == Aidx(end)
+            N.pos = [pop.pos(Aidx(1),:,it); pop.pos(Aidx(end-1),:,it)]; 
+            N.fit = [pop.fit(Aidx(1),it); pop.fit(Aidx(end-1),it)];
+            N.idx = [Aidx(1) Aidx(end-1)];
         else 
-            N.pos = pop.pos([x.idx-1, x.idx+1],:,it);
-            N.fit = pop.fit([x.idx-1, x.idx+1],it);
-            N.idx = [x.idx-1 x.idx+1];
+            id = find(Aidx == x.idx);
+            N.pos = pop.pos([Aidx(id-1), Aidx(id+1)],:,it);
+            N.fit = pop.fit([Aidx(id-1), Aidx(id+1)],it);
+            N.idx = [Aidx(id-1) Aidx(id+1)];
         end
 
     case 1 % full   ok
         N=[];
-        N.pos = pop.pos(1:popSize,:,it);
-        N.fit = pop.fit(1:popSize,it);
-        N.idx = 1:popSize;
+        N.pos = pop.pos(Aidx,:,it);
+        N.fit = pop.fit(Aidx,it);
+        N.idx = Aidx;
 
     case 2 % von    ok
         d = ceil(sqrt(popSize));
         mtx=zeros(d+2); 
-        mtx(2:end-1,2:end-1) = sort(sort(magic(d)),2);
-        mtx(mtx>size(pop,1)) = 0;
+        % mtx(2:end-1,2:end-1) = sort(sort(magic(d)),2);
+        % mtx(mtx>popSize) = 0;%size(pop,1)
+        k=0;
+        for i=2:d+1
+            for j = 2:d+1
+                k=k+1;
+                mtx(i,j) = Aidx(k);
+                if k == numel(Aidx); break; end
+            end
+            if k == numel(Aidx); break; end
+        end
+
+        
         [r,c]=find(mtx == x.idx);
         N.pos = [];
         N.fit = [];
@@ -54,6 +67,7 @@ switch topCS
         N=[];
         while true
             neighborIdx = randperm(popSize, 2);
+            neighborIdx = Aidx(neighborIdx);%new
             if ~sum(x.idx == neighborIdx); break; end 
         end
         N.pos = pop.pos(neighborIdx,:,it);
@@ -64,7 +78,8 @@ switch topCS
     case 4 % hierarchical
         h = ceil(popSize / bd); % number of members in each branch
         remain = popSize - h * bd;  % remain members    (bd=5; 4*5 & 1*3 ;popSize=23)
-        tree = reshape([randperm(popSize), zeros(1,-remain)], bd, h);
+        rnd_idx = randperm(popSize);%new
+        tree = reshape([Aidx(rnd_idx), zeros(1,-remain)], bd, h);%new
         treeFit = zeros(bd,h);
         for i = 1:bd
             for j = 1:h

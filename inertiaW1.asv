@@ -1,7 +1,6 @@
 function w1 = inertiaW1(old_w1,gb,x,bound,pop,X,saveIdx)   % abv?
 % need old_w1 : 4=self-regulating , 5=abv 
-% depend on i : 4=self-regulating , 6=desa , 7=rank , 8=success ,
-% 9=convergence | 5=abv
+% depend on i : 4=self-regulating , 6=desa , 7=rank , 
 global itMax it d Aidx
 global inertiaW1CS
 global inertia_cte w1Max w1Min nu a_w1_cb b_w1_cb lambda_w1_abv
@@ -25,7 +24,7 @@ switch inertiaW1CS
 
     case 4 % self-regulating                                                depend on i
         dw = (w1Max - w1Min)/itMax;
-        if x.pb.fit == gb.fit(it)
+        if x.pb == gb.fit(it)
             w1 = old_w1 + nu * dw;
         else
             w1 = old_w1 - dw;

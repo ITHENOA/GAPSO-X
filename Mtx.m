@@ -1,5 +1,5 @@
-function outVector = Mtx(vector,d,pop)
-global it itMax
+function outVector = Mtx(vector, pop, saveIdx)
+global it itMax d
 global MtxCS
 
 switch MtxCS
@@ -8,27 +8,27 @@ switch MtxCS
         
     case 1 % rnd diagonal    ok
         mtx = rand(d,1).*eye(d);
-        outVector = vector * mtx;?   % vec*mtx ?? 1*3 * 3*3 = 1*3 ok mishe
+        outVector = vector * mtx;
 
     case 2 % rnd linear      ok
         mtx = rand(1,1).*eye(d);
         outVector = vector * mtx;
 
     case 3 % exp map        ok
-        alpha = alpha_mtx(d,pop,it);
+        alpha = alpha_mtx(pop, saveIdx);                                             ?
         A = rand(d)-0.5;
         mtx = eye(d) + (alpha * pi / 180 * (A - A'));
         outVector = vector * mtx;
 
     case 4 % Eul rot
-        alpha = alpha_mtx(d,pop,it);
+        alpha = alpha_mtx(pop, saveIdx);
         plain = randperm(d,2);
         vector(plain(1)) = vector(plain(1)) * cosd(alpha) - vector(plain(2)) * sind(alpha);
         vector(plain(2)) = vector(plain(2)) * cosd(alpha) + vector(plain(1)) * sind(alpha);
         outVector = vector;
 
     case 5 % Eul rot_all
-        alpha = alpha_mtx(d,pop,it);
+        alpha = alpha_mtx(pop, saveIdx);
         for i=1:d-1
             for j = i+1:d
                 vector(i) = vector(i) * cosd(alpha) - vector(j) * sind(alpha);

@@ -17,7 +17,6 @@ switch  pertInfCS
         perted = zeros(size(vector,2),1);
         for i = 1:size(vector,2)
             perted(i) = random(makedist('Stable','alpha',lambda,'beta',0,'gam',pm,'delta',pm+vector(i)));
-            % 1<landa<2
         end
 
     case 3 % cauchy     +1
@@ -27,7 +26,7 @@ switch  pertInfCS
         end
 
     case 4 % uniform +1
-        s = rand(size(vector)) * (2*bt) - bt;
+        s = rand(size(vector)) * (2 * bt) - bt;
         perted = vector + s .* vector;
  
 

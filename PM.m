@@ -5,6 +5,7 @@ global PM_cte e m Sc Fc %(user defined)
 switch  pmCS2
     case 1 % cte
         pm = PM_cte;
+        
     case 2 % euclidean
         distance = norm(x.pos - x.pb.pos); % euclidean distance
         % e = (0,1] used to weigh the diastance
