@@ -83,41 +83,51 @@ lambda_w1_abv = .5; % [0.1:1]
 w2_cte = .5; % [0:1]
 w3_cte = .5; % [0:1]
 %%%%%%%%%%%%%%%% cte %%%%%%%%%%%%%%%%%%%
-pm = ?; % initial pert magnitud     = PM_cte? or user define? or cte? = 1
-fit = zeros(popSize,itMax);
+pm=1; % initial pert magnitud  
 w1 = [];
 
-gb.fit %[0:tMix]
-gb.pos %[0:tMix]
+% gb.fit %[0:tMix]
+% gb.pos %[0:tMix]
 
-best = 1;? % global???
+best = 1; 
 
 
-pop.fit = ones(finalPopSize,itMax)*inf;     % (popSize, it)
-pop.pos = ones(finalPopSize,d,itMax)*inf;   % (popSize, d, it)
-v = zeros(finalPopSize,d,itMax);            % (popSize, d, it)
+% pop.fit = ones(finalPopSize,itMax)*inf;     % (popSize, it)
+% pop.pos = ones(finalPopSize,d,itMax)*inf;   % (popSize, d, it)
+% v = zeros(finalPopSize,d,itMax);            % (popSize, d, it)
 
-% initialize pop
+f = @(x) 3.*(1-x(:,1)).^2.*exp(-(x(:,1).^2)-(x(:,2)+1).^2)-10.*(x(:,1)./5-x(:,1).^3-x(:,2).^5).*exp(-x(:,1).^2-x(:,2).^2)-1./3.*exp(-(x(:,1)+1).^2-x(:,2).^2);
+bound = [-3 3;-4 4]; 
+
+
+% initialize pop ------------------------------
+pop.idx = zeros(itMax,finalPopSize);
 if popCS ~= 2   % not incrimental
     pop.pos(1:particles,:,1) = ini_pop(particles, bound);
     pop.fit(1:particles,1) = f(pop.pos(1:particles,:,1));
-    pop.size(1) = sum(pop.fit(:,1) ~= inf);
+    pop.size(1) = particles;
+    pop.idx(1,1:particles) = 1:particles;
+    % pop sorter
+    [pop.fit(:,1),idx] = sort(pop.fit(:,1));
+    pop.pos(:,:,1) = pop.pos(idx,:,1);
 else
     pop.pos(1:initialPopSize,:,1) = ini_pop(initialPopSize, bound);
     pop.fit(1:initialPopSize,1) = f(pop.pos(1:initialPopSize,:,1)); 
-    pop.size(1) = sum(pop.fit(:,1) ~= inf);
+    pop.size(1) = initialPopSize;
+    pop.idx(1,1:initialPopSize) = 1:initialPopSize;    %(it,idx)
+    % pop sorter
+    [pop.fit(:,1),idx] = sort(pop.fit(:,1));
+    pop.pos(:,:,1) = pop.pos(idx,:,1);
 end
-% [gb.fit(1), gbidx] = min(pop.fit(:,1));
-% gb.pos(1,:) = pop.pos(gbidx,:,1);
-% pop sorter
-[pop.fit(:,1),idx] = sort(pop.fit(:,1));
-pop.pos(:,:,1) = pop.pos(idx,:,1);
+for i=1:pop.size
+    X(i,1).pm = 1;
+end
+
 % global best
 gb.fit(1) = pop.fit(best,1);
 gb.pos(1,:) = pop.pos(best,:,1);
 
-N = [];%new ?
-% Main 
+%  --------------------- Main ----------------------
 for it = 2:itMax
     pop = populationCS(pop,bound,gb);   % pop.(fit & pos & size)
     % pop sorter
@@ -129,19 +139,20 @@ for it = 2:itMax
     for i=1:pop.size(it)
         pb.pos(i,:) = pop.pos(i,:,itOfMin(i));
     end
-    [gb.fit(it), idx] = min(pb.fit);    %need in AC
-    gb.pos(it,:) = bp.pos(idx,:);%pop.pos(idx,:,itOfMin);
+    [gb.fit(it), idx] = min(pb.fit);
+    gb.pos(it,:) = bp.pos(idx,:);
     % gb.idx = idx;
 
-    for i=1:finalPopSize
-        % x(i).fit
+    
+
+    for i = pop.idx % -------------- particle ------------------
         N=[];%new ?
         % Define the Particle
-        [x.pb.fit, pbIdx] = min(pop.fit(i,:));%pb.fit(i); new2
-        x.pb.pos = pop.pos(i,:,pbIdx);%pb.pos(i,:); new2
+        x.pb.fit = pb.fit(i); 
+        x.pb.pos = pb.pos(i,:);
         x.fit = pop.fit(i,it);
         x.pos = pop.pos(i,:,it);
-        x.idx = i;%new
+        x.idx = i;
         % Neighborhood(N) <== topology
         x.N = TOP(pop,x,d,N);   % x.N.(pos & fit & idx)   % to it badi bayad N in x ro bedim ??? modify MOI and TOP
         x.N.size = numel(x.N.fit);  % x.N.(pos & fit & idx & size)
@@ -149,16 +160,26 @@ for it = 2:itMax
         x.N.pos = x.N.pos(idx,:); % N.pos sort
         x.N.idx = x.N.idx(idx,:); % N.idx sort
         % Local best <== N
-        x.lb.fit = x.N.fit(best);% [x.lb.fit, idxlb] = min(x.N.fit);
-        x.lb.pos = x.N.pos(best,:);% x.lb.pos = x.N.pos(idxlb,:);
+        x.lb.fit = x.N.fit(best);
+        x.lb.pos = x.N.pos(best,:);
         % Influencer(I) <== model of influence
         x.I = MOI(); % x.I.(pos & fit & idx & size | weight)
         [x.I.fit, idx] = sort(x.I.fit); % I.fit sort
         x.I.pos = x.I.pos(idx,:); % I.pos sort
         x.I.idx = x.I.idx(idx,:); % N.idx sort
-
+        x.pm = PM(x,X(i,it-1).pm,gb);
+        X(i,it) = x;
         x=[];
     end
-    % X(it) = x; 
+    for i = pop.idx
+
+    end
+    for i = pop.idx
+        X(i,it).prtInfo = pertInf(pb.pos(i,:),X(i,it).pm);
+        X(i,it).phi = AC(X(i,it),gb);
+    end
+    for i = pop.idx
+        X(i,it).dnpp = DNPP(X(i,it), pop, X(i,it).prtInfo, X(i,it).phi);
+    end
     
 end

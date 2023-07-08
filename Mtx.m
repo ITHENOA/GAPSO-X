@@ -8,17 +8,17 @@ switch MtxCS
         
     case 1 % rnd diagonal    ok
         mtx = rand(d,1).*eye(d);
-        outVector = mtx * vector;?   % vec*mtx ?? 1*3 * 3*3 = 1*3 ok mishe
+        outVector = vector * mtx;?   % vec*mtx ?? 1*3 * 3*3 = 1*3 ok mishe
 
     case 2 % rnd linear      ok
         mtx = rand(1,1).*eye(d);
-        outVector = mtx * vector;
+        outVector = vector * mtx;
 
     case 3 % exp map        ok
         alpha = alpha_mtx(d,pop,it);
-        A = rand(d)-0.5;?                % A = n*n  ????
+        A = rand(d)-0.5;
         mtx = eye(d) + (alpha * pi / 180 * (A - A'));
-        outVector = mtx * vector;
+        outVector = vector * mtx;
 
     case 4 % Eul rot
         alpha = alpha_mtx(d,pop,it);
@@ -57,5 +57,5 @@ switch MtxCS
                 end
             end
         end
-        outVector = mtx * vector; 
+        outVector = vector * mtx; 
 end

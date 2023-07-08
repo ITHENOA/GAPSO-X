@@ -11,6 +11,6 @@ switch alpha_mtxCS2
 
     case 2 % adaptive       ok
         % ir: is the number of improved particles in the last iteration divided by the population size.
-        ir = sum(pop.fit(:,it) < pop.fit(:,it-1)) / pop.size;%sum(fit(:,it)<fit(:,it-1))/size(fit,1);
+        ir = sum(pop.fit(:,it) < pop.fit(:,it-1)) / pop.size;
         sigma_alpha = z_alpha * ir/sqrt(d) + ro_alpha;
 end

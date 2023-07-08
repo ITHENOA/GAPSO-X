@@ -4,25 +4,29 @@ global popCS pIntitTypeCS2
 global particles initialPopSize finalPopSize particlesToAdd  popTViterations
 
 popSize = pop.size(it-1);
-newpop = pop.pos(:,:,it-1);
 switch popCS
 case 0 % constant    ok
-    pop.pos(:,:,it) = pop.pos(:,:,it-1)
+    pop.pos(:,:,it) = pop.pos(:,:,it-1);
 case 1  % time-varying      ok
     if it > popTViterations
-        if prod(gb.fit(it-1) == gb.fit(it-popTViterations:it-1)) 
+        if prod(gb.fit(it-1) == gb.fit(it-popTViterations:it-1)) % +1 after pop
             if popSize < finalPopSize
                 pop.pos(popSize+1,:,it) = ini_pop(1,bound);
                 pop.size(it) = pop.size(it-1) + 1;
                 pop.fit(popSize+1,it) = f(pop.pos(popSize+1,:,it));
-            elseif popSize == finalPopSize
-                pop.pos(popSize,:,it) = ini_pop(1,bound);
+                pop.idx(it,pop.size(it)) = pop.size(it);
+
+            elseif popSize == finalPopSize  % +1 on worst
+                pop.idx(it,popSize) = popSize+1;
+                pop.pos(popSize,:,it) = infini_pop(1,bound);
                 pop.fit(popSize,it) = f(pop.pos(popSize,:,it));
-                pop.fit(popSize,1:it-1)=inf;
+                % pop.fit(popSize,1:it-1)=inf;
+
+                pop.idx()
 
             end
         else
-            if popSize > initialPopSize
+            if popSize > initialPopSize % -1 delete worst
                 pop.pos(popSize,:,it) = inf;
                 pop.size(it) = pop.size(it-1) - 1;
                 pop.fit(popSize,1:it) = inf;
@@ -40,7 +44,7 @@ case 2  % incremental       ok
         end
         pop.size(it) = pop.size(it-1) + particlesToAdd;
         pop.fit(popSize+1:popSize+particlesToAdd,it) = ...
-    f(pop.pos(popSize+1:popSize+particlesToAdd,:,it));
+            f(pop.pos(popSize+1:popSize+particlesToAdd,:,it));
 end
 
 
