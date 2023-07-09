@@ -33,8 +33,6 @@ switch topCS
     case 2 % von    ok
         d = ceil(sqrt(popSize));
         mtx=zeros(d+2); 
-        % mtx(2:end-1,2:end-1) = sort(sort(magic(d)),2);
-        % mtx(mtx>popSize) = 0;%size(pop,1)
         k=0;
         for i=2:d+1
             for j = 2:d+1
@@ -45,7 +43,6 @@ switch topCS
             if k == numel(Aidx); break; end
         end
 
-        
         [r,c]=find(mtx == x.idx);
         N.pos = [];
         N.fit = [];
@@ -59,7 +56,7 @@ switch topCS
            if mtx(r,c+i) ~= 0   % ^ v
                N.pos = [N.pos; pop.pos(mtx(r,c+i),:,it)];
                N.fit = [N.fit; pop.fit(mtx(r,c+i),it)];
-               N.idx = [N.idx; mtx(r,c+i)];%new  ??
+               N.idx = [N.idx; mtx(r,c+i)];
            end
         end
 
@@ -67,7 +64,7 @@ switch topCS
         N=[];
         while true
             neighborIdx = randperm(popSize, 2);
-            neighborIdx = Aidx(neighborIdx);%new
+            neighborIdx = Aidx(neighborIdx);
             if ~sum(x.idx == neighborIdx); break; end 
         end
         N.pos = pop.pos(neighborIdx,:,it);
@@ -78,12 +75,12 @@ switch topCS
     case 4 % hierarchical
         h = ceil(popSize / bd); % number of members in each branch
         remain = popSize - h * bd;  % remain members    (bd=5; 4*5 & 1*3 ;popSize=23)
-        rnd_idx = randperm(popSize);%new
-        tree = reshape([Aidx(rnd_idx), zeros(1,-remain)], bd, h);%new
-        treeFit = zeros(bd,h);
+        rnd_idx = randperm(popSize);
+        tree = reshape([Aidx(rnd_idx), ones(1,-remain)*inf], bd, h);
+        treeFit = ones(bd,h)*inf;
         for i = 1:bd
             for j = 1:h
-                if tree(i,j) == 0 ; continue; end
+                if tree(i,j) == inf ; continue; end
                 treeFit(i,j) = pop.fit(tree(i,j),it);
             end
         end
@@ -95,9 +92,14 @@ switch topCS
             end
         end
         [r,c] = find(finalTreeIdx == x.idx);
-        N.pos = pop.pos(finalTreeIdx(r,c:end),:,it);
-        N.fit = pop.fit(finalTreeIdx(r,c:end),it);
-        N.idx = finalTreeIdx(r,c:end);
+        for i = 1:size(finalTreeIdx,2)
+            if c+i > size(finalTreeIdx,2); break; end
+            if finalTreeIdx(r,c+i) == inf; break; end
+            N.pos(i,:) = pop.pos(finalTreeIdx(r,c+i),:,it);
+            N.fit(i) = pop.fit(finalTreeIdx(r,c+i),it);
+            N.idx(i) = finalTreeIdx(r,c+i);
+        end
+
 
     case 5 % time - var     need previous N
         k = randi([1,10],1);
@@ -108,10 +110,12 @@ switch topCS
             k = finalPopSize * k;
             k = floor(k/(popSize-3));
         end
-        if rem(it,k) == 0   % every k iteration remove one random particle
-            removeIdx = randi(popSize,1);
-            N.pos = [N.pos(1:removeIdx-1,:) ; N.pos(removeIdx+1:end,:)];
-            N.fit = [N.fit(1:removeIdx-1,:) ; N.fit(removeIdx+1:end,:)];
-            N.idx = [N.idx(1:removeIdx-1,:) ; N.idx(removeIdx+1:end,:)];
+        if it > 1
+            if rem(it,k) == 0   % every k iteration remove one random particle
+                removeIdx = randi(numel(N.idx),1);
+                N.pos = [N.pos(1:removeIdx-1,:) ; N.pos(removeIdx+1:end,:)];
+                N.fit = [N.fit(1:removeIdx-1,:) ; N.fit(removeIdx+1:end,:)];
+                N.idx = [N.idx(1:removeIdx-1,:) ; N.idx(removeIdx+1:end,:)];
+            end
         end
 end
