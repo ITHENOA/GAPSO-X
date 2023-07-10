@@ -1,14 +1,16 @@
-function N  = TOP(pop,x,N)    % ok    Available_idx : Aidx
+function N  = TOP(pop,x,N)   
 if nargin < 2;end
+
 global it Aidx
 global topCS popCS
 global finalPopSize bd %(user defined)
 
-% N = [];
 popSize = pop.size(it);
 switch topCS
-    case 0 % ring   ok
+    case 0 % ring  
+        disp("Topology ==> ring")
         N=[];
+        % shuffle = sort(Aidx); ???????????? badesh sort konim
         if x.idx == Aidx(1)
             N.pos = [pop.pos(Aidx(2),:,it); pop.pos(Aidx(end),:,it)];
             N.fit = [pop.fit(Aidx(2),it); pop.fit(Aidx(end),it)];
@@ -24,13 +26,17 @@ switch topCS
             N.idx = [Aidx(id-1) Aidx(id+1)];
         end
 
-    case 1 % full   ok
+    case 1 % full   
+        % shuffle = sort(Aidx); ????????????
+        disp("Topology ==> fully")
         N=[];
         N.pos = pop.pos(Aidx,:,it);
         N.fit = pop.fit(Aidx,it);
         N.idx = Aidx;
 
-    case 2 % von    ok
+    case 2 % von newman
+        % shuffle = sort(Aidx); ????????????
+        disp("Topology ==> Von Newman")
         d = ceil(sqrt(popSize));
         mtx=zeros(d+2); 
         k=0;
@@ -61,6 +67,7 @@ switch topCS
         end
 
     case 3 % rand   pick 2 random
+        disp("Topology ==> rnadom")
         N=[];
         while true
             neighborIdx = randperm(popSize, 2);
@@ -71,8 +78,8 @@ switch topCS
         N.fit = pop.fit(neighborIdx,it);
         N.idx = neighborIdx;
 
-
     case 4 % hierarchical
+        disp("Topology ==> Hierarchical")
         h = ceil(popSize / bd); % number of members in each branch
         remain = popSize - h * bd;  % remain members    (bd=5; 4*5 & 1*3 ;popSize=23)
         rnd_idx = randperm(popSize);
@@ -81,7 +88,7 @@ switch topCS
         for i = 1:bd
             for j = 1:h
                 if tree(i,j) == inf ; continue; end
-                treeFit(i,j) = pop.fit(tree(i,j),it);
+                treeFit(i,j) = pop.fit(tree(i,j),it);%%%%%%%pb
             end
         end
         [~,idxTree] = sort(treeFit,2);
@@ -100,17 +107,23 @@ switch topCS
             N.idx(i) = finalTreeIdx(r,c+i);
         end
 
-
     case 5 % time - var     need previous N
-        k = randi([1,10],1);
-        if popCS == 2 % population => incrimental
-            k = popSize * k;
-            k = floor(k/(finalPopSize-3));    
+        disp("Topology ==> Time Varing")
+        if it == 1
+            N=[];
+            N.pos = pop.pos(Aidx,:,it);
+            N.fit = pop.fit(Aidx,it);
+            N.idx = Aidx;
         else
-            k = finalPopSize * k;
-            k = floor(k/(popSize-3));
-        end
-        if it > 1
+            k = randi([1,10],1);
+            if popCS == 2 % population => incrimental
+                k = popSize * k;
+                k = floor(k/(finalPopSize-3));    
+            else
+                k = finalPopSize * k;
+                k = floor(k/(popSize-3));
+            end
+    
             if rem(it,k) == 0   % every k iteration remove one random particle
                 removeIdx = randi(numel(N.idx),1);
                 N.pos = [N.pos(1:removeIdx-1,:) ; N.pos(removeIdx+1:end,:)];
@@ -119,3 +132,4 @@ switch topCS
             end
         end
 end
+N.size = numel(N.idx);

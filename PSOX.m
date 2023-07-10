@@ -1,87 +1,90 @@
 clear;clc
 run('Configuration.m')
 
-global topCS inertiaW1CS
-global it itMax finalPopSize 
-global particles initialPopSize
+global topCS alpha_mtxCS2 inertiaW1CS popCS
+global it itMax Aidx deadidx bornidx
 
-% f = @(x) 3.*(1-x(:,1)).^2.*exp(-(x(:,1).^2)-(x(:,2)+1).^2)-10.*(x(:,1)./5-x(:,1).^3-x(:,2).^5).*exp(-x(:,1).^2-x(:,2).^2)-1./3.*exp(-(x(:,1)+1).^2-x(:,2).^2);
-bound = [-3 3;-4 4]; 
+% Load initialize (pop, TOP, MOI)
+[pop, ini_X, gb, pb_it] = INITIALIZE(bound);
 
-%-----------------------------
-global deadidx Aidx newidx bornidx
-deadidx = [];  % Dead indeces
-bornidx = [];
-% Aidx : Alive indeces
-% newidx : maximum usage of index
-saveIdx = zeros(itMax,finalPopSize);                                        
-%-----------------------------
+X = struct('idx',[],'pos',[],'fit',[],'v',[],'pb',[],'N',[],'I',[],'lb',[]);
+saveIdx = cell(1,itMax);
 
-%% initialize pop ------------------------------
-if popCS ~= 2   % for all 
-
-    pop.pos(1:particles,:,1) = ini_pop(particles, bound);
-    pop.fit(1:particles,1) = f(pop.pos(1:particles,:,1));
-    [pop.fit(:,1),idx] = sort(pop.fit(:,1));
-    pop.pos(:,:,1) = pop.pos(idx,:,1);
-    Aidx = 1:particles;
-    pop.size(1) = numel(Aidx);
-    newidx = particles;
-    pop.v(1:particles,:,1) = zeros(particles,d,1);                          
-
-else  % for incrimental  % ??
-
-    pop.pos(1:initialPopSize,:,1) = ini_pop(initialPopSize, bound);
-    pop.fit(1:initialPopSize,1) = f(pop.pos(1:initialPopSize,:,1));     
-    [pop.fit(:,1),idx] = sort(pop.fit(:,1));
-    pop.pos(:,:,1) = pop.pos(idx,:,1);
-    Aidx = 1:initialPopSize;
-    pop.size(1) = numel(Aidx);
-    newidx = initialPopSize;
-    pop.v(1:initialPopSize,:,1) = zeros(initialPopSize,d,1);                
-
-end
-
-saveIdx(1,1:numel(Aidx)) = Aidx;
-
-for i=1:pop.size(1)
-    X(i,1).pm = 1;
-    X(i,1).N.pos = [];
-    X(i,1).N.fit = [];
-    X(i,1).N.idx = [];
-    % if inertiaW1CS==4 || inertiaW1CS==5                                     
-    %     X(i,1).w1 =                                                         
-    % end
-end
-
-% personal best
-pb_it.fit = pop.fit(:,1);
-pb_it.pos = pop.pos(:,:,1);
-% global best
-gb.fit(1) = pop.fit(best,1);
-gb.pos(1,:) = pop.pos(best,:,1);
-gb.idx(1) = best;
-
-% initial Neighborhood
-it = 1;
-for i = Aidx
-    % to hierical momkene N = [] bashe bara bazia
-    x.idx = i;
-    i;
-    X(i,1).N = TOP(pop,x,X(i,1).N);
-end
-
-%%  --------------------- Main ----------------------
 for it = 1:itMax
-    % bornidx = [];
-    % deadidx = [];
-    % pop = populationCS(pop,bound,gb);   % pop.(fit & pos & size)
-    % pop.size(it) = numel(Aidx);
-    % 
-    % % idx sorter
-    % [~, idx] = sort(pop.fit(Aidx,it));
-    % Aidx = Aidx(idx);
-    % 
+    saveIdx{it} = Aidx;
+    
+    for i = Aidx
+        if it == 1
+            x = ini_X(i); % .({idx},{pos},{fit},{v},{pb.fit},{pb.pos},{N},{I},{lb.pos},{lb.fit},{lb.idx})
+        else
+            x = X(i,it);
+        end
+    
+        % ------------- Calculate parameters for update velocity --------------
+        % w1
+        if it == 1
+            if inertiaW1CS == 8 || inertiaW1CS == 9 % need previos iteration
+                x.w1 = ini_w1_45;
+            else
+                x.w1 = inertiaW1(ini_w1_45,gb,x,bound,pop,[],[]);
+            end
+        else
+            x.w1 = inertiaW1(ini_w1_45,gb,x,bound,pop,X,saveIdx);
+        end
+        % w2, w3
+        [x.w2, x.w3] = param_W23(x.w1);
+        % Perturbation Magnitud (PM)
+        if it == 1
+            x.pm = ini_pm_234;
+        else
+            x.pm = PM(x, X(i,it-1).pm, gb);
+        end
+        % Pert_Info
+        x.prtInfo = pertInf(pb_it.pos(i,:), x.pm);
+        % phi
+        x.phi = AC(x, gb);
+        % DNPP
+        if it == 1 && alpha_mtxCS2 == 2 % adaptive alpha Need previous iteration
+            alpha_mtxCS2 = 0; % use cte alpha
+        	    x.dnpp = DNPP(x, pop, x.prtInfo, x.phi, []); 
+            alpha_mtxCS2 = 2; % back to adaptive alpha
+        else
+            x.dnpp = DNPP(x, pop, x.prtInfo, x.phi, saveIdx); 
+        end
+        % Pert_Rand
+        x.prtRnd = pertRnd(x.pos, pm);
+        % ----- save -----
+        X(i,it) = x;
+        x=[];
+        % -------------------------- Update Velocity --------------------------
+        X(i,it+1).v = X(i,it).w1 * X(i,it).v + X(i,it).w2 * X(i,it).dnpp + X(i,it).w3 * X(i,it).prtRnd;
+        % -------------------------- Update Position --------------------------
+        X(i,it+1).pos = X(i,it).pos + X(i,it+1).v;        
+    end
+    clear ini_X 
+
+    for i = Aidx    % -------------- Update Pb --------------------------------
+        X(i,it+1).fit = f(X(i,it+1).pos);
+        if X(i,it+1).fit < X(i,it).fit && isinrange(X(i,it+1).pos,bound) % && toye bound bood ? 
+            X(i,it+1).pb.pos = X(i,it+1).pos;%? formul 3 ?
+            X(i,it+1).pb.fit = X(i,it+1).fit;
+        else
+            X(i,it+1).pb = X(i,it).pb;
+        end
+    end
+
+    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % apply stagnation detection, particles reinitialization %optional
+    
+    % ------------------------- Update Population ------------------------
+    pop = populationCS(pop,bound,gb);  % +1 | +1,-1 | -1 | +particlesToAdd
+    % sort idxs
+    [~, idx] = sort(pop.fit(Aidx,it));
+    Aidx = Aidx(idx);
+    % pb ha ke avaz nashode - faghat in jedida pb nadaran
+    % momkene gb taghir kone
     % % personal best & global best
     % [pb_it.fit(Aidx), itOfMin] = min(pop.fit(Aidx,:),[],2);
     % for i=1:numel(Aidx)
@@ -90,6 +93,100 @@ for it = 1:itMax
     % [gb.fit(it), idx] = min(pb_it.fit(Aidx));
     % gb.pos(it,:) = pb_it.pos(Aidx(idx),:);
     % gb.idx(it) = Aidx(idx);
+
+
+    % ------------------------- Update Topology ------------------------
+    if popCS ~= 0     % top(time-var) or pop(~cte)
+        %%%%%%%%%%%%% popCS ~= 0 %%%%%%%%%%%%%
+        % we have a dead
+        if numel(deadidx) ~= 0  
+            % if numel(bornidx) == 0 && (topCS == 0 || topCS == 1 || topCS == 2)%new
+            %     % dar soorati ke az shuffle rstefade konim
+            %     for i = Aidx
+            %         x.idx = i;
+            %         X(i,it+1).N.idx = TOP(pop,x,N);
+            %         X(i,it+1).N.pos = pop.pos(X(i,it+1).N.idx,:,it+1);
+            %         X(i,it+1).N.fit = pop.fit(X(i,it+1).N.idx,it+1);
+            %         X(i,it+1).N.size = numel(X(i,it+1).N.idx);
+            %     end
+            % else
+                for i = setdiff(Aidx,bornidx) % repeated
+                    x = X(i,it);
+                    if sum(x.N.idx == deadidx) % dead blong i ?
+                        id = find(x.N.idx == deadidx);
+                        X(i,it+1).N.idx = [x.N.idx(1:id-1) x.N.idx(id+1:end)];
+                        X(i,it+1).N.pos = pop.pos(X(i,it+1).N.idx,:,it+1);
+                        X(i,it+1).N.fit = pop.fit(X(i,it+1).N.idx,it+1);
+                        X(i,it+1).N.size = numel(X(i,it+1).N.idx);
+                    end
+                end
+            % end
+        end
+        % we have new born(s)
+        if numel(bornidx) ~= 0
+            if topCS == 5 % Time-Varing
+                % assign C neighbors to every new particle,
+                % C = average number of neighbors that every
+                % particle in the swarm has at iteration t
+                idx = saveIdx(it,:);
+                idx = idx(idx ~= 0);
+                s=0;
+                for i = numel(idx)
+                    s = s + X(i,it).N.size;
+                end
+                C = s / numel(idx);
+
+            elseif topCS == 4 % Hierarchical
+                % new particles are always placed at the bottom of the tree
+
+            else % ring || fully || von newman
+                % find some random particle and add each newborns to it's
+                % neighborhood and add all this particles to each
+                % newborns's neghborhood
+                repeated_idx = setdiff(Aidx,bornidx); 
+                rnd_idx = randperm(numel(repeated_idx), n_addToNeighborhood);
+                rnd_N_idx = repeated_idx(rnd_idx);
+                for i = 1:numel(bornidx) % give one newborn
+                    for j = rnd_N_idx   % add to all random neighborhood
+                        % add newborn to a neighborhood
+                        X(j,it+1).N.idx = [X(j,it).N.idx, bornidx(i)];
+                        X(j,it+1).N.pos = pop.pos(X(j,it+1).N.idx,:,it+1);
+                        X(j,it+1).N.fit = pop.fit(X(j,it+1).N.idx,it+1);
+                        X(j,it+1).N.size = numel(X(j,it+1).N.idx);
+                    end
+                    % add all random particles to this newborn
+                    X(bornidx(i),it+1).N.idx = rnd_N_idx;
+                    X(bornidx(i),it+1).N.pos = pop.pos(rnd_N_idx,:,it+1);
+                    X(bornidx(i),it+1).N.fit = pop.fit(rnd_N_idx,it+1);
+                    X(bornidx(i),it+1).N.size = numel(rnd_N_idx);
+                end
+                
+            end
+        else
+            if topCS == 5
+
+            end
+        end
+
+    else
+        % it => it+1    (Aidx(it+1) == Aidx(it))
+        X(Aidx,it+1).N = X(Aidx,it).N;
+    end
+
+      
+end
+
+
+
+%%  --------------------- Main ----------------------
+for i = 1:itMax
+
+    
+
+
+
+    % 
+
     % 
     % % assign bornidxs to other exsited particle's neighbor on this it
     % % according to less neighbor size 
@@ -151,25 +248,30 @@ for it = 1:itMax
             end
         end
 
+        % % Neighborhood(N) <== TOP(pop{fit,pos,size},x{idx},N(i,it-1))
+        % x.N = TOP(pop, x, X(i,it-1).N);   % x.N.(pos & fit & idx)
+        % x.N.size = numel(x.N.idx);  % x.N.(pos & fit & idx & size)
+        % [x.N.fit, idx] = sort(x.N.fit); % N.fit sort
+        % x.N.pos = x.N.pos(idx,:); % N.pos sort
+        % x.N.idx = x.N.idx(idx,:); % N.idx sort
+        if it == 1
+            x.N = X(i,1).N;
 
+        end
 
-
-        % Neighborhood(N) <== TOP(pop{fit,pos,size},x{idx},N(i,it-1))
-        x.N = TOP(pop, x, X(i,it-1).N);   % x.N.(pos & fit & idx)
-        x.N.size = numel(x.N.idx);  % x.N.(pos & fit & idx & size)
-        [x.N.fit, idx] = sort(x.N.fit); % N.fit sort
-        x.N.pos = x.N.pos(idx,:); % N.pos sort
-        x.N.idx = x.N.idx(idx,:); % N.idx sort
         % Local best <== N
         x.lb.fit = x.N.fit(best);
         x.lb.pos = x.N.pos(best,:);
         x.lb.idx = x.N.idx(best);
-        % Influencer(I) <== model of influence
-        x.I = MOI(x); % x.I.(pos & fit & idx & size | weight)
-        [x.I.fit, idx] = sort(x.I.fit); % I.fit sort
-        x.I.pos = x.I.pos(idx,:); % I.pos sort
-        x.I.idx = x.I.idx(idx,:); % N.idx sort
+
+        % % Influencer(I) <== model of influence
+        % x.I = MOI(x); % x.I.(pos & fit & idx & size | weight)
+        % [x.I.fit, idx] = sort(x.I.fit); % I.fit sort
+        % x.I.pos = x.I.pos(idx,:); % I.pos sort
+        % x.I.idx = x.I.idx(idx,:); % N.idx sort
+
         x.pm = PM(x, X(i,it-1).pm, gb);
+        
         % if inertiaW1CS==4 || inertiaW1CS==5
         %     x.w1 = inertiaW1(X(i,it-1).w1 ,gb,x,bound,pop,X,saveIdx);
         % elseif inertiaW1CS==4 || inertiaW1CS==5

@@ -15,7 +15,7 @@ switch MtxCS
         outVector = vector * mtx;
 
     case 3 % exp map        ok
-        alpha = alpha_mtx(pop, saveIdx);                                             ?
+        alpha = alpha_mtx(pop, saveIdx); 
         A = rand(d)-0.5;
         mtx = eye(d) + (alpha * pi / 180 * (A - A'));
         outVector = vector * mtx;

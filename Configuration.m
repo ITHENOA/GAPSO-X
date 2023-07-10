@@ -10,13 +10,15 @@ global MtxCS % 0=None, 1=rnd diagonal, 2=rnd linear, 3=exp map, 4=Eul rot, 5=Eul
 global inertiaW1CS % 0=cte, 1=linear decreasing, 2=linear increasing, 3=random, 4=self-regulating, 5=adaptive based on velocity, 6=double exponential self-adaptive, 7=rank-based, 8=success-based, 9=convergence-based
 global paramW23CS % 0=w1, 1=rnd, 2=cte
 global popCS
-
+global alpha_mtxCS2 % => MtxCS  % 0=cte, 1=gauss, 2=adaptive,
+global dnppCS % 0=rectangular, 1=spherical, 2=standard, 3=gaussian, 4=discrete, 5=cauchy gaussian
+global pIntitTypeCS2 % => popCS  %
 % General Parameters
 global finalPopSize it itMax  
 % inipop
 global particles initialPopSize
 % top
-global bd
+global bd particlesToAdd
 % AC
 global phi1 phi2 phiMax phiMin
 % Mtx
@@ -46,11 +48,15 @@ AC_CS = 0; %[0 1 2 3]
 inertiaW1CS = 0; % [0 1 2 3 4 5 6 7 8 9]
 paramW23CS = 0; % [0 1 2]
 popCS = 0;
+alpha_mtxCS2 = 0; % [0 1 2]
+dnppCS = 0; % []
+pIntitTypeCS2 = 0; %[]
 % general param
 finalPopSize = 30; % [2:200]
 itMax = 30;
 % TOP parameter
 bd = 10; %[2 20]    % branching degree
+particlesToAdd = 5; %[]  topCS=3 time-varing
 % AC param
 phi1 = 0; % [0:2.5]
 phi2 = 0; % [0:2.5]
@@ -75,8 +81,8 @@ z_alpha = 1; % int[1:40]
 ro_alpha = 0.1; % [0.01:0.9]
 % w1
 inertia_cte = .5; % [0:0.9]
-w1Max = .5; % [0:0.9]
-w1Min = .5; % [0:.9] 
+w1Max = .8; % [0:0.9]
+w1Min = .1; % [0:0.9] 
 nu = .5; % [0.1:1] 
 a_w1_cb = .5; % [0:1] 
 b_w1_cb = .5; % [0:1] 
@@ -88,22 +94,17 @@ w3_cte = .5; % [0:1]
 particles = 20;
 initialPopSize = 10;
 %%%%%%%%%%%%%%%% cte %%%%%%%%%%%%%%%%%%%
+global best d
 pm=1; % initial pert magnitud  
 w1 = [];
+best = 1; % minimization=1, maximization=end ?
+d = 2;   % dimansion of benchmark function                                                                  
+bound = [-3 3;-4 4];
 
-% gb.fit %[0:tMix]
-% gb.pos %[0:tMix]
+ini_w1_45 = 0;  % initial w1 for 4=self-regulating and 5=adaptive vel
+ini_pm_234 = 1; % initial pm for all exept 1=cte
 
-global best d
-best = 1; 
-d = 2;                                                                     
+n_addToNeighborhood = 5;
 
-% pop.fit = ones(finalPopSize,itMax)*inf;     % (popSize, it)
-% pop.pos = ones(finalPopSize,d,itMax)*inf;   % (popSize, d, it)
-% v = zeros(finalPopSize,d,itMax);            % (popSize, d, it)
-
-
-
-% pop.pos = ones(finalPopSize+itMax,d,itMax)*Inf; % if all it pop+1
-% pop.fit = ones(finalPopSize+itMax,itMax)*Inf;
-
+% ok
+% TOP, MOI, w1(8?9?)

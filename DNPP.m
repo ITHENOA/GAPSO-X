@@ -7,7 +7,7 @@ switch dnppCS
         dnpp = zeros(1,d);
         for i = x.I.idx
             if i == x.idx
-                dnpp = dnpp + phi(1) * Mtx((prtInfo - x.pos), pop, saveIdx);         ?
+                dnpp = dnpp + phi(1) * Mtx((prtInfo - x.pos), pop, saveIdx);         
             else
                 dnpp = dnpp + phi(2) * Mtx((prtInfo - x.pos), pop, saveIdx);
             end

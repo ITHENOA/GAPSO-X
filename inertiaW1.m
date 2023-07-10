@@ -19,7 +19,7 @@ switch inertiaW1CS
     case 3 % random
         w1 = 0.5 + rand / 2;
 
-    case 4 % self-regulating                                                depend on i
+    case 4 % self-regulating  (sr)                                              depend on i
         dw = (w1Max - w1Min)/itMax;
         if x.pb.fit == gb.fit(it)
             w1 = old_w1 + nu * dw;
@@ -48,7 +48,7 @@ switch inertiaW1CS
     case 8 % success-based
         % popSize = sum(pop.fit(:,it) ~= inf);
         % S = sum(pop.fit(:,it) < min(pop.fit(:,1:it-1),[],2));
-        repeated_idx = intersect(Aidx,saveIdx(it-1,:));
+        repeated_idx = intersect(Aidx,saveIdx{it-1});
         sumS = sum(X(repeated_idx,it).pb.fit < X(repeated_idx,it-1).pb.fit);
         w1 = w1Min + (w1Max - w1Min) * sumS/numel(repeated_idx);
          
