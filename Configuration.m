@@ -107,7 +107,7 @@ bound = [-3 3;-4 4];
 
 ini_w1_45 = 0;  % initial w1 for 4=self-regulating and 5=adaptive vel
 ini_pm_234 = 1; % initial pm for all exept 1=cte
-
+ini_vel = 0;
 n_addToNeighborhood = 5;
 
 % ok

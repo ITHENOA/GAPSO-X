@@ -1,4 +1,4 @@
-function pop = populationCS(pop,bound,gb)   % pop.(pos,size) => pop.(fit)
+function pop = populationCS(pop,bound,gb,saveIdx)   % pop.(pos,size) => pop.(fit)
 global it newidx deadidx Aidx bornidx
 global popCS  pIntitTypeCS2
 global initialPopSize finalPopSize particlesToAdd  popTViterations
@@ -14,7 +14,7 @@ case 1  % time-varying      ok
     % deadidx = Aidx(end); % dead last idx (worst) %-1
     % Aidx = Aidx(1:end-1); % update idx vector
     if it > popTViterations
-        if prod(gb.fit(it) == gb.fit(it-popTViterations:it)) % +1 after pop     2(it-1)
+        if prod(gb.fit(it+1) == gb.fit(it+1-popTViterations:it+1)) % +1 after pop     2(it-1)
             if popSize < finalPopSize
 
                 newidx = newidx + 1; % create new idx
@@ -47,7 +47,7 @@ case 1  % time-varying      ok
             end
         end
     else
-        pop.pos(Aidx,:,it+1) = pop.pos(Aidx,:,it);  %(it)(it-1)
+        pop.pos(Aidx,:,it+1) = pop.pos(Aidx,:,it+1);  %(it)(it-1)
         pop.fit(Aidx,it+1) = f(pop.pos(Aidx,:,it+1)); %2(it)  
     end
 
@@ -63,16 +63,15 @@ case 2  % incremental       ok
             elseif pIntitTypeCS2 == 1 % Init-horizontal       ok
                 xprim=ini_pop(particlesToAdd,bound);
                 pop.pos(newidx+1:newidx+particlesToAdd,:,it+1) = ...    %(it)
-                    xprim + rand(particlesToAdd,d) .* (gb.pos(it) - xprim); %(it-1)
+                    xprim + rand(particlesToAdd,d) .* (gb.pos(it+1) - xprim); %(it-1)
     
             end
     
             pop.fit(newidx+1:newidx+particlesToAdd,it+1) = ...%(it)
                 f(pop.pos(newidx+1:newidx+particlesToAdd,:,it+1));%(it)
-
-            pop.pos(Aidx,:,it+1) = pop.pos(Aidx,:,it);
-            pop.fit(Aidx,it+1) = pop.fit(Aidx,it);
-    
+            
+            
+            % update idx
             Aidx = [Aidx newidx+1:newidx+particlesToAdd]; % update idx vector  
             bornidx = newidx+1:newidx+particlesToAdd;
             newidx = newidx + particlesToAdd; % create new idx
@@ -82,6 +81,6 @@ case 2  % incremental       ok
         end
 end
 pop.size(it+1) = numel(Aidx);
-pop.fit(bornidx,1:it) = inf; % for pop.pb
+pop.fit(bornidx,1:it) = inf;
 
 

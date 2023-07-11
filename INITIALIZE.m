@@ -1,4 +1,4 @@
-function [pop, X, gb] = INITIALIZE(bound)
+function [pop, X, gb] = INITIALIZE(bound,ini_vel)
 
 global popCS  
 global it itMax finalPopSize deadidx Aidx newidx bornidx best d
@@ -20,7 +20,7 @@ if popCS ~= 2   % for all
     Aidx = 1:particles;
     pop.size(1) = numel(Aidx);
     newidx = particles;
-    pop.v(1:particles,:,1) = zeros(particles,d,1);                          
+    pop.v(1:particles,:,1) = ones(particles,d,1) * ini_vel;                          
 
 else  % for incrimental  % ??
 
@@ -31,7 +31,7 @@ else  % for incrimental  % ??
     Aidx = 1:initialPopSize;
     pop.size(1) = numel(Aidx);
     newidx = initialPopSize;
-    pop.v(1:initialPopSize,:,1) = zeros(initialPopSize,d,1);                
+    pop.v(1:initialPopSize,:,1) = ones(initialPopSize,d,1) * ini_vel;                
 
 end
 

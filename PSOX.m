@@ -5,7 +5,7 @@ global topCS alpha_mtxCS2 inertiaW1CS popCS
 global it itMax Aidx deadidx bornidx
 
 % Load initialize (pop, TOP, MOI)
-[pop, ini_X, gb] = INITIALIZE(bound);
+[pop, ini_X, gb] = INITIALIZE(bound,ini_vel);
 
 saveIdx = cell(1,itMax);
 
@@ -66,11 +66,13 @@ for it = 1:itMax
         % Update pop
         pop.v(i,:,it+1) = X(i,it+1).v;
         pop.pos(i,:,it+1) = X(i,it+1).pos;
-        pos.fit(i,it+1) = X(i,it+1).fit;
+        pop.fit(i,it+1) = X(i,it+1).fit;
         pop.size(it+1) = pop.size(it);
     end % END i
     clear ini_X 
     
+    [X(:,it+1).idx] = deal(X(:,it).idx);
+
     % for i = Aidx
     %     % X new in bound ?
     % end
@@ -95,26 +97,38 @@ for it = 1:itMax
     
     % ------------------------- Update Population ------------------------
     popCS = 2;
-    pop = populationCS(pop,bound,gb);  % +1 | +1,-1 | -1 | +particlesToAdd
-    % sort idxs
-    [~, idx] = sort(pop.fit(Aidx,it));
-    Aidx = Aidx(idx);
-    
-    X()
+    pop = populationCS(pop,bound,gb,saveIdx);  % +1 | +1,-1 | -1 | +particlesToAdd
 
-    % update personal best 
-    [pop.pb.fit(Aidx), itOfMin] = min(pop.fit(Aidx,:),[],2);
-    for i=1:numel(Aidx)
-        pop.pb.pos(Aidx(i),:) = pop.pos(Aidx(i),:,itOfMin(i));
+    if numel(deadidx) ~= 0 || numel(bornidx) ~= 0  % have (+ | -)
+        % sort idxs
+        [~, idx] = sort(pop.fit(Aidx,it));
+        Aidx = Aidx(idx);
+        % update personal best
+        if numel(deadidx) ~= 0  % have (-)
+            pop.pb.pos(deadidx,:) = inf;
+            pop.pb.fit(deadidx) = inf;
+        end
+        if numel(bornidx) ~= 0  % have (+)
+            pop.pb.pos(bornidx,:) = pop.pos(bornidx,:,it+1);
+            pop.pb.fit(bornidx) = pop.fit(bornidx,it+1);
+            pop.v(bornidx,:,it+1) = ini_vel;    % be sorate it haye ghbl 0 ezaf mikone
+        end
+        % update global best
+        [gb.fit(it+1), idx] = min(pop.pb.fit(Aidx));
+        gb.pos(it+1,:) = pop.pb.pos(Aidx(idx),:);
+        gb.idx(it+1) = Aidx(idx);
+        
+        % update X
+        for i = Aidx
+            X(i,it+1).idx = i;
+            X(i,it+1).pos = pop.pos(i,:,it+1);
+            X(i,it+1).fit = pop.fit(i,it+1);
+            X(i,it+1).v = pop.v(i,:,it+1);
+            X(i,it+1).pb = pop.pb;
+        end
     end
-    if numel(deadidx) ~= 0  % remove deads
-        pop.pb.pos(deadidx,:) = inf;
-        pop.pb.fit(deadidx) = inf;
-    end
-    % update global best
-    [gb.fit(it+1), idx] = min(pop.pb.fit(Aidx));
-    gb.pos(it+1,:) = pop.pb.pos(Aidx(idx),:);
-    gb.idx(it+1) = Aidx(idx);
+    
+
 
     % ------------------------- Update Topology ------------------------
     X = updateTOP(pop,X,saveIdx);
