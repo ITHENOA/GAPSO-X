@@ -17,6 +17,8 @@ global pIntitTypeCS2 % => popCS  %
 global finalPopSize it itMax  
 % inipop
 global particles initialPopSize
+% pop
+global popTViterations
 % top
 global bd particlesToAdd
 % AC
@@ -33,7 +35,7 @@ global taw delta
 global inertia_cte w1Max w1Min nu a_w1_cb b_w1_cb lambda_w1_abv
 % w2, w3
 global w2_cte w3_cte
-% 
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,6 +56,8 @@ pIntitTypeCS2 = 0; %[]
 % general param
 finalPopSize = 30; % [2:200]
 itMax = 30;
+% population
+popTViterations = 1; %int[0:100]
 % TOP parameter
 bd = 10; %[2 20]    % branching degree
 particlesToAdd = 5; %[]  topCS=3 time-varing

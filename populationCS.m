@@ -45,6 +45,9 @@ case 1  % time-varying      ok
 
             end
         end
+    else
+        pop.pos(Aidx,:,it+1) = pop.pos(Aidx,:,it);  %(it)(it-1)
+        pop.fit(Aidx,it+1) = f(pop.pos(Aidx,:,it+1)); %2(it)  
     end
 
 case 2  % incremental       ok
