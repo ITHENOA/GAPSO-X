@@ -5,12 +5,12 @@ global topCS alpha_mtxCS2 inertiaW1CS popCS
 global it itMax Aidx deadidx bornidx
 
 % Load initialize (pop, TOP, MOI)
-[pop, ini_X, gb, pb_it] = INITIALIZE(bound);
+[pop, ini_X, gb] = INITIALIZE(bound);
 
-X = struct('idx',[],'pos',[],'fit',[],'v',[],'pb',[],'N',[],'I',[],'lb',[]);
 saveIdx = cell(1,itMax);
 
 for it = 1:itMax
+    it
     saveIdx{it} = Aidx;
     
     for i = Aidx
@@ -40,7 +40,7 @@ for it = 1:itMax
             x.pm = PM(x, X(i,it-1).pm, gb);
         end
         % Pert_Info
-        x.prtInfo = pertInf(pb_it.pos(i,:), x.pm);
+        x.prtInfo = pertInf(pop.pb.pos(i,:), x.pm);
         % phi
         x.phi = AC(x, gb);
         % DNPP
@@ -59,19 +59,36 @@ for it = 1:itMax
         % -------------------------- Update Velocity --------------------------
         X(i,it+1).v = X(i,it).w1 * X(i,it).v + X(i,it).w2 * X(i,it).dnpp + X(i,it).w3 * X(i,it).prtRnd;
         % -------------------------- Update Position --------------------------
-        X(i,it+1).pos = X(i,it).pos + X(i,it+1).v;        
-    end
-    clear ini_X 
-
-    for i = Aidx    % -------------- Update Pb --------------------------------
+        X(i,it+1).pos = X(i,it).pos + X(i,it+1).v; 
+        % Update Fitness
         X(i,it+1).fit = f(X(i,it+1).pos);
+
+        % Update pop
+        pop.v(i,:,it+1) = X(i,it+1).v;
+        pop.pos(i,:,it+1) = X(i,it+1).pos;
+        pos.fit(i,it+1) = X(i,it+1).fit;
+        pop.size(it+1) = pop.size(it);
+    end % END i
+    clear ini_X 
+    
+    % for i = Aidx
+    %     % X new in bound ?
+    % end
+
+    % update pb
+    for i = Aidx    
         if X(i,it+1).fit < X(i,it).fit && isinrange(X(i,it+1).pos,bound) % && toye bound bood ? 
             X(i,it+1).pb.pos = X(i,it+1).pos;%? formul 3 ?
             X(i,it+1).pb.fit = X(i,it+1).fit;
+            pop.pb.pos(i,:) = X(i,it+1).pb.pos;
+            pop.pb.fit(i) = X(i,it+1).pb.fit;
         else
             X(i,it+1).pb = X(i,it).pb;
+            pop.pb = X(i,it+1).pb
         end
-    end
+
+    end % END i (update pb)
+
 
     
 
@@ -79,136 +96,36 @@ for it = 1:itMax
     % apply stagnation detection, particles reinitialization %optional
     
     % ------------------------- Update Population ------------------------
+    popCS = 2;
     pop = populationCS(pop,bound,gb);  % +1 | +1,-1 | -1 | +particlesToAdd
     % sort idxs
     [~, idx] = sort(pop.fit(Aidx,it));
     Aidx = Aidx(idx);
-    % pb ha ke avaz nashode - faghat in jedida pb nadaran
-    % momkene gb taghir kone
-    % % personal best & global best
-    % [pb_it.fit(Aidx), itOfMin] = min(pop.fit(Aidx,:),[],2);
-    % for i=1:numel(Aidx)
-    %     pb_it.pos(Aidx(i),:) = pop.pos(Aidx(i),:,itOfMin(i));
-    % end
-    % [gb.fit(it), idx] = min(pb_it.fit(Aidx));
-    % gb.pos(it,:) = pb_it.pos(Aidx(idx),:);
-    % gb.idx(it) = Aidx(idx);
+    
+    X()
 
+    % update personal best 
+    [pop.pb.fit(Aidx), itOfMin] = min(pop.fit(Aidx,:),[],2);
+    for i=1:numel(Aidx)
+        pop.pb.pos(Aidx(i),:) = pop.pos(Aidx(i),:,itOfMin(i));
+    end
+    if numel(deadidx) ~= 0  % remove deads
+        pop.pb.pos(deadidx,:) = inf;
+        pop.pb.fit(deadidx) = inf;
+    end
+    % update global best
+    [gb.fit(it+1), idx] = min(pop.pb.fit(Aidx));
+    gb.pos(it+1,:) = pop.pb.pos(Aidx(idx),:);
+    gb.idx(it+1) = Aidx(idx);
 
     % ------------------------- Update Topology ------------------------
-    if pop{time-var(-1|+1-1|+1) & increment(+some)}
+    X = updateTOP(pop,X,saveIdx);
 
-        if -1
-            if ~+ & pop{ring|full|von}
-                update TOP for all
-                N(it+1) <== TOP()
-            else
-                N(it+1) <== (remove this -1 from all neighborhood)
-            end
-        end
-
-        if +
-            if top{time-var}
-                C = average number of neighbor for all particles
-                N(it+1) <== (+ <==> C random neighborhood)
-            elseif top{Hierarchical}
-                put + bottom of tree
-            else top{ring|full|von}
-                + <==> random neighborhood
-            end
-        end
-
-        if top{time-var}
-            N(it+1) <== updateTOP(N(it+1))
-        end
-
-    else
-        if top{time-var}
-            N(it+1) <== updateTOP(N(it))
-        else
-            N(it+1) <== N(it)
-        end
-    end
-
-
-
-    if popCS ~= 0     % top(time-var) or pop(~cte)
-        if numel(deadidx) ~= 0 %%%% dead %%%% 
-            if numel(bornidx) == 0 && (topCS == 0 || topCS == 1 || topCS == 2) % (dont have born) & TOP(ring|full|von)
-                % update topology for all
-                for i = Aidx
-                    x.idx = i;
-                    X(i,it+1).N.idx = TOP(pop,x,N);
-                    X(i,it+1).N.pos = pop.pos(X(i,it+1).N.idx,:,it+1);
-                    X(i,it+1).N.fit = pop.fit(X(i,it+1).N.idx,it+1);
-                    X(i,it+1).N.size = numel(X(i,it+1).N.idx);
-                end
-            else
-                for i = setdiff(Aidx,bornidx) % repeated
-                    x = X(i,it);
-                    if sum(x.N.idx == deadidx) % dead blong i 
-                        id = find(x.N.idx == deadidx);
-                        X(i,it+1).N.idx = [x.N.idx(1:id-1) x.N.idx(id+1:end)];
-                        X(i,it+1).N.pos = pop.pos(X(i,it+1).N.idx,:,it+1);
-                        X(i,it+1).N.fit = pop.fit(X(i,it+1).N.idx,it+1);
-                        X(i,it+1).N.size = numel(X(i,it+1).N.idx);
-                    end
-                end
-            end
-        end
-        % we have new born(s)
-        if numel(bornidx) ~= 0
-            if topCS == 5 % Time-Varing
-                % assign C neighbors to every new particle,
-                % C = average number of neighbors that every
-                % particle in the swarm has at iteration t
-                idx = saveIdx(it,:);
-                idx = idx(idx ~= 0);
-                s=0;
-                for i = numel(idx)
-                    s = s + X(i,it).N.size;
-                end
-                C = s / numel(idx);
-
-            elseif topCS == 4 % Hierarchical
-                % new particles are always placed at the bottom of the tree
-
-            else % ring || fully || von newman
-                % find some random particle and add each newborns to it's
-                % neighborhood and add all this particles to each
-                % newborns's neghborhood
-                repeated_idx = setdiff(Aidx,bornidx); 
-                rnd_idx = randperm(numel(repeated_idx), n_addToNeighborhood);
-                rnd_N_idx = repeated_idx(rnd_idx);
-                for i = 1:numel(bornidx) % give one newborn
-                    for j = rnd_N_idx   % add to all random neighborhood
-                        % add newborn to a neighborhood
-                        X(j,it+1).N.idx = [X(j,it).N.idx, bornidx(i)];
-                        X(j,it+1).N.pos = pop.pos(X(j,it+1).N.idx,:,it+1);
-                        X(j,it+1).N.fit = pop.fit(X(j,it+1).N.idx,it+1);
-                        X(j,it+1).N.size = numel(X(j,it+1).N.idx);
-                    end
-                    % add all random particles to this newborn
-                    X(bornidx(i),it+1).N.idx = rnd_N_idx;
-                    X(bornidx(i),it+1).N.pos = pop.pos(rnd_N_idx,:,it+1);
-                    X(bornidx(i),it+1).N.fit = pop.fit(rnd_N_idx,it+1);
-                    X(bornidx(i),it+1).N.size = numel(rnd_N_idx);
-                end
-                
-            end
-        else
-            if topCS == 5
-
-            end
-        end
-
-    else
-        % it => it+1    (Aidx(it+1) == Aidx(it))
-        X(Aidx,it+1).N = X(Aidx,it).N;
-    end
-
+    % update other
+    I
+    
       
-end
+end % END it
 
 
 
@@ -244,8 +161,8 @@ for i = 1:itMax
     for i = Aidx % -------------- particle ------------------
         x.v = pop.v(i,:,it);                                                
         % Define the Particle
-        x.pb.fit = pb_it.fit(i); 
-        x.pb.pos = pb_it.pos(i,:,it);
+        x.pb.fit = pop.pb.fit(i); 
+        x.pb.pos = pop.pb.pos(i,:,it);
         x.fit = pop.fit(i,it);
         x.pos = pop.pos(i,:,it);
         x.idx = i;
@@ -315,7 +232,7 @@ for i = 1:itMax
         x=[];
     end
     for i = Aidx % -------------- particle ------------------
-        X(i,it).prtInfo = pertInf(pb_it.pos(i,:), X(i,it).pm);
+        X(i,it).prtInfo = pertInf(pop.pb.pos(i,:), X(i,it).pm);
         X(i,it).prtRnd = pertRnd(X(i,it).pos, pm);                          
         X(i,it).phi = AC(X(i,it), gb);
         X(i,it).w1 = inertiaW1(X(i,it-1).w1 ,gb,X(i,it), bound, pop, X, saveIdx); 

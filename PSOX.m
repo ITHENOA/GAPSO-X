@@ -5,7 +5,7 @@ global topCS alpha_mtxCS2 inertiaW1CS popCS
 global it itMax Aidx deadidx bornidx
 
 % Load initialize (pop, TOP, MOI)
-[pop, ini_X, gb, pb_it] = INITIALIZE(bound);
+[pop, ini_X, gb] = INITIALIZE(bound);
 
 saveIdx = cell(1,itMax);
 
@@ -40,7 +40,7 @@ for it = 1:itMax
             x.pm = PM(x, X(i,it-1).pm, gb);
         end
         % Pert_Info
-        x.prtInfo = pertInf(pb_it.pos(i,:), x.pm);
+        x.prtInfo = pertInf(pop.pb.pos(i,:), x.pm);
         % phi
         x.phi = AC(x, gb);
         % DNPP
@@ -59,50 +59,62 @@ for it = 1:itMax
         % -------------------------- Update Velocity --------------------------
         X(i,it+1).v = X(i,it).w1 * X(i,it).v + X(i,it).w2 * X(i,it).dnpp + X(i,it).w3 * X(i,it).prtRnd;
         % -------------------------- Update Position --------------------------
-        X(i,it+1).pos = X(i,it).pos + X(i,it+1).v;        
+        X(i,it+1).pos = X(i,it).pos + X(i,it+1).v; 
+        % Update Fitness
+        X(i,it+1).fit = f(X(i,it+1).pos);
+
+        % Update pop
+        pop.v(i,:,it+1) = X(i,it+1).v;
+        pop.pos(i,:,it+1) = X(i,it+1).pos;
+        pos.fit(i,it+1) = X(i,it+1).fit;
+        pop.size(it+1) = pop.size(it);
     end % END i
     clear ini_X 
+    
+    % for i = Aidx
+    %     % X new in bound ?
+    % end
 
-    for i = Aidx    % -------------- Update Pb --------------------------------
-        X(i,it+1).fit = f(X(i,it+1).pos);
+    % update pb and gb
+    for i = Aidx    
         if X(i,it+1).fit < X(i,it).fit && isinrange(X(i,it+1).pos,bound) % && toye bound bood ? 
             X(i,it+1).pb.pos = X(i,it+1).pos;%? formul 3 ?
             X(i,it+1).pb.fit = X(i,it+1).fit;
         else
             X(i,it+1).pb = X(i,it).pb;
         end
+        pop.pb.pos(i,:) = X(i,it+1).pb.pos;
+        pop.pb.fit(i) = X(i,it+1).pb.fit;
     end % END i (update pb)
-
-    
+    [gb.fit(it+1), id] = min(pop.pb.fit);
+    gb.pos(it+1,:) = pop.pb.pos(id,:);
+   
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % apply stagnation detection, particles reinitialization %optional
     
     % ------------------------- Update Population ------------------------
-    popCS = 1;
+    popCS = 2;
     pop = populationCS(pop,bound,gb);  % +1 | +1,-1 | -1 | +particlesToAdd
     % sort idxs
     [~, idx] = sort(pop.fit(Aidx,it));
     Aidx = Aidx(idx);
-    % pb ha ke avaz nashode - faghat in jedida pb nadaran
-    % momkene gb taghir kone
-    % personal best & global best
     
-    % remove deads
-    pb_it.pos(deadidx,:) = inf;
-    pb_it.fit(deadidx) = inf;
-    % add borns
+    X()
 
-
-
-    [pb_it.fit(Aidx), itOfMin] = min(pop.fit(Aidx,:),[],2);
+    % update personal best 
+    [pop.pb.fit(Aidx), itOfMin] = min(pop.fit(Aidx,:),[],2);
     for i=1:numel(Aidx)
-        pb_it.pos(Aidx(i),:) = pop.pos(Aidx(i),:,itOfMin(i));
+        pop.pb.pos(Aidx(i),:) = pop.pos(Aidx(i),:,itOfMin(i));
     end
-    [gb.fit(it), idx] = min(pb_it.fit(Aidx));
-    gb.pos(it,:) = pb_it.pos(Aidx(idx),:);
-    gb.idx(it) = Aidx(idx);
-
+    if numel(deadidx) ~= 0  % remove deads
+        pop.pb.pos(deadidx,:) = inf;
+        pop.pb.fit(deadidx) = inf;
+    end
+    % update global best
+    [gb.fit(it+1), idx] = min(pop.pb.fit(Aidx));
+    gb.pos(it+1,:) = pop.pb.pos(Aidx(idx),:);
+    gb.idx(it+1) = Aidx(idx);
 
     % ------------------------- Update Topology ------------------------
     X = updateTOP(pop,X,saveIdx);
@@ -147,8 +159,8 @@ for i = 1:itMax
     for i = Aidx % -------------- particle ------------------
         x.v = pop.v(i,:,it);                                                
         % Define the Particle
-        x.pb.fit = pb_it.fit(i); 
-        x.pb.pos = pb_it.pos(i,:,it);
+        x.pb.fit = pop.pb.fit(i); 
+        x.pb.pos = pop.pb.pos(i,:,it);
         x.fit = pop.fit(i,it);
         x.pos = pop.pos(i,:,it);
         x.idx = i;
@@ -218,7 +230,7 @@ for i = 1:itMax
         x=[];
     end
     for i = Aidx % -------------- particle ------------------
-        X(i,it).prtInfo = pertInf(pb_it.pos(i,:), X(i,it).pm);
+        X(i,it).prtInfo = pertInf(pop.pb.pos(i,:), X(i,it).pm);
         X(i,it).prtRnd = pertRnd(X(i,it).pos, pm);                          
         X(i,it).phi = AC(X(i,it), gb);
         X(i,it).w1 = inertiaW1(X(i,it-1).w1 ,gb,X(i,it), bound, pop, X, saveIdx); 

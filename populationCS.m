@@ -5,13 +5,14 @@ global initialPopSize finalPopSize particlesToAdd  popTViterations
 
 bornidx = [];
 deadidx = [];
-popSize = pop.size(it);
+popSize = pop.size(it+1);
 switch popCS
 case 0 % constant    ok
-    pop.pos(Aidx,:,it+1) = pop.pos(Aidx,:,it);  %(it)(it-1)
-    pop.fit(Aidx,it+1) = f(pop.pos(Aidx,:,it+1)); %2(it)
+    % Do Nothing
 
 case 1  % time-varying      ok
+    % deadidx = Aidx(end); % dead last idx (worst) %-1
+    % Aidx = Aidx(1:end-1); % update idx vector
     if it > popTViterations
         if prod(gb.fit(it) == gb.fit(it-popTViterations:it)) % +1 after pop     2(it-1)
             if popSize < finalPopSize
@@ -68,13 +69,19 @@ case 2  % incremental       ok
     
             pop.fit(newidx+1:newidx+particlesToAdd,it+1) = ...%(it)
                 f(pop.pos(newidx+1:newidx+particlesToAdd,:,it+1));%(it)
+
+            pop.pos(Aidx,:,it+1) = pop.pos(Aidx,:,it);
+            pop.fit(Aidx,it+1) = pop.fit(Aidx,it);
     
             Aidx = [Aidx newidx+1:newidx+particlesToAdd]; % update idx vector  
             bornidx = newidx+1:newidx+particlesToAdd;
             newidx = newidx + particlesToAdd; % create new idx
             % ==> no dead
+            
+            
         end
 end
 pop.size(it+1) = numel(Aidx);
+pop.fit(bornidx,1:it) = inf; % for pop.pb
 
 
