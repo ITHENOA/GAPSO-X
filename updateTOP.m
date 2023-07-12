@@ -1,15 +1,14 @@
 function X = updateTOP(pop,X,saveIdx)
-% if pop{time-var(-1|+1-1|+1) & increment(+some)}
-%
-%     if -1
-%         if ~+ & pop{ring|full|von}      
-%             update TOP for all
-%             N(it+1) <== TOP()
-%         else                          
+% if + | -
+% 
+%     if -1          
+%         if top{Hierarchical}
+%             N(it+1) = updateTree(tree);
+%         else
 %             N(it+1) <== (remove this -1 from all neighborhood)
 %         end
-%     end   ok
-%
+%     end
+% 
 %     if top{time-var}                                                      {time-var} : remove some random connections
 %         if -1
 %             N(it+1) <== updateTOP(N(it+1))                                N updated in above IF
@@ -17,18 +16,21 @@ function X = updateTOP(pop,X,saveIdx)
 %             N(it+1) <== updateTOP(N(it))                                  N didnt update yet
 %         end
 %     end
-%
+% 
 %     if +
 %         if top{time-var}
 %             C = average number of neighbor for all particles
 %             N(it+1) <== (+ <==> C random neighborhood)
 %         elseif top{Hierarchical}
-%             N(it+1) <== TOP(put + bottom of tree)
-%         else top{ring|full|von} ok
-%             N(it+1) <== (+ <==> random neighborhood)
+%             tree = addToTree(+,tree)
+%             N(it+1) = updateTree(tree);
 %         end
 %     end
-%
+% 
+%     if top{ring|full|von}
+%         N(it+1) <== TOP()
+%     end
+% 
 % else
 %     if top{time-var}
 %         N(it+1) <== updateTOP(N(it))

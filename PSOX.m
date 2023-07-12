@@ -79,7 +79,7 @@ for it = 1:itMax
 
     % update pb and gb
     for i = Aidx    
-        if X(i,it+1).fit < X(i,it).fit && isinrange(X(i,it+1).pos,bound) % && toye bound bood ? 
+        if X(i,it+1).fit < X(i,it).fit% && isinrange(X(i,it+1).pos,bound) % && toye bound bood ? 
             X(i,it+1).pb.pos = X(i,it+1).pos;%? formul 3 ?
             X(i,it+1).pb.fit = X(i,it+1).fit;
         else

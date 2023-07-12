@@ -1,4 +1,4 @@
-function N  = TOP(pop,x,N)
+function [N,rc]  = TOP(pop,x,N,rc)
 
 global it Aidx
 global topCS popCS
@@ -29,11 +29,12 @@ switch topCS
 
     case 1 % full   
         shuffle = sort(Aidx);
+        exept_i = setdiff(shuffle,x.idx);
         disp("Topology ==> fully")
         N=[];
-        N.pos = pop.pos(shuffle,:,it);
-        N.fit = pop.fit(shuffle,it);
-        N.idx = shuffle;
+        N.pos = pop.pos(exept_i,:,it);
+        N.fit = pop.fit(exept_i,it);
+        N.idx = exept_i;
 
     case 2 % von newman
         shuffle = sort(Aidx); 
@@ -111,25 +112,38 @@ switch topCS
     case 5 % time - var     need previous N
         disp("Topology ==> Time Varing")
         if it == 1
-            N=[];
-            N.pos = pop.pos(Aidx,:,it);
-            N.fit = pop.fit(Aidx,it);
-            N.idx = Aidx;
-        else
-            k = randi([1,10],1);
-            if popCS == 2 % population => incrimental
-                k = popSize * k;
-                k = floor(k/(finalPopSize-3));    
-            else
-                k = finalPopSize * k;
-                k = floor(k/(popSize-3));
+            shuffle = sort(Aidx);
+            for i = Aidx
+                exept_i = setdiff(shuffle,X(i,it?).idx);
+                disp("Topology ==> fully")
+                N=[];
+                N.pos = pop.pos(exept_i,:,it);
+                N.fit = pop.fit(exept_i,it);
+                N.idx = exept_i;
             end
-    
+            % remain_connection (rc)
+            rc = [Aidx(randperm(numel(Aidx)));Aidx(randperm(numel(Aidx)))];
+            rc = connectionsFixer(rc);
+        else  
+            % input <== rc
+            % rc -1 shod?
+            % rc + shod?
             if rem(it,k) == 0   % every k iteration remove one random particle
-                removeIdx = randi(numel(N.idx),1);
-                N.pos = [N.pos(1:removeIdx-1,:) ; N.pos(removeIdx+1:end,:)];
-                N.fit = [N.fit(1:removeIdx-1,:) ; N.fit(removeIdx+1:end,:)];
-                N.idx = [N.idx(1:removeIdx-1,:) ; N.idx(removeIdx+1:end,:)];
+                % k : user define ?
+                rndp = randperm(size(rc,2),del);
+                del_connection = rc(:,rndp);
+                rc = rc(:,setdiff(1:size(rand_idx,2),rndp)); % rc ==> output
+                for i = 1:del
+                    Nidx1 = X(rand_idx(1,i),it?).N.idx;
+                    Nidx2 = X(rand_idx(2,i),it?).N.idx;
+                    X(del_connection(1,i)).N.idx = Nidx1(Nidx1 ~= del_connection(2,i)); % remove 2 from 1
+                    X(del_connection(2,i)).N.idx = Nidx2(Nidx2 ~= del_connection(1,i)); % remove 1 from 2
+                end
+                for i = Aidx
+                    X(i,it?).N.pos = pop.pos(X(i,it?).N.idx,:,it?);
+                    X(i,it?).N.fit = pop.fit(X(i,it?).N.idx,it?);
+                    X(i,it?).N.size = numel(X(i,it?).N.idx);
+                end
             end
         end
 end
