@@ -5,22 +5,27 @@ global topCS alpha_mtxCS2 inertiaW1CS popCS
 global it itMax Aidx deadidx bornidx
 
 % Load initialize (pop, TOP, MOI)
-[pop, ini_X, gb] = INITIALIZE(bound,ini_vel);
+[pop, ini_X, gb, rc] = INITIALIZE(bound,ini_vel);
 
 saveIdx = cell(1,itMax);
 
 for it = 1:itMax
     it
     saveIdx{it} = Aidx;
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%% update TOP MOI %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    if it > 1   
+        [X,rc]  = TOP(pop,X,rc);
+        X = MOI(X);
+    end
     
-    for i = Aidx
+    %%%%%%%%%%%%%% w123,pm,phi,dnpp,prtInfo,prtRnd,next(pop) %%%%%%%%%%%%%%
+    for i = Aidx   
         if it == 1
-            x = ini_X(i); % .({idx},{pos},{fit},{v},{pb.fit},{pb.pos},{N},{I},{lb.pos},{lb.fit},{lb.idx})
+            x = ini_X(i,it);
         else
             x = X(i,it);
         end
-    
-        % ------------- Calculate parameters for update velocity --------------
         % w1
         if it == 1
             if inertiaW1CS == 8 || inertiaW1CS == 9 % need previos iteration
@@ -56,9 +61,9 @@ for it = 1:itMax
         % ----- save -----
         X(i,it) = x;
         x=[];
-        % -------------------------- Update Velocity --------------------------
+        % Update Velocity 
         X(i,it+1).v = X(i,it).w1 * X(i,it).v + X(i,it).w2 * X(i,it).dnpp + X(i,it).w3 * X(i,it).prtRnd;
-        % -------------------------- Update Position --------------------------
+        % Update Position 
         X(i,it+1).pos = X(i,it).pos + X(i,it+1).v; 
         % Update Fitness
         X(i,it+1).fit = f(X(i,it+1).pos);
@@ -77,11 +82,12 @@ for it = 1:itMax
     %     % X new in bound ?
     % end
 
-    % update pb and gb
+    %%%%%%%%%%%%%%%%%%%%%%%%% update pb and gb %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     for i = Aidx    
         if X(i,it+1).fit < X(i,it).fit% && isinrange(X(i,it+1).pos,bound) % && toye bound bood ? 
             X(i,it+1).pb.pos = X(i,it+1).pos;%? formul 3 ?
             X(i,it+1).pb.fit = X(i,it+1).fit;
+            X(i,it+1).pb.it = it+1;
         else
             X(i,it+1).pb = X(i,it).pb;
         end
@@ -92,11 +98,10 @@ for it = 1:itMax
     gb.pos(it+1,:) = pop.pb.pos(id,:);
    
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % apply stagnation detection, particles reinitialization %optional
     
-    % ------------------------- Update Population ------------------------
-    popCS = 2;
+    %%%%%%%%%%%%%%%%%%%%%%%%%% Update Population %%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     pop = populationCS(pop,bound,gb,saveIdx);  % +1 | +1,-1 | -1 | +particlesToAdd
 
     if numel(deadidx) ~= 0 || numel(bornidx) ~= 0  % have (+ | -)
@@ -124,139 +129,8 @@ for it = 1:itMax
             X(i,it+1).pos = pop.pos(i,:,it+1);
             X(i,it+1).fit = pop.fit(i,it+1);
             X(i,it+1).v = pop.v(i,:,it+1);
-            X(i,it+1).pb = pop.pb;
+            X(i,it+1).pb.pos = pop.pb.pos(i,:);
+            X(i,it+1).pb.fit = pop.pb.fit(i);
         end
     end
-    
-
-
-    % ------------------------- Update Topology ------------------------
-    X = updateTOP(pop,X,saveIdx);
-
-    % update other
-    I
-    
-      
 end % END it
-
-
-
-%%  --------------------- Main ----------------------
-for i = 1:itMax
-
-    
-
-
-
-    % 
-
-    % 
-    % % assign bornidxs to other exsited particle's neighbor on this it
-    % % according to less neighbor size 
-    % if numel(bornidx) ~= 0 && numel(deadidx) == 0
-    %     idxs = setdiff(Aidx,bornidx);
-    %     % [sorted, id] = sort(X(idxs,it-1).N.size);
-    %     for i = 1:numel(bornidx)
-    %         for j=1:numel(idxs)
-    %             vectosort(j)=X(idxs(j),it-1).N.size
-    %         end
-    %         [sorted, id] = sort(vectosort);
-    %         X(idxs(id(1)),it-1).N.size=X(idxs(id(1)),it-1).N.size+1;
-    %         % X(idxs(id(1)),it).N.idx = [X(idxs(id(1)),it-1).N.idx bornidx(i)];
-    %         % X(id(check),it).N.pos = pop.pos(X(id(check),it).N.idx,:,it);
-    %         % X(id(check),it).N.fit = pop.fit(X(id(check),it).N.idx,it);
-    % 
-    % 
-    %     end
-    % end
-
-    for i = Aidx % -------------- particle ------------------
-        x.v = pop.v(i,:,it);                                                
-        % Define the Particle
-        x.pb.fit = pop.pb.fit(i); 
-        x.pb.pos = pop.pb.pos(i,:,it);
-        x.fit = pop.fit(i,it);
-        x.pos = pop.pos(i,:,it);
-        x.idx = i;
-        if numel(deadidx) ~= 0  % we have a dead
-            if sum(X(i,it-1).N.idx == deadidx) % dead blong i ?
-                if numel(bornidx) ~= 0 % we have a born too ?
-                    id = find(X(i,it-1).N.idx == deadidx);
-                    X(i,it).N.idx(id) = bornidx;
-                    X(i,it).N.pos(id,:) = pop.pos(bornidx,:,it);
-                    X(i,it).N.fit(id) = pop.fit(bornidx,it);
-
-                else % we dont have a born
-                    id = find(X(i,it-1).N.idx == deadidx);
-                    X(i,it).N.idx = [X(i,it).N.idx(1:id-1) X(i,it).N.idx(id+1:end)];
-                    X(i,it).N.pos = pop.pos(X(i,it).N.idx,:,it);
-                    X(i,it).N.fit = pop.fit(X(i,it).N.idx,it);
-                    X(i,it).N.size = X(i,it).N.size -1;
-                end
-            end
-        end
-        if sum(i==bornidx)
-            if topCS == 5
-                topCS = 3;
-                flag = true;
-            end
-            x.N = TOP(pop, x, []);
-            x.N.size = numel(x.N.idx);  % x.N.(pos & fit & idx & size)
-            [x.N.fit, idx] = sort(x.N.fit); % N.fit sort
-            x.N.pos = x.N.pos(idx,:); % N.pos sort
-            x.N.idx = x.N.idx(idx,:); % N.idx sort
-            if flag
-                topCS = 5;
-                flag = false;
-            end
-        end
-
-        % % Neighborhood(N) <== TOP(pop{fit,pos,size},x{idx},N(i,it-1))
-        % x.N = TOP(pop, x, X(i,it-1).N);   % x.N.(pos & fit & idx)
-        % x.N.size = numel(x.N.idx);  % x.N.(pos & fit & idx & size)
-        % [x.N.fit, idx] = sort(x.N.fit); % N.fit sort
-        % x.N.pos = x.N.pos(idx,:); % N.pos sort
-        % x.N.idx = x.N.idx(idx,:); % N.idx sort
-        if it == 1
-            x.N = X(i,1).N;
-
-        end
-
-        % Local best <== N
-        x.lb.fit = x.N.fit(best);
-        x.lb.pos = x.N.pos(best,:);
-        x.lb.idx = x.N.idx(best);
-
-        % % Influencer(I) <== model of influence
-        % x.I = MOI(x); % x.I.(pos & fit & idx & size | weight)
-        % [x.I.fit, idx] = sort(x.I.fit); % I.fit sort
-        % x.I.pos = x.I.pos(idx,:); % I.pos sort
-        % x.I.idx = x.I.idx(idx,:); % N.idx sort
-
-        x.pm = PM(x, X(i,it-1).pm, gb);
-        
-        % if inertiaW1CS==4 || inertiaW1CS==5
-        %     x.w1 = inertiaW1(X(i,it-1).w1 ,gb,x,bound,pop,X,saveIdx);
-        % elseif inertiaW1CS==4 || inertiaW1CS==5
-        %     x.w1 = 
-        % end
-        X(i,it) = x;
-        x=[];
-    end
-    for i = Aidx % -------------- particle ------------------
-        X(i,it).prtInfo = pertInf(pop.pb.pos(i,:), X(i,it).pm);
-        X(i,it).prtRnd = pertRnd(X(i,it).pos, pm);                          
-        X(i,it).phi = AC(X(i,it), gb);
-        X(i,it).w1 = inertiaW1(X(i,it-1).w1 ,gb,X(i,it), bound, pop, X, saveIdx); 
-        [X(i,it).w2, X(i,it).w3] = param_W23(X(i,it).w1);
-        X(i,it).dnpp = DNPP(X(i,it), pop, X(i,it).prtInfo, X(i,it).phi, saveIdx); 
-        % update velocity
-        X(i,it+1).v = X(i,it).w1 * X(i,it).v + X(i,it).w2 * X(i,it).dnpp + X(i,it).w3 * X(i,it).prtRnd; 
-        % update position
-        X(i,it+1).pos = X(i,it).pos + X(i,it+1).v;
-    end
-    pop.pos(Aidx,:,it+1) = X(Aidx,it+1).pos;    
-        % biaim tebgh algoritm khodesh berim => akhar berim soragh update
-        % pop na aval
-    saveIdx(it,1:numel(Aidx)) = Aidx;
-end

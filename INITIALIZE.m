@@ -1,4 +1,4 @@
-function [pop, X, gb] = INITIALIZE(bound,ini_vel)
+function [pop, X, gb, rc] = INITIALIZE(bound,ini_vel)
 
 global popCS  
 global it itMax finalPopSize deadidx Aidx newidx bornidx best d
@@ -9,31 +9,21 @@ bornidx = [];   % new born indeces
 % Aidx :          Alive indeces =>  for it=1 equal to 1:popSize
 % newidx :        maximum usage of index
 %-----------------------------
-
-% initialize pop ------------------------------
-if popCS ~= 2   % for all 
-
-    pop.pos(1:particles,:,1) = ini_pop(particles, bound);
-    pop.fit(1:particles,1) = f(pop.pos(1:particles,:,1));
-    [pop.fit(:,1),idx] = sort(pop.fit(:,1));
-    pop.pos(:,:,1) = pop.pos(idx,:,1);
-    Aidx = 1:particles;
-    pop.size(1) = numel(Aidx);
-    newidx = particles;
-    pop.v(1:particles,:,1) = ones(particles,d,1) * ini_vel;                          
-
-else  % for incrimental  % ??
-
-    pop.pos(1:initialPopSize,:,1) = ini_pop(initialPopSize, bound);
-    pop.fit(1:initialPopSize,1) = f(pop.pos(1:initialPopSize,:,1));     
-    [pop.fit(:,1),idx] = sort(pop.fit(:,1));
-    pop.pos(:,:,1) = pop.pos(idx,:,1);
-    Aidx = 1:initialPopSize;
-    pop.size(1) = numel(Aidx);
-    newidx = initialPopSize;
-    pop.v(1:initialPopSize,:,1) = ones(initialPopSize,d,1) * ini_vel;                
-
+if popCS ~= 2
+    popSize = particles;
+else
+    popSize = initialPopSize;
 end
+% initialize pop ------------------------------
+pop.pos(1:popSize,:,1) = ini_pop(popSize, bound);
+pop.fit(1:popSize,1) = f(pop.pos(1:popSize,:,1));
+[pop.fit(:,1),idx] = sort(pop.fit(:,1));
+pop.pos(:,:,1) = pop.pos(idx,:,1);
+Aidx = 1:popSize;
+pop.size(1) = numel(Aidx);
+newidx = popSize;
+pop.v(1:popSize,:,1) = ones(popSize,d,1) * ini_vel;                          
+
 
 % personal best
 pop.pb.fit = pop.fit(:,1);
@@ -55,13 +45,10 @@ for i = Aidx
 
     x.pb.fit = pop.pb.fit(i);
     x.pb.pos = pop.pb.pos(i,:);
-
-    x.N = TOP(pop,x); % sorted in it == 1  % to hierical momkene N = [] bashe bara bazia   ??
-    x.I = MOI(x); 
-
-    x.lb.fit = x.N.fit(best);
-    x.lb.pos = x.N.pos(best,:);
-    x.lb.idx = x.N.idx(best);
+    x.pb.it = 1;
     
-    X(i) = x;
+    X(i,it) = x;
 end
+[X,rc] = TOP(pop,X,[]); % rnd ok 
+X = MOI(X);
+

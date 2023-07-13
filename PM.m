@@ -1,5 +1,5 @@
 function pm = PM(x,oldPm,gb)
-global pmCS2
+global pmCS2 it
 global PM_cte e m Sc Fc %(user defined)
 
 switch  pmCS2
@@ -10,9 +10,9 @@ switch  pmCS2
         distance = norm(x.pos - x.pb.pos); % euclidean distance
         % e = (0,1] used to weigh the diastance
         if distance == 0
-            pm = e*oldPm;
+            pm = e * oldPm;
         else
-            pm =e * distance;
+            pm = e * distance;
         end
 
     case 3 % obj.func

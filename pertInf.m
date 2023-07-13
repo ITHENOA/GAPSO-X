@@ -1,7 +1,7 @@
 function perted = pertInf(vector,pm) % ok +2
 global pertInfCS
 global lambda bt %(user defined)
-
+pm
 switch  pertInfCS
     case 0 % None   ok
         perted = vector;
@@ -14,7 +14,7 @@ switch  pertInfCS
         end
 
     case 2 % levy ok
-        perted = zeros(size(vector,2),1);
+        perted = zeros(1,size(vector,2));
         for i = 1:size(vector,2)
             perted(i) = random(makedist('Stable','alpha',lambda,'beta',0,'gam',pm,'delta',pm+vector(i)));
         end

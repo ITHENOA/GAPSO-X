@@ -37,37 +37,38 @@ global inertia_cte w1Max w1Min nu a_w1_cb b_w1_cb lambda_w1_abv
 global w2_cte w3_cte
 
 
-
+rng(3)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % component
-pertInfCS = 0; % [0 1 2 3 4]
-topCS = 0; %[0 1 2]
-pmCS2 = 1; % [1 2 3 4]
-moiCS = 0; % [0 1 2 3]
-pertRndCS = 0; % [0 1 2]
-MtxCS = 0; % [0 1 2 3 4 5 6]
-AC_CS = 0; %[0 1 2 3]
-inertiaW1CS = 0; % [0 1 2 3 4 5 6 7 8 9]
-paramW23CS = 0; % [0 1 2]
-popCS = 0;
-alpha_mtxCS2 = 0; % [0 1 2]
-dnppCS = 0; % []
-pIntitTypeCS2 = 0; %[]
+pertInfCS = 0%randi(5)-1%0; % [0 1 2 3 4]
+topCS = randi(3)-1%0; %[0 1 2]
+pmCS2 = randi(4)%1; % [1 2 3 4]
+moiCS = randi(4)-1%0; % [0 1 2 3]
+pertRndCS = randi(3)-1%0; % [0 1 2]
+MtxCS = randi(7)-1%0; % [0 1 2 3 4 5 6]
+AC_CS = randi(4)-1%0; %[0 1 2 3]
+inertiaW1CS = randi(10)-1%0; % [0 1 2 3 4 5 6 7 8 9]
+paramW23CS = randi(3)-1%0; % [0 1 2]
+popCS = randi(3)-1%0; % [0 1 2]
+alpha_mtxCS2 = randi(3)-1%0; % [0 1 2]
+dnppCS = 0%0; % []
+pIntitTypeCS2 = randi(2)-1%0; %[0 1]
 % general param
-finalPopSize = 30; % [2:200]
+finalPopSize = randi(199)+1%30; % [2:200]
 itMax = 30;
 % population
 popTViterations = 1; %int[0:100]
 % TOP parameter
 bd = 10; %[2 20]    % branching degree
 particlesToAdd = 5; %[]  topCS=3 time-varing
+k_topTime = 5;  % delete some connections evary k iterations
 % AC param
 phi1 = 0; % [0:2.5]
 phi2 = 0; % [0:2.5]
 phiMax = 0; % [phi1Max, phi2Max] [0:2.5, 0:2.5]
 phiMin = 0; % [phi1Min, phi2Min] [0:2.5, 0:2.5]
 % PM param
-PM_cte = 0; % [0:1]
+PM_cte = 1; % [0:1] sefr moshkel dare                       pm moshkel date ??
 e = 1; % (0:1]
 m = 1; % (0:1]
 Sc = 5; % int[1:50]
@@ -98,7 +99,7 @@ w3_cte = .5; % [0:1]
 particles = 20;
 initialPopSize = 10;
 %%%%%%%%%%%%%%%% cte %%%%%%%%%%%%%%%%%%%
-global best d
+global best d topTime_counter n_iniNei_top3 n_nei_born_top3
 pm=1; % initial pert magnitud  
 w1 = [];
 best = 1; % minimization=1, maximization=end ?
@@ -109,6 +110,8 @@ ini_w1_45 = 0;  % initial w1 for 4=self-regulating and 5=adaptive vel
 ini_pm_234 = 1; % initial pm for all exept 1=cte
 ini_vel = 0;
 n_addToNeighborhood = 5;
-
+topTime_counter = 1;
+n_iniNei_top3 = 1;
+n_nei_born_top3 = n_iniNei_top3 + 1;
 % ok
 % TOP, MOI, w1(8?9?)

@@ -1,4 +1,4 @@
-function X = updateTOP(pop,X,saveIdx)
+function X = updateTOP(pop,X,saveIdx,rc)
 % if + | -
 % 
 %     if -1          
@@ -42,6 +42,15 @@ function X = updateTOP(pop,X,saveIdx)
 global popCS topCS
 global deadidx it Aidx bornidx
 
+if topCS == 5 % TV
+elseif topCS == 4 % H
+elseif topCS == 0 || topCS == 1 || topCS == 2 % ring|full|von
+else
+    error("Topology option : 0=ring, 1=full, 2=VonNewman, 3=rand, 4=Hierarchy, 5=TimeVar")
+end
+
+
+
 
 if popCS ~= 0     % top(time-var) or pop(~cte)
 
@@ -65,8 +74,46 @@ if popCS ~= 0     % top(time-var) or pop(~cte)
             end
         end
     end % END -
-
+    
+    % koli shod ; az if biar biron                                          ??
     if topCS == 5 % Time-Varing
+        if numel(deadidx) ~= 0  % (-)
+            rc(rc == deadidx,:)=[];
+        end
+        [] = TOP(it+1,pop,x,N,rc)
+        % dont remove some connection from newborns                         ??
+        if numel(bornidx) ~= 0  % (+)
+            repeated_idx = setdiff(Aidx,saveIdx{it});
+            s=0;
+            for i = repeated_idx
+                s = s + X(i,it).N.size;
+            end
+            C = s / numel(repeated_idx); % number of adding neighbor
+            neighbors = repeated_idx(randperm(numel(repeated_idx),C));
+            for i = bornidx
+                X(i,it+1).N.idx = neighbors;
+                for j = neighbors
+                    rc = [rc ; [i j]];
+                    X(j,it+1).N.idx = [X(j,it).N.idx i];
+                end
+            end
+            update_idx = [bornidx, neighbors];  % N neighbors nabayed avaz she bayad update she chon momkene ghablan update shode bashe
+            X(update_idx,it+1).N.pos = pop.pos(X(update_idx,it+1).N.idx,:,it+1);              % test
+            % [X(update_idx,it+1).N.pos] = deal[pop.pos([X(update_idx,it+1).N.idx],:,it+1)]; 
+            X(update_idx,it+1).N.fit = pop.fit(X(update_idx,it+1).N.idx,it+1);               % test
+            % [X(update_idx,it+1).N.fit] = deal[pop.fit([X(update_idx,it+1).N.idx],it+1)]; 
+            X(update_idx,it+1).N.size = numel(X(update_idx,it+1).N.idx);                     % test
+            % X(update_idx,it+1).N.size = numel([X(update_idx,it+1).N.idx]);
+            % for i = update_idx                                                            % trust way
+            %     X(i,it+1).N.pos = pop.pos(X(i,it+1).N.idx,:,it+1); 
+            %     X(i,it+1).N.fit = pop.fit(X(i,it+1).N.idx,it+1);
+            %     X(i,it+1).N.size = numel(X(i,it+1).N.idx);
+            % end
+        end
+    end
+
+
+
         for i = Aidx
             x.idx = i;
             if numel(deadidx) ~= 0
