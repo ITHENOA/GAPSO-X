@@ -37,7 +37,7 @@ global inertia_cte w1Max w1Min nu a_w1_cb b_w1_cb lambda_w1_abv
 global w2_cte w3_cte
 
 
-rng(3)
+rng(1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % component
 pertInfCS = 0%randi(5)-1%0; % [0 1 2 3 4]
@@ -55,7 +55,7 @@ dnppCS = 0%0; % []
 pIntitTypeCS2 = randi(2)-1%0; %[0 1]
 % general param
 finalPopSize = randi(199)+1%30; % [2:200]
-itMax = 30;
+itMax = 100;
 % population
 popTViterations = 1; %int[0:100]
 % TOP parameter
@@ -63,8 +63,8 @@ bd = 10; %[2 20]    % branching degree
 particlesToAdd = 5; %[]  topCS=3 time-varing
 k_topTime = 5;  % delete some connections evary k iterations
 % AC param
-phi1 = 0; % [0:2.5]
-phi2 = 0; % [0:2.5]
+phi1 = 1; % [0:2.5]
+phi2 = 1; % [0:2.5]
 phiMax = 0; % [phi1Max, phi2Max] [0:2.5, 0:2.5]
 phiMin = 0; % [phi1Min, phi2Min] [0:2.5, 0:2.5]
 % PM param
@@ -99,7 +99,7 @@ w3_cte = .5; % [0:1]
 particles = 20;
 initialPopSize = 10;
 %%%%%%%%%%%%%%%% cte %%%%%%%%%%%%%%%%%%%
-global best d topTime_counter n_iniNei_top3 n_nei_born_top3
+global best d topTime_counter n_iniNei_top3 n_nei_born_top3 f_counter
 pm=1; % initial pert magnitud  
 w1 = [];
 best = 1; % minimization=1, maximization=end ?
@@ -113,5 +113,6 @@ n_addToNeighborhood = 5;
 topTime_counter = 1;
 n_iniNei_top3 = 1;
 n_nei_born_top3 = n_iniNei_top3 + 1;
+f_counter = 0;
 % ok
 % TOP, MOI, w1(8?9?)

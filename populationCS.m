@@ -7,10 +7,12 @@ bornidx = [];
 deadidx = [];
 popSize = pop.size(it+1);
 switch popCS
-case 0 % constant    ok
+case 0 % constant ---------------------------------------------------------
+    % disp("pop ==> cte")
     % Do Nothing
 
-case 1  % time-varying      ok
+case 1  % time-varying ----------------------------------------------------
+    % disp("pop ==> time-varying")
     % deadidx = Aidx(end); % dead last idx (worst) %-1
     % Aidx = Aidx(1:end-1); % update idx vector
     if it > popTViterations
@@ -51,34 +53,33 @@ case 1  % time-varying      ok
         pop.fit(Aidx,it+1) = f(pop.pos(Aidx,:,it+1)); %2(it)  
     end
 
-case 2  % incremental       ok
-        % if popSize < finalPopSize && popSize + particlesToAdd > finalPopSize
-        if popSize + particlesToAdd > finalPopSize
-            particlesToAdd = finalPopSize - popSize;
+case 2  % incremental -----------------------------------------------------
+    % disp("pop ==> incremental")
+    % if popSize < finalPopSize && popSize + particlesToAdd > finalPopSize
+    if popSize + particlesToAdd > finalPopSize
+        particlesToAdd = finalPopSize - popSize;
+    end
+    if particlesToAdd > 0                                                       %new
+        if pIntitTypeCS2 == 0 % Init-random       ok 
+            pop.pos(newidx+1:newidx+particlesToAdd,:,it+1) = ini_pop(particlesToAdd,bound);
+
+        elseif pIntitTypeCS2 == 1 % Init-horizontal       ok
+            xprim=ini_pop(particlesToAdd,bound);
+            pop.pos(newidx+1:newidx+particlesToAdd,:,it+1) = ...    %(it)
+                xprim + rand(particlesToAdd,d) .* (gb.pos(it+1) - xprim); %(it-1)
+
         end
-        if particlesToAdd > 0                                                       %new
-            if pIntitTypeCS2 == 0 % Init-random       ok 
-                pop.pos(newidx+1:newidx+particlesToAdd,:,it+1) = ini_pop(particlesToAdd,bound);
-    
-            elseif pIntitTypeCS2 == 1 % Init-horizontal       ok
-                xprim=ini_pop(particlesToAdd,bound);
-                pop.pos(newidx+1:newidx+particlesToAdd,:,it+1) = ...    %(it)
-                    xprim + rand(particlesToAdd,d) .* (gb.pos(it+1) - xprim); %(it-1)
-    
-            end
-    
-            pop.fit(newidx+1:newidx+particlesToAdd,it+1) = ...%(it)
-                f(pop.pos(newidx+1:newidx+particlesToAdd,:,it+1));%(it)
-            
-            
-            % update idx
-            Aidx = [Aidx newidx+1:newidx+particlesToAdd]; % update idx vector  
-            bornidx = newidx+1:newidx+particlesToAdd;
-            newidx = newidx + particlesToAdd; % create new idx
-            % ==> no dead
-            
-            
-        end
+
+        pop.fit(newidx+1:newidx+particlesToAdd,it+1) = ...%(it)
+            f(pop.pos(newidx+1:newidx+particlesToAdd,:,it+1));%(it)
+        
+        
+        % update idx
+        Aidx = [Aidx newidx+1:newidx+particlesToAdd]; % update idx vector  
+        bornidx = newidx+1:newidx+particlesToAdd;
+        newidx = newidx + particlesToAdd; % create new idx
+        % ==> no dead
+    end
 end
 pop.size(it+1) = numel(Aidx);
 pop.fit(bornidx,1:it) = inf;

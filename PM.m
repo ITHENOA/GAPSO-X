@@ -3,7 +3,8 @@ global pmCS2 it
 global PM_cte e m Sc Fc %(user defined)
 
 switch  pmCS2
-    case 1 % cte
+    case 1 % cte ----------------------------------------------------------
+        % disp("pm ==> cte")
         pm = PM_cte;
         
     case 2 % euclidean
@@ -15,7 +16,8 @@ switch  pmCS2
             pm = e * distance;
         end
 
-    case 3 % obj.func
+    case 3 % obj.func -----------------------------------------------------
+        % disp("pm ==> obj.func")
         % m = (0,1]
         obj_distance = (x.lb.fit - x.fit)/x.lb.fit;
         if obj_distance == 0
@@ -24,7 +26,8 @@ switch  pmCS2
             pm = m * obj_distance;
         end
 
-    case 4 % success rate
+    case 4 % success rate -------------------------------------------------
+        % disp("pm ==> success rate")
         % Sc = threshold (user defined)
         % Fc = threshold (user defined)
         flagS=1;

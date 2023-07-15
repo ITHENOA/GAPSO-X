@@ -62,7 +62,7 @@ switch inertiaW1CS
         w1 = w1Min + (w1Max - w1Min) * sumS/numel(repeated_idx);
          
     case 9 % convergence-based (cb) ---------------------------------------
-        % disp("w1 ==> convergence-based (cb)")
+        disp("w1 ==> convergence-based (cb)")
         fpp = X(x.idx,it-1).pb.fit - X(x.idx,it).pb.fit;
         fpl = x.pb.fit - x.lb.fit;
         C = abs(fpp) / fpp;

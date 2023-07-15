@@ -1,5 +1,4 @@
-function [X,tree,rc]  = TOP(pop,X,tree,rc) 
-if nargin < 3;end
+function [X,tree,rc]  = TOP(pop,X,rc,tree) 
 
 global Aidx topTime_counter bornidx it deadidx
 global topCS 
