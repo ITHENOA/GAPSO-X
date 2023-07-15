@@ -1,7 +1,7 @@
-function pop = populationCS(pop,bound,gb,saveIdx)   % pop.(pos,size) => pop.(fit)
-global it newidx deadidx Aidx bornidx
-global popCS  pIntitTypeCS2
-global initialPopSize finalPopSize particlesToAdd  popTViterations
+function pop = populationCS(pop,bound,gb)   % pop.(pos,size) => pop.(fit)
+global it newidx deadidx Aidx bornidx d
+global popCS pIntitTypeCS2
+global initialPopSize finalPopSize particlesToAdd popTViterations
 
 bornidx = [];
 deadidx = [];
@@ -35,7 +35,7 @@ case 1  % time-varying ----------------------------------------------------
                 bornidx = newidx;
                 Aidx = [Aidx(1:end-1) newidx]; % update idx vector
 
-                pop.pos(newidx,:,it+1) = infini_pop(1,bound); %(it)
+                pop.pos(newidx,:,it+1) = ini_pop(1,bound); %(it)
                 pop.fit(newidx,it+1) = f(pop.pos(newidx,:,it+1));
 
             end

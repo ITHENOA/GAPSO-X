@@ -18,19 +18,4 @@ for i = 1:popSize
 end 
 rc = [rc1 rc2];
 
-% remove equals connections (5 <=> 5)
-rc(rc(:,1) == rc(:,2),:) = [];  
-% removes nearby connections (4 <=> 5)
-rc(abs(rc(:,1) - rc(:,2)) == 1,:) = []; 
-% remove one of same connections (4 <=> 5) (5 <=> 4)
-i=1;
-while true  
-    if sum(prod(rc(i,:) == rc(:,2:-1:1),2))
-        rc(i,:) = [];   
-    else
-        i=i+1;
-    end
-    if i > size(rc,1) ;break;end
-end
-% remove (1 <=> end) or (end <=> 1)
-rc(find(prod(rc == [1 max(Aidx)] | rc == [max(Aidx) 1],2)),:) = []; % dont remove find syntax
+rc = rcFixer(rc);

@@ -48,7 +48,9 @@ switch moiCS
     case 3 % Random Informant ---------------------------------------------
         % disp("Model of Influence ==> Random Informant")
         for i = Aidx
-            idx = randperm(X(i,it).N.size,2);
+            n=2; % number of neighbor for i
+            if X(i,it).N.size < 2; n=1; end
+            idx = randperm(X(i,it).N.size,n);
             X(i,it).I.pos = X(i,it).N.pos(idx,:);
             X(i,it).I.fit = X(i,it).N.fit(idx);
             X(i,it).I.idx = X(i,it).N.idx(idx);

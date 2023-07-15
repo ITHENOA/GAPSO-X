@@ -9,7 +9,7 @@ switch  pertInfCS
 
     case 1 % gauss --------------------------------------------------------
         % disp("prtInfo ==> gauss")
-        perted = zeros(size(vector,2),1);
+        perted = zeros(1,size(vector,2));
         for i = 1:size(vector,2)
             perted(i) = random(makedist('Stable','alpha',2,'beta',0,'gam',...
                 pm/sqrt(2),'delta',vector(i)));           
@@ -24,7 +24,7 @@ switch  pertInfCS
 
     case 3 % cauchy -------------------------------------------------------
         % disp("prtInfo ==> cauchy")
-        perted = zeros(size(vector,2),1);
+        perted = zeros(1,size(vector,2));
         for i = 1:size(vector,2)
             perted(i) = random(makedist('Stable','alpha',1,'beta',0,'gam',pm,'delta',vector(i)));
         end

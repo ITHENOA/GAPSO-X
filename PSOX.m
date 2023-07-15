@@ -1,7 +1,7 @@
-clear;clc
+clear;clc;close all;tic
 run('Configuration.m')
-tic
-global topCS alpha_mtxCS2 inertiaW1CS popCS
+
+global alpha_mtxCS2 inertiaW1CS
 global it itMax Aidx deadidx bornidx
 
 % Load initialize (pop, TOP, MOI)
@@ -38,21 +38,25 @@ for it = 1:itMax
         % w2, w3
         [x.w2, x.w3] = param_W23(x.w1);
         % Perturbation Magnitud (PM)
-        if it == 1
-            x.pm = ini_pm_234;
+
+        if it == 1 || ismember(x.idx,bornidx)
+            x.pm = ini_pm_234born;
         else
             x.pm = PM(x, X(i,it-1).pm, gb);
         end
+
         % Pert_Info
         x.prtInfo = pertInf(pop.pb.pos(i,:), x.pm);
         % phi
         x.phi = AC(x, gb);
+        % Pert_Rand
+        x.prtRnd = pertRnd(x.pos, x.pm);
 
         % ----- save -----
-        X(i,it) = x;%new
-        x=[];%new
-    end%new
-    for i = Aidx%new
+        X(i,it) = x;
+        x=[];
+    end
+    for i = Aidx
         % DNPP
         if it == 1 && alpha_mtxCS2 == 2 % adaptive alpha Need previous iteration
             alpha_mtxCS2 = 0; % use cte alpha
@@ -61,20 +65,14 @@ for it = 1:itMax
         else
             X(i,it).dnpp = DNPP(X, X(i,it), pop, saveIdx);
         end
-        % Pert_Rand
-        X(i,it).prtRnd = pertRnd(X(i,it).pos, X(i,it).pm);
-
+        
+        %%%%%%%%%%%%%%%%%%%%% prepare next generation %%%%%%%%%%%%%%%%%%%%%
         % Update Velocity 
         X(i,it+1).v = X(i,it).w1 * X(i,it).v + X(i,it).w2 * X(i,it).dnpp + X(i,it).w3 * X(i,it).prtRnd;
-        
-        % disp("1111")
-        % X(i,it).w1 * X(i,it).v  
-        % X(i,it).w2 * X(i,it).dnpp 
-        % X(i,it).w3 * X(i,it).prtRnd
         % Update Position 
         X(i,it+1).pos = X(i,it).pos + X(i,it+1).v; 
+        % check bound
         X(i,it+1).pos = boundCheck(X(i,it+1).pos,bound);
-
         % Update Fitness
         X(i,it+1).fit = f(X(i,it+1).pos);
         % Update pop
@@ -85,8 +83,7 @@ for it = 1:itMax
     end % END i
     clear ini_X 
     
-    [X(:,it+1).idx] = deal(X(:,it).idx);
-
+    [X(:,it+1).idx] = deal(X(:,it).idx);    
 
     %%%%%%%%%%%%%%%%%%%%%%%%% update pb and gb %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     for i = Aidx    
@@ -108,7 +105,7 @@ for it = 1:itMax
     
     %%%%%%%%%%%%%%%%%%%%%%%%%% Update Population %%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    pop = populationCS(pop,bound,gb,saveIdx);  % +1 | +1,-1 | -1 | +particlesToAdd
+    pop = populationCS(pop,bound,gb);  % +1 | +1,-1 | -1 | +particlesToAdd
 
     if numel(deadidx) ~= 0 || numel(bornidx) ~= 0  % have (+ | -)
         % sort idxs
@@ -139,5 +136,23 @@ for it = 1:itMax
             X(i,it+1).pb.fit = pop.pb.fit(i);
         end
     end
+
+    % bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1))
+    % n=floor(numel(Aidx) * .2);
+    % m=floor(numel(Aidx) * .7);
+    % for i = Aidx(1:n)
+    %     m=m+1;
+    %     scatter(X(Aidx(m),it+1).pos(1,1),X(Aidx(m),it+1).pos(1,2))
+    %     [X(Aidx(m),it+1).pos, X(Aidx(m),it+1).fit] = RS(X(i,it+1).pos,bound);
+    %     scatter(X(Aidx(m),it+1).pos(1,1),X(Aidx(m),it+1).pos(1,2),'r')
+    % end
+
+
+    bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1))
+    if gb.fit(end) < -6.5; break; end
 end % END it
 toc
+disp("END")
+disp("f_counter = "+num2str(f_counter))
+disp("Final gb = "+num2str(gb.fit(end)))
+disp("Actual : -6.5367")

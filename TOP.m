@@ -2,9 +2,9 @@ function [X,tree,rc]  = TOP(pop,X,tree,rc)
 if nargin < 3;end
 
 global Aidx topTime_counter bornidx it deadidx
-global topCS 
-global bd k_topTime n_iniNei_top3 n_nei_born_top3%(user defined)
-topCS=5
+global topCS rcdelCS2
+global k_topTime n_iniNei_top3 n_nei_born_top3 %(user defined)
+
 popSize = pop.size(it);
 switch topCS
     case 0 % ring  --------------------------------------------------------
@@ -75,15 +75,11 @@ switch topCS
             if deadidx==0 ; deadidx=[]; end
 
             if numel(bornidx) ~= 0 % (+)
-                if numel(repeat) < numel(bornidx) * n_rnd_top3 + 1
-                    error("reduce 'n_rnd_top3' or change born TOPrnd structure")
-                end
-                neighbor = repeat(randperm(numel(repeat), numel(bornidx) * n_nei_born_top3)); % (+1) check 
-                neighbor = reshape(neighbor,numel(bornidx),n_nei_born_top3);
                 for b = 1:numel(bornidx)
-                    X(bornidx(b),it).N.idx = neighbor(b,:);
+                    neighbor = repeat(randperm(numel(repeat), n_nei_born_top3));
+                    X(bornidx(b),it).N.idx = neighbor;
                     for n = 1:n_nei_born_top3
-                        X(neighbor(b,n),it).N.idx = [X(neighbor(b,n),it).N.idx, bornidx(b)];
+                        X(neighbor(n),it).N.idx = [X(neighbor(n),it).N.idx, bornidx(b)];
                     end
                 end
             end
@@ -112,7 +108,19 @@ switch topCS
             for i = Aidx
                 X(i,it).N.idx = setdiff(shuffle,i);
             end
-            rc = fix_ring_connection(Aidx);
+            % rc = fix_ring_connection(Aidx);
+
+            rc1=[];
+            for i = Aidx
+                rc1 = [rc1 ; ones(popSize,1)*i];
+            end
+            rc2=[];
+            for i = 1:popSize
+                rc2 = [rc2 ; Aidx'];
+            end 
+            rc = [rc1 rc2];
+
+            rc = rcFixer(rc);
             
         else % it = 2:itMax
 
@@ -163,25 +171,33 @@ switch topCS
                     end
                 end
             end
-                
-
-            % input <== rc
-            if rem(it,k_topTime) == 0   % every k iteration remove one random particle
-                topTime_counter = topTime_counter + 1;
-                n_del = popSize - topTime_counter;
-                % if number of delete > remain connection => remove all
-                % connection which allowed to delete
-                if n_del > size(rc,1); n_del = size(rc,1); end
-                rndp = randperm(size(rc,1),n_del);
-                del_connection = rc(rndp,:);
-                rc = rc(setdiff(rc,del_connection,'rows'),:); % rc ==> output
-                if size(rc,1) == 0; disp("no more allowed connection"); end
-              
-                for i = 1:n_del
-                    Nidx1 = X(del_connection(i,1),it).N.idx;
-                    Nidx2 = X(del_connection(i,2),it).N.idx;
-                    X(del_connection(i,1),it).N.idx = Nidx1(Nidx1 ~= del_connection(i,2)); % remove 2 from 1
-                    X(del_connection(i,2),it).N.idx = Nidx2(Nidx2 ~= del_connection(i,1)); % remove 1 from 2
+            if size(rc,1) ~= 0
+                rc(find(prod(rc == [min(min(rc)) max(max(rc))] | rc == [max(max(rc)) min(min(rc))],2)),:) = [];
+                % every k iteration remove one random particle
+                if rem(it,k_topTime) == 0
+                    % ------------------------------------------------------- main idea
+                    if rcdelCS2 == 0
+                        topTime_counter = topTime_counter + 1;
+                        n_del = popSize - topTime_counter;
+                        if n_del > size(rc,1); n_del = size(rc,1); end
+                    % ------------------------------------------------------- new idea ***
+                    elseif rcdelCS2 == 1
+                        n_del = floor(size(rc,1) * .4);    % remove 40% of connections                     
+                        if size(rc,1) == 1; n_del = 1; end                  
+                    else
+                        error("rcdelCS2 = {0,1}")
+                    end
+                    % -------------------------------------------------------
+                    rndp = randperm(size(rc,1),n_del);
+                    del_connection = rc(rndp,:);
+                    rc = setdiff(rc,del_connection,'rows'); % rc ==> output
+                    if size(rc,1) == 0; disp("no more allowed connection"); end
+                    for i = 1:n_del
+                        Nidx1 = X(del_connection(i,1),it).N.idx;
+                        Nidx2 = X(del_connection(i,2),it).N.idx;
+                        X(del_connection(i,1),it).N.idx = Nidx1(Nidx1 ~= del_connection(i,2)); % remove 2 from 1
+                        X(del_connection(i,2),it).N.idx = Nidx2(Nidx2 ~= del_connection(i,1)); % remove 1 from 2
+                    end
                 end
             end
         end
