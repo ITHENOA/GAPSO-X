@@ -1,4 +1,5 @@
-function tree=Top_hierarchical_to_add(tree,bornidx,bd)
+function tree=Top_hierarchical_to_add(tree)
+global bornidx bd
 toAdd=length(bornidx);
 cap=sum(tree(end,:)==0);
 if cap>= toAdd

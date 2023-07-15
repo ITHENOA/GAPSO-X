@@ -1,4 +1,5 @@
-function N=Top_hierarchical(tree,index,bd)
+function N=Top_hierarchical_neighborhood(tree,index,bd)
+global bd 
 [row,column]=find(index==tree);
 N=zeros(1,row);
 for j=row:-1:1

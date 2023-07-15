@@ -5,7 +5,7 @@ global topCS alpha_mtxCS2 inertiaW1CS popCS
 global it itMax Aidx deadidx bornidx
 
 % Load initialize (pop, TOP, MOI)
-[pop, ini_X, gb, rc] = INITIALIZE(bound,ini_vel);
+[pop, ini_X, gb, tree, rc] = INITIALIZE(bound,ini_vel);
 saveIdx = cell(1,itMax);
 
 for it = 1:itMax

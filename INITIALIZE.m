@@ -1,4 +1,4 @@
-function [pop, X, gb, rc] = INITIALIZE(bound,ini_vel)
+function [pop, X, gb, tree, rc] = INITIALIZE(bound,ini_vel)
 
 global popCS  
 global it itMax finalPopSize deadidx Aidx newidx bornidx best d
@@ -49,6 +49,6 @@ for i = Aidx
     
     X(i,it) = x;
 end
-[X,rc] = TOP(pop,X,[]); % rnd ok 
+[X,tree,rc] = TOP(pop,X,[],[]); % rnd ok 
 X = MOI(X);
 

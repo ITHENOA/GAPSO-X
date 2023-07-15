@@ -4,7 +4,7 @@ if nargin < 3;end
 global Aidx topTime_counter bornidx it deadidx
 global topCS 
 global bd k_topTime n_iniNei_top3 n_nei_born_top3%(user defined)
-
+topCS=5
 popSize = pop.size(it);
 switch topCS
     case 0 % ring  --------------------------------------------------------
@@ -91,12 +91,16 @@ switch topCS
 
     case 4 % hierarchical  ------------------------------------------------
         % disp("Topology ==> Hierarchical")
-        if numel(Aidx) ~= 0
-            tree = Top_hierarchical_to_add(tree,bornidx,bd);
+        if it == 1
+            tree = Top_hierarchical_ini(pop.pb.fit);
+        else
+            if numel(bornidx) ~= 0
+                tree = Top_hierarchical_to_add(tree);
+            end
+            tree = Top_hierarchical_update(tree,pop.pb.fit);
         end
-        tree = Top_hierarchical_update(tree,Aidx,pop.pb.fit,bd);
         for i = Aidx
-            X(i,it).N.idx = Top_hierarchical_neighborhood(tree,i,bd);
+            X(i,it).N.idx = Top_hierarchical_neighborhood(tree,i);
         end
 
     case 5 % time - var  --------------------------------------------------
@@ -123,7 +127,7 @@ switch topCS
 
             % (if) dead exist remove and update (else) update
             if numel(deadidx)==0; deadidx=0; end
-            for i = Aidx
+            for i = setdiff(Aidx,bornidx)
                 X(i,it).N.idx = X(i,it-1).N.idx(X(i,it-1).N.idx ~= deadidx);
             end
             if deadidx==0 ; deadidx=[]; end
@@ -144,9 +148,9 @@ switch topCS
                 repeated_idx = setdiff(Aidx,bornidx);
                 s=0;
                 for i = repeated_idx
-                    s = s + X(i,it).N.size;
+                    s = s + numel(X(i,it).N.idx);
                 end
-                C = s / numel(repeated_idx); % number of adding neighbor
+                C = floor(s / numel(repeated_idx)); % number of adding neighbor
                 for i = bornidx
                     while true  % ensure random neighbors not nearby i
                         neighbors = repeated_idx(randperm(numel(repeated_idx),C));

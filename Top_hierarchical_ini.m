@@ -1,4 +1,5 @@
-function tree=Top_hierarchical_ini(Aidx,p_best,bd)
+function tree=Top_hierarchical_ini(p_best)
+global Aidx bd
 [~,index]=sort(p_best);
 size_m=1;
 while true

@@ -1,4 +1,5 @@
-function updated_tree=Top_hierarchical_update(tree,Aidx,p_best,bd)
+function updated_tree=Top_hierarchical_update(tree,p_best)
+global bd Aidx
 Aidx=[Aidx,find(p_best==inf)];
 
 for i=1:size(tree,1)
