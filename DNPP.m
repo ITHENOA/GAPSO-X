@@ -1,6 +1,6 @@
-function dnpp = DNPP(X, x, pop, saveIdx)%(i,it)
-global it itMax d
-global dnppCS MtxCS moiCS rand_cauchy_dnpp
+function dnpp = DNPP(X, x, pop, saveIdx)
+global it d
+global dnppCS moiCS rand_cauchy_dnpp
 
 for k = unique([x.I.idx, x.idx]); S(k) = 1; end
 if moiCS == 2; S(x.I.idx) = x.I.weight; end % MOI(RANKED)
@@ -8,17 +8,15 @@ if moiCS == 2; S(x.I.idx) = x.I.weight; end % MOI(RANKED)
 dnpp = zeros(1,d);   
 switch dnppCS
     case 0  % rectangular ------------------------------------------------- 
-        % disp("dnpp ==> rectangular")
         for k = x.I.idx
             if k == x.idx
-                dnpp = dnpp + x.phi(1) * S(k) * Mtx((x.prtInfo - x.pos), pop, saveIdx);%mew  
+                dnpp = dnpp + x.phi(1) * S(k) * Mtx((x.prtInfo - x.pos), pop, saveIdx);
             else
-                dnpp = dnpp + X(k,it).phi(2) * S(k) * Mtx((X(k,it).prtInfo - x.pos), pop, saveIdx);%mew  
+                dnpp = dnpp + X(k,it).phi(2) * S(k) * Mtx((X(k,it).prtInfo - x.pos), pop, saveIdx);
             end
         end 
 
     case 1  % spherical ---------------------------------------------------
-        % disp("dnpp ==> spherical")
         P = 0;
         L = x.pos;
         P = x.pos + x.phi(1) * S(k) * Mtx((x.prtInfo - x.pos), pop, saveIdx); 
@@ -31,7 +29,6 @@ switch dnppCS
         dnpp = H - x.pos;
 
     case 2  % standard ----------------------------------------------------
-        % disp("dnpp ==> standard")
         for k = x.I.idx
             q = (x.phi(1) * S(x.idx) * x.prtInfo + x.phi(2) * S(x.idx)...
                 * X(k,it).prtInfo ) / (x.phi(1) * S(x.idx) + x.phi(2) * S(x.idx));
@@ -39,8 +36,6 @@ switch dnppCS
         end
 
     case 3  % gaussian ----------------------------------------------------
-        % disp("dnpp ==> gaussian")
-        % if MtxCS ~= 0; error("forbidden in gaussian DNPP"); end
         for k = x.I.idx
             c = (x.prtInfo + X(k,it).prtInfo)/2;
             r = norm(x.prtInfo - X(k,it).prtInfo);
@@ -49,8 +44,6 @@ switch dnppCS
         end
 
     case 4  % discrete ----------------------------------------------------
-        % disp("dnpp ==> discrete")
-        % if MtxCS ~= 0; error("forbidden in discrete DNPP"); end
         nu = randi([0 1]); % U{0,1}
         for k = x.I.idx
             q = nu * x.prtInfo + (1-nu) * X(k,it).prtInfo;
@@ -58,8 +51,6 @@ switch dnppCS
         end
 
     case 5  % cauchy gaussian ---------------------------------------------
-        % disp("dnpp ==> cauchy gaussian")
-        % if MtxCS ~= 0; error("forbidden in cauchy gaussian DNPP"); end  
         for k = x.I.idx
             q = zeros(1,d);
             for j = 1:d

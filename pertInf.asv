@@ -26,6 +26,7 @@ switch  pertInfCS
         end
 
     case 4 % uniform ------------------------------------------------------
+        % disp("prtInfo ==> uniform")
         s = rand(size(vector)) * (2 * bt) - bt;
         perted = vector + s .* vector;
 end

@@ -39,12 +39,12 @@ global inertia_cte w1Max w1Min nu a_w1_cb b_w1_cb lambda_w1_abv
 global w2_cte w3_cte
 
 
-% rng(1)
+rng(1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % component
 popCS = 1%0; % [0 1 2]
 pIntitTypeCS2 = 0%0; %[0 1] (popCS=2)
-topCS = 1%0; %[0 1 2 3 4 5]
+topCS = 5%0; %[0 1 2 3 4 5]
 rcdelCS2 = 1; % [0 1] (topCS=5)  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% new
 moiCS = 3%0; % [0 1 2 3]
 pmCS2 = 4%1; % [1 2 3 4]
@@ -56,7 +56,7 @@ dnppCS = 0%0; % [0 1 2 3 4 5]
 pertRndCS = 2%0; % [0 1 2]
 inertiaW1CS = 9%0; % [0 1 2 3 4 5 6 7 8 9]
 paramW23CS = 2%0; % [0 1 2]
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % general param
 finalPopSize = 100%30; % [2:200]
 itMax = 100;
@@ -72,7 +72,7 @@ phi2 = 1; % [0:2.5]
 phiMax = 0; % [phi1Max, phi2Max] [0:2.5, 0:2.5]
 phiMin = 2.5; % [phi1Min, phi2Min] [0:2.5, 0:2.5]
 % PM param
-PM_cte = 1; % [0:1] sefr moshkel dare                       pm moshkel date ??
+PM_cte = 1; % [0:1] sefr moshkel dare                 
 e = 1; % (0:1]
 m = 1; % (0:1]
 Sc = 5; % int[1:50]
@@ -111,6 +111,7 @@ d = 2;   % dimansion of benchmark function
 bound = [-3 3;-4 4];
 
 ini_w1_45 = 0;  % initial w1 for 4=self-regulating and 5=adaptive vel
+ini_w1_9born = 0;
 ini_pm_234born = 1; % initial pm for all exept 1=cte
 ini_vel = 0;
 n_addToNeighborhood = 5;

@@ -1,9 +1,8 @@
-function X = MOI(X)   % ok+1
+function X = MOI(X) % PSOX => MOI
 global moiCS Aidx it
 
 switch moiCS
     case 0  % best of neighborhood ----------------------------------------
-        % disp("Model of Influence ==> Best of Neighborhood")
         for i = Aidx
             if ismember(i, X(i,it).N.idx) % i is in his own neighborhood
                 id = find(i == X(i,it).N.idx);
@@ -28,11 +27,9 @@ switch moiCS
 
 
     case 1 % fully informed -----------------------------------------------
-        % disp("Model of Influence ==> Fully Informed")
         [X(Aidx,it).I] = deal(X(Aidx,it).N); % I <== N.(pos & fit & idx & size)
 
     case 2 % Weighted Ranking ---------------------------------------------
-        % disp("Model of Influence ==> Weighted Ranking")
         for i = Aidx
             lowerPart=2^(X(i,it).N.size)-1;
             upperPart=zeros(1,X(i,it).N.size);
@@ -46,7 +43,6 @@ switch moiCS
         
 
     case 3 % Random Informant ---------------------------------------------
-        % disp("Model of Influence ==> Random Informant")
         for i = Aidx
             n=2; % number of neighbor for i
             if X(i,it).N.size < 2; n=1; end

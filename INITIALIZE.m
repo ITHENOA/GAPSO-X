@@ -1,7 +1,7 @@
 function [pop, X, gb, tree, rc] = INITIALIZE(bound,ini_vel)
 
 global popCS  
-global it itMax finalPopSize deadidx Aidx newidx bornidx best d
+global it deadidx Aidx newidx bornidx best d
 global particles initialPopSize
 
 deadidx = [];   % Dead indeces
@@ -49,6 +49,6 @@ for i = Aidx
     
     X(i,it) = x;
 end
-[X,tree,rc] = TOP(pop,X,[],[]); % rnd ok 
+[X,tree,rc] = TOP(pop,X,[],[]);
 X = MOI(X);
 
