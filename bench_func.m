@@ -25,14 +25,14 @@ end
 % subplot(121); 
 contourf(X1, X2, Z);
 hold on
-% scatter(pos(:,1),pos(:,2),'MarkerEdgeColor',...
-%     'k','MarkerFaceColor',[0 .75 .75])
-% title("it = "+num2str(it)+"  (gb = "+num2str(gb(end))+")"+"  popSize = "+num2str(sizee))
-% % subplot(122); 
-% % mesh(X1,X2,Z)
-% % hold on
-% % scatter3(x1,x2,f(pop),'MarkerEdgeColor',...
-% %     'k','MarkerFaceColor',[0 .75 .75]);
-% hold off
-% % min(min(Z))
-% pause(0.2)
+scatter(pos(:,1),pos(:,2),'MarkerEdgeColor',...
+    'k','MarkerFaceColor',[0 .75 .75])
+title("it = "+num2str(it)+"  (gb = "+num2str(gb(end))+")"+"  popSize = "+num2str(sizee))
+% subplot(122); 
+% mesh(X1,X2,Z)
+% hold on
+% scatter3(x1,x2,f(pop),'MarkerEdgeColor',...
+%     'k','MarkerFaceColor',[0 .75 .75]);
+hold off
+% min(min(Z))
+pause(0.2)

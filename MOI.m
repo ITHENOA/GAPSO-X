@@ -5,7 +5,7 @@ switch moiCS
     case 0  % best of neighborhood ----------------------------------------
         % disp("Model of Influence ==> Best of Neighborhood")
         for i = Aidx
-            if sum(i == X(i,it).N.idx) % i is in his own neighborhood
+            if ismember(i, X(i,it).N.idx) % i is in his own neighborhood
                 id = find(i == X(i,it).N.idx);
                 if i ~= X(i,it).N.idx(1)  % i isnt best of his own neighborhood
                     X(i,it).I.pos = [X(i,it).N.pos(1,:); X(i,it).N.pos(id,:)];

@@ -44,18 +44,18 @@ global w2_cte w3_cte
 % component
 popCS = 1%0; % [0 1 2]
 pIntitTypeCS2 = 0%0; %[0 1] (popCS=2)
-topCS = 3%0; %[0 1 2 3 4 5]
+topCS = 1%0; %[0 1 2 3 4 5]
 rcdelCS2 = 1; % [0 1] (topCS=5)  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% new
-moiCS = 1%0; % [0 1 2 3]
+moiCS = 3%0; % [0 1 2 3]
 pmCS2 = 4%1; % [1 2 3 4]
-pertInfCS = 2%randi(5)-1%0; % [0 1 2 3 4]   ta inja
-alpha_mtxCS2 = 0%0; % [0 1 2]
-MtxCS = 0%0; % [0 1 2 3 4 5 6]
-AC_CS = 0%0; %[0 1 2 3]
+pertInfCS = 4%randi(5)-1%0; % [0 1 2 3 4]   
+alpha_mtxCS2 = 2%0; % [0 1 2]
+MtxCS = 3%0; % [0 1 2 3 4 5 6]
+AC_CS = 1%0; %[0 1 2 3]
 dnppCS = 0%0; % [0 1 2 3 4 5]
-pertRndCS = 0%0; % [0 1 2]
-inertiaW1CS = 0%0; % [0 1 2 3 4 5 6 7 8 9]
-paramW23CS = 0%0; % [0 1 2]
+pertRndCS = 2%0; % [0 1 2]
+inertiaW1CS = 9%0; % [0 1 2 3 4 5 6 7 8 9]
+paramW23CS = 2%0; % [0 1 2]
 
 % general param
 finalPopSize = 100%30; % [2:200]
@@ -70,7 +70,7 @@ k_topTime = 3;  % delete some connections evary k iterations
 phi1 = 1; % [0:2.5]
 phi2 = 1; % [0:2.5]
 phiMax = 0; % [phi1Max, phi2Max] [0:2.5, 0:2.5]
-phiMin = 0; % [phi1Min, phi2Min] [0:2.5, 0:2.5]
+phiMin = 2.5; % [phi1Min, phi2Min] [0:2.5, 0:2.5]
 % PM param
 PM_cte = 1; % [0:1] sefr moshkel dare                       pm moshkel date ??
 e = 1; % (0:1]
@@ -103,7 +103,7 @@ w3_cte = .5; % [0:1]
 particles = 20;
 initialPopSize = 10;
 %%%%%%%%%%%%%%%% cte %%%%%%%%%%%%%%%%%%%
-global best d topTime_counter n_iniNei_top3 n_nei_born_top3 f_counter
+global best d topTime_counter n_iniNei_top3 n_nei_born_top3 f_counter rand_cauchy_dnpp rand_AC1
 pm=1; % initial pert magnitud  
 w1 = [];
 best = 1; % minimization=1, maximization=end ?
@@ -118,4 +118,5 @@ topTime_counter = 1;
 n_iniNei_top3 = 1;
 n_nei_born_top3 = n_iniNei_top3 + 1;
 f_counter = 0;
-
+rand_cauchy_dnpp = 0.5;
+rand_AC1 = rand(1,2);

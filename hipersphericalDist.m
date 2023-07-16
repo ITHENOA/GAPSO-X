@@ -84,7 +84,19 @@ leftBound = xx(find(cumyy>min_thresh,1));
 xx = linspace(leftBound, 1, 1000);
 yy = VMFMeanDirDensity(xx, k, p);
 
-M = max(yy);
+[~,id] = sort(yy);
+ll=0;
+while true
+    
+    if yy(id(end-ll)) ~= inf
+        M = yy(id(ll));
+        break
+    end
+    ll=ll+1;
+end
+    
+% M = max(yy);
+
 t = zeros(N,1);
 for i=1:N
     while(1)

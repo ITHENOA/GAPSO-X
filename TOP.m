@@ -39,10 +39,10 @@ switch topCS
             [r,c]=find(mtx == i);
             for j = [+1 -1]
                if mtx(r+j,c) ~= 0   % < >
-                   X(i,it).N.idx = [X(i,it).N.idx; mtx(r+j,c)];
+                   X(i,it).N.idx = [X(i,it).N.idx, mtx(r+j,c)];
                end
                if mtx(r,c+j) ~= 0   % ^ v
-                   X(i,it).N.idx = [X(i,it).N.idx; mtx(r,c+j)];
+                   X(i,it).N.idx = [X(i,it).N.idx, mtx(r,c+j)];
                end
             end
         end

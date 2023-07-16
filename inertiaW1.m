@@ -58,15 +58,29 @@ switch inertiaW1CS
         % popSize = sum(pop.fit(:,it) ~= inf);
         % S = sum(pop.fit(:,it) < min(pop.fit(:,1:it-1),[],2));
         repeated_idx = intersect(Aidx,saveIdx{it-1});
-        sumS = sum(X(repeated_idx,it).pb.fit < X(repeated_idx,it-1).pb.fit);
+        sumS=0;
+        for r = repeated_idx
+            if X(r,it).pb.fit < X(r,it-1).pb.fit
+                sumS=sumS+1;
+            end
+        end
         w1 = w1Min + (w1Max - w1Min) * sumS/numel(repeated_idx);
          
     case 9 % convergence-based (cb) ---------------------------------------
         % disp("w1 ==> convergence-based (cb)")
+
         fpp = X(x.idx,it-1).pb.fit - X(x.idx,it).pb.fit;
         fpl = x.pb.fit - x.lb.fit;
-        C = abs(fpp) / fpp;
-        D = abs(fpl) / fpl;
+        if fpp == 0
+            C = 1;
+        else
+            C = abs(fpp) / fpp;
+        end
+        if fpl == 0
+            D = 1;
+        else
+            D = abs(fpl) / fpl;
+        end
         w1 = 1 - abs((a_w1_cb-C)/(1+D)/(1+b_w1_cb));
 
 end

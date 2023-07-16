@@ -13,7 +13,7 @@ for it = 1:itMax
     saveIdx{it} = Aidx;
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%% update TOP MOI %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    if it > 1   
+    if it > 1  
         [X,tree,rc]  = TOP(pop,X,tree,rc);
         X = MOI(X);
     end
@@ -26,6 +26,9 @@ for it = 1:itMax
             x = X(i,it);
         end
         % w1
+        if it==3 && i==21
+            i
+        end
         if it == 1
             if inertiaW1CS == 8 || inertiaW1CS == 9 % need previos iteration
                 x.w1 = ini_w1_45;

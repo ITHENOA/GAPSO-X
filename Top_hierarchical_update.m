@@ -1,14 +1,14 @@
 function updated_tree=Top_hierarchical_update(tree,p_best)
 global bd Aidx
-Aidx=[Aidx,find(p_best==inf)];
+% idx = [Aidx,find(p_best==inf)'];
 
-for i=1:size(tree,1)
-    for j=1:bd^(i-1)
-        if tree(i,j)~=0
-            p_best(tree(i,j))=p_best(tree(i,j)==Aidx);
-        end
-    end
-end
+% for i=1:size(tree,1)
+%     for j=1:bd^(i-1)
+%         if tree(i,j)~=0
+%             p_best(tree(i,j))=p_best(tree(i,j)==idx);
+%         end
+%     end
+% end
 
 updated_tree=zeros(size(tree,1),size(tree,2));
 updated_tree(1,1)=tree(1,1);

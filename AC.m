@@ -1,7 +1,7 @@
 function phi = AC(x,gb)   % ok
 global it itMax
 global AC_CS
-global phi1 phi2 phiMax phiMin %(user defined)
+global phi1 phi2 phiMax phiMin  rand_AC1 %(user defined)
 
     switch AC_CS
         case 0 % cte ------------------------------------------------------
@@ -9,7 +9,7 @@ global phi1 phi2 phiMax phiMin %(user defined)
             phi = [phi1 phi2];
         case 1 % rnd ------------------------------------------------------
             % disp("AC ==> v")
-            phi = rand(1,2).*(phiMax - phiMin) + phiMin;
+            phi = rand_AC1.*(phiMax - phiMin) + phiMin;
         case 2 % time-var -------------------------------------------------
             % disp("AC ==> time-var")
             phi(1) = 2.5 - it/itMax * 2;
