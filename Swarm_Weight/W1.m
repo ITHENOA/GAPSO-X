@@ -1,4 +1,4 @@
-function w1 = inertiaW1(old_w1,gb,x,bound,pop,X,saveIdx)   % abv?
+function w1 = W1(old_w1,gb,x,bound,pop,X,saveIdx)   % abv?
 % need old_w1 : 4=self-regulating , 5=abv 
 % depend on i : 4=self-regulating , 6=desa , 7=rank , 8=success ,
 % 9=convergence | 5=abv

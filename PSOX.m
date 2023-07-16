@@ -33,15 +33,15 @@ for it = 1:itMax
             if inertiaW1CS == 8 || inertiaW1CS == 9 % need previos iteration
                 x.w1 = ini_w1_45;
             else
-                x.w1 = inertiaW1(ini_w1_45,gb,x,bound,pop,[],[]);
+                x.w1 = W1(ini_w1_45,gb,x,bound,pop,[],[]);
             end
         elseif ismember(x.idx,bornidx) && inertiaW1CS == 9
             x.w1 = ini_w1_9born;
         else
-            x.w1 = inertiaW1(ini_w1_45,gb,x,bound,pop,X,saveIdx);
+            x.w1 = W1(ini_w1_45,gb,x,bound,pop,X,saveIdx);
         end
         % w2, w3
-        [x.w2, x.w3] = param_W23(x.w1);
+        [x.w2, x.w3] = W23(x.w1);
         % Perturbation Magnitud (PM)
 
         if it == 1 || ismember(x.idx,bornidx)
@@ -110,7 +110,7 @@ for it = 1:itMax
     
     %%%%%%%%%%%%%%%%%%%%%%%%%% Update Population %%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    pop = populationCS(pop,bound,gb);  % +1 | +1,-1 | -1 | +particlesToAdd
+    pop = POP(pop,bound,gb);  % +1 | +1,-1 | -1 | +particlesToAdd
 
     if numel(deadidx) ~= 0 || numel(bornidx) ~= 0  % have (+ | -)
         % sort idxs
@@ -141,17 +141,6 @@ for it = 1:itMax
             X(i,it+1).pb.fit = pop.pb.fit(i);
         end
     end
-
-    % bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1))
-    % n=floor(numel(Aidx) * .2);
-    % m=floor(numel(Aidx) * .7);
-    % for i = Aidx(1:n)
-    %     m=m+1;
-    %     scatter(X(Aidx(m),it+1).pos(1,1),X(Aidx(m),it+1).pos(1,2))
-    %     [X(Aidx(m),it+1).pos, X(Aidx(m),it+1).fit] = RS(X(i,it+1).pos,bound);
-    %     scatter(X(Aidx(m),it+1).pos(1,1),X(Aidx(m),it+1).pos(1,2),'r')
-    % end
-
 
     bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1))
     if gb.fit(end) < -6.5; break; end

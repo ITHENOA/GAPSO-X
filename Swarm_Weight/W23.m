@@ -1,4 +1,4 @@
-function [w2,w3] = param_W23(w1)   % ok
+function [w2,w3] = W23(w1)   % ok
 global paramW23CS
 global w2_cte w3_cte
 

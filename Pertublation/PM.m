@@ -30,46 +30,24 @@ switch  pmCS2
         % disp("pm ==> success rate")
         % Sc = threshold (user defined)
         % Fc = threshold (user defined)
-
-        if it < max(Sc,Fc)+1
-            sc = it-1;
-            fc = it-1;
-        else
-            sc = Sc;
-            fc = Fc;
-        end
-
-        flagS=1;
-        flagF=1;
-        for i = 1:sc
-            if (gb.fit(it+1-i) == gb.fit(it-i)); flagS=0; break; end
-        end
-        for i = 1:fc
-            if (gb.fit(it+1-i) < gb.fit(it-i)); flagF=0; break; end
-        end
-
-        if flagS 
-            pm = oldPm * 2;
-        elseif flagF
-            pm =  oldPm * .5;
-        else
+        if it < max(Sc,Fc)
             pm = oldPm;
+        else
+            flagS=1;
+            flagF=1;
+            for i = 1:Sc
+                if (gb.fit(it+1-i) == gb.fit(it-i)); flagS=0; break; end
+            end
+            for i = 1:Fc
+                if (gb.fit(it+1-i) < gb.fit(it-i)); flagF=0; break; end
+            end
+    
+            if flagS 
+                pm = oldPm * 2;
+            elseif flagF
+                pm =  oldPm * .5;
+            else
+                pm = oldPm;
+            end
         end
-
-        % flagS=1;
-        % flagF=1;
-        % for i = 1:Sc
-        %     if (gb.fit(it+1-i) == gb.fit(it-i)); flagS=0; break; end
-        % end
-        % for i = 1:Fc
-        %     if (gb.fit(it+1-i) < gb.fit(it-i)); flagF=0; break; end
-        % end
-        % 
-        % if flagS 
-        %     pm = oldPm * 2;
-        % elseif flagF
-        %     pm =  oldPm * .5;
-        % else
-        %     pm = oldPm;
-        % end
 end
