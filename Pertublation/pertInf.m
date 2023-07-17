@@ -1,6 +1,6 @@
 function perted = pertInf(vector,pm) % ok +2
 global prtInfCS
-global lambda bt %(user defined)
+global bt %(user defined)
 
 switch  prtInfCS
     case 0 % None ---------------------------------------------------------
@@ -16,7 +16,7 @@ switch  prtInfCS
     case 2 % levy ---------------------------------------------------------
         perted = zeros(1,size(vector,2));
         for i = 1:size(vector,2)
-            perted(i) = random(makedist('Stable','alpha',lambda,'beta',0,'gam',pm,'delta',pm+vector(i)));
+            perted(i) = random(makedist('Stable','alpha',0.5,'beta',0,'gam',pm,'delta',pm+vector(i)));
         end
 
     case 3 % cauchy -------------------------------------------------------

@@ -1,7 +1,7 @@
 function phi = AC(x,X,gb)   % ok
 global it itMax
 global AC_CS
-global phi1 phi2 phiMax phiMin  %(user defined)
+global phi1 phi2 phi1Max phi1Min phi2Max phi2Min %(user defined)
 
     switch AC_CS
         case 0 % cte ------------------------------------------------------
@@ -9,7 +9,7 @@ global phi1 phi2 phiMax phiMin  %(user defined)
 
         case 1 % rnd ------------------------------------------------------
             if it == 1
-                phi = rand(1,2).*(phiMax - phiMin) + phiMin;
+                phi = rand(1,2).*([phi1Max phi2Max] - [phi1Min phi2Min]) + [phi1Min phi2Min];
             else
                 X(x.idx,it).phi = X(x.idx,it-1).phi;
             end

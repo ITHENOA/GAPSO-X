@@ -1,8 +1,9 @@
 clear;clc;close all;tic
 run('Configuration.m')
 
-global alpha_mtxCS2 inertiaW1CS
+global alpha_mtxCS2 inertiaW1CS pertRndCS prtInfCS inertia_cte
 global it itMax Aidx deadidx bornidx
+global PM_cte 
 
 % Load initialize (pop, TOP, MOI)
 [pop, ini_X, gb, tree, rc] = INITIALIZE(bound,ini_vel);
@@ -26,28 +27,26 @@ for it = 1:itMax
             x = X(i,it);
         end
         % w1
-        if it==3 && i==21
-            i
-        end
         if it == 1
             if inertiaW1CS == 8 || inertiaW1CS == 9 % need previos iteration
-                x.w1 = ini_w1_45;
+                x.w1 = inertia_cte;
             else
-                x.w1 = W1(ini_w1_45,gb,x,bound,pop,[],[]);
+                x.w1 = W1(inertia_cte,gb,x,bound,pop,[],[]);
             end
         elseif ismember(x.idx,bornidx) && inertiaW1CS == 9
-            x.w1 = ini_w1_9born;
+            x.w1 = inertia_cte;
         else
-            x.w1 = W1(ini_w1_45,gb,x,bound,pop,X,saveIdx);
+            x.w1 = W1(inertia_cte,gb,x,bound,pop,X,saveIdx);
         end
         % w2, w3
-        [x.w2, x.w3] = W23(x.w1);
+        [x.w2, x.w3] = W23(X,x);
         % Perturbation Magnitud (PM)
-
-        if it == 1 || ismember(x.idx,bornidx)
-            x.pm = ini_pm_234born;
-        else
-            x.pm = PM(x, X(i,it-1).pm, gb);
+        if prtInfCS ~= 0 || pertRndCS ~= 0
+            if it == 1 || ismember(x.idx,bornidx)
+                x.pm = PM_cte;
+            else
+                x.pm = PM(x, X(i,it-1).pm, gb);
+            end
         end
 
         % Pert_Info
@@ -74,7 +73,11 @@ for it = 1:itMax
         %%%%%%%%%%%%%%%%%%%%% prepare next generation %%%%%%%%%%%%%%%%%%%%%
         % Update Velocity 
         X(i,it+1).v = X(i,it).w1 * X(i,it).v + X(i,it).w2 * X(i,it).dnpp + X(i,it).w3 * X(i,it).prtRnd;
-        
+        if vClampCS = 1
+
+        end
+
+
         % Update Position 
         X(i,it+1).pos = X(i,it).pos + X(i,it+1).v; 
         % check bound
@@ -106,8 +109,9 @@ for it = 1:itMax
     [gb.fit(it+1), id] = min(pop.pb.fit);
     gb.pos(it+1,:) = pop.pb.pos(id,:);
    
-
+    %%%%%%%%%%%%%%%%%%%%%%% unstuck & reinitial %%%%%%%%%%%%%%%%%%%%%%%%%%%
     [pop, X, gb] = stagnation_detection(X,gb);
+    [] = particles_reinitialization();
     
     %%%%%%%%%%%%%%%%%%%%%%%%%% Update Population %%%%%%%%%%%%%%%%%%%%%%%%%%
     
