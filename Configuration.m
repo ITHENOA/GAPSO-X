@@ -102,7 +102,7 @@ global phi1 phi2 phi1Max phi1Min phi2Max phi2Min
 global AC_CS % 0=cte, 1=rnd, 2=time-var, 3=extrapolated
 % -----------------------
 AC_CS = 1; % $ [0 1 2 3]
-% AC0
+% AC0 
 phi1 = 1; % $ [0:2.5]
 phi2 = 1; % $ [0:2.5]
 % AC1
