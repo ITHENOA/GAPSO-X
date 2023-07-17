@@ -32,7 +32,7 @@ particlesToAdd = 5; % $ []  topCS=3 time-varing
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  TOP
 global perc_top5_rcdel1 topTime_counter n_iniNei_top3 n_nei_born_top3 k_top5 bd
-global topCS % 0=ring, 1=full, 2=von 3=rnd, 4=time-var, 5=hierarchical
+global topCS % 0=ring, 1=full, 2=von 3=rnd, 4=hierarchical, 5=time-var
 global rcdelCS2 % 0=main, 1=percentage
 % -----------------------
 topCS = 5; % $ [0 1 2 3 4 5]
@@ -156,6 +156,7 @@ vClampCS = 0;% $
 unstuckCS = 0;% $ 
 reInitial = 0;% $ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+global vmax
 vmax = zeros(1,d);
 for j = 1:d
     vmax(j) = (bound(j,2) - bound(j,1))/2;
