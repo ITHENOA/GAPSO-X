@@ -152,9 +152,9 @@ w3_cte = .5; %  $ [0:1]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% unstuc reini %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global vClampCS unstuckCS reInitial
-vClampCS = 0;% $ 
-unstuckCS = 0;% $ 
-reInitial = 0;% $ 
+vClampCS = 1;% $ 
+unstuckCS = 1;% $ 
+reInitial = 1;% $ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global vmax
 vmax = zeros(1,d);
