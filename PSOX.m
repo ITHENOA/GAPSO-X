@@ -3,7 +3,7 @@ run('Configuration.m')
 
 global alpha_mtxCS2 inertiaW1CS pertRndCS prtInfCS inertia_cte
 global it itMax Aidx deadidx bornidx
-global PM_cte vmax
+global PM_cte 
 
 % Load initialize (pop, TOP, MOI)
 [pop, ini_X, gb, tree, rc] = INITIALIZE(bound,ini_vel);
@@ -41,7 +41,7 @@ for it = 1:itMax
         % w2, w3
         [x.w2, x.w3] = W23(X,x);
         % Perturbation Magnitud (PM)
-        if prtInfCS ~= 0 || pertRndCS ~= 0 || prtInfCS ~= 4
+        if prtInfCS ~= 0 || pertRndCS ~= 0
             if it == 1 || ismember(x.idx,bornidx)
                 x.pm = PM_cte;
             else
@@ -73,8 +73,8 @@ for it = 1:itMax
         %%%%%%%%%%%%%%%%%%%%% prepare next generation %%%%%%%%%%%%%%%%%%%%%
         % Update Velocity 
         X(i,it+1).v = X(i,it).w1 * X(i,it).v + X(i,it).w2 * X(i,it).dnpp + X(i,it).w3 * X(i,it).prtRnd;
-        if vClampCS
-            X(i,it+1).v = velClamp(X(i,it+1).v,vmax);
+        if vClampCS = 1
+
         end
 
 
@@ -110,8 +110,8 @@ for it = 1:itMax
     gb.pos(it+1,:) = pop.pb.pos(id,:);
    
     %%%%%%%%%%%%%%%%%%%%%%% unstuck & reinitial %%%%%%%%%%%%%%%%%%%%%%%%%%%
-    [pop, X, gb] = stagnation_detection(pop,X,gb);
-    [pop,X,gb] = particles_reinitialization(pop,X,gb,bound);
+    [pop, X, gb] = stagnation_detection(X,gb);
+    [] = particles_reinitialization();
     
     %%%%%%%%%%%%%%%%%%%%%%%%%% Update Population %%%%%%%%%%%%%%%%%%%%%%%%%%
     

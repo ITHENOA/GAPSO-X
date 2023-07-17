@@ -1,15 +1,11 @@
-function [pop, X, gb] = stagnation_detection(pop, X, gb)
-global Aidx it vmax
+function [pop, X, gb] = stagnation_detection(X,gb)
+global Aidx it
 global mu unstuckCS
-
 if unstuckCS
     for i = Aidx
         if norm(X(i,it+1).v) + norm(gb.pos(end) - X(i,it+1).pos) < mu
             changeIdx{1} = [changeIdx, i];
             X(i,it+1).v = (2 * rand+eps - 1) * mu;
-            if vClampCS
-                X(i,it+1).v = velClamp(X(i,it+1).v,vmax);
-            end
         end
     end
     
