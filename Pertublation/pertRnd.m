@@ -1,8 +1,8 @@
 function perted = pertRnd(vector,pm)
-global pertRndCS
+global prtRndCS
 global taw delta %(user defined)
 
-switch pertRndCS
+switch prtRndCS
     case 0  % None --------------------------------------------------------
         perted = vector;
 

@@ -3,6 +3,7 @@ global Aidx it vmax
 global mu unstuckCS
 
 if unstuckCS
+    changeIdx{1}=[];
     for i = Aidx
         if norm(X(i,it+1).v) + norm(gb.pos(end) - X(i,it+1).pos) < mu
             changeIdx{1} = [changeIdx, i];

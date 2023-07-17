@@ -3,7 +3,7 @@ function [X,tree,rc]  = TOP(pop,X,tree,rc)
 global Aidx topTime_counter bornidx it deadidx
 global topCS rcdelCS2
 global k_top5 n_iniNei_top3 n_nei_born_top3 perc_top5_rcdel1 %(user defined)
-
+topCS=5
 popSize = pop.size(it);
 switch topCS
     case 0 % ring  --------------------------------------------------------
@@ -109,7 +109,6 @@ switch topCS
                 rc{3} = [[rc{3}] ; Aidx'];
             end 
             rc{1} = [rc{2} rc{3}];
-            rc{2}=[];rc{3}=[];
             rc{1} = rcFixer(rc{1});
             
         else % it > 1
@@ -118,9 +117,9 @@ switch topCS
 
             % if(-) : update rc
             if numel(deadidx)~=0
-                rc{1}(logical(sum(rc{1} == deadidx,2)),:)=[]; % remove remainConnections include deadidx
-                rc{1}(logical(prod(rc{1} == [deadidx+1 deadidx-1],2)),:)=[]; % remove [deadidx+1 deadidx-1] connection
-                rc{1}(logical(prod(rc{1} == [deadidx-1 deadidx+1],2)),:)=[]; % because ring make them side by side 
+                rc(logical(sum(rc == deadidx,2)),:)=[]; % remove remainConnections include deadidx
+                rc(logical(prod(rc == [deadidx+1 deadidx-1],2)),:)=[]; % remove [deadidx+1 deadidx-1] connection
+                rc(logical(prod(rc == [deadidx-1 deadidx+1],2)),:)=[]; % because ring make them side by side 
             end
 
             % (if) dead exist remove and update (else) update
@@ -160,24 +159,24 @@ switch topCS
             %     end
             % end 
                        
-            if size(rc{1},1) ~= 0
-                rc{1}(find(prod(rc{1} == [min(min(rc{1})) max(max(rc{1}))] | rc{1} == [max(max(rc{1})) min(min(rc{1}))],2)),:) = [];
+            if size(rc,1) ~= 0
+                rc(find(prod(rc == [min(min(rc)) max(max(rc))] | rc == [max(max(rc)) min(min(rc))],2)),:) = [];
                 % every k iteration remove one random particle
                 if rem(it,k_top5) == 0
                     if rcdelCS2 == 0
                         topTime_counter = topTime_counter + 1;
                         n_del = popSize - topTime_counter;
-                        if n_del > size(rc{1},1); n_del = size(rc{1},1); end
+                        if n_del > size(rc,1); n_del = size(rc,1); end
                     elseif rcdelCS2 == 1
-                        n_del = floor(size(rc{1},1) * perc_top5_rcdel1);    % remove 40% of connections                     
-                        if size(rc{1},1) == 1; n_del = 1; end                  
+                        n_del = floor(size(rc,1) * perc_top5_rcdel1);    % remove 40% of connections                     
+                        if size(rc,1) == 1; n_del = 1; end                  
                     else
                         error("rcdelCS2 = {0,1}")
                     end
-                    rndp = randperm(size(rc{1},1),n_del);
-                    del_connection = rc{1}(rndp,:);
-                    rc{1} = setdiff(rc{1},del_connection,'rows'); % rc ==> output
-                    if size(rc{1},1) == 0; disp("no more allowed connection"); end
+                    rndp = randperm(size(rc,1),n_del);
+                    del_connection = rc(rndp,:);
+                    rc = setdiff(rc,del_connection,'rows'); % rc ==> output
+                    if size(rc,1) == 0; disp("no more allowed connection"); end
                     for i = 1:n_del
                         Nidx1 = X(del_connection(i,1),it).N.idx;
                         Nidx2 = X(del_connection(i,2),it).N.idx;
@@ -201,7 +200,7 @@ switch topCS
                     end
                     X(i,it).N.idx = unique([X(i,it).N.idx, neighbors]);
                     for j = neighbors
-                        rc{1} = [rc{1} ; [i j]]; % rc = [rc ; [i j]]; % update rc
+                        rc = [rc ; [i j]]; % rc = [rc ; [i j]]; % update rc
                         X(j,it).N.idx = [X(j,it).N.idx i];
                     end
                 end

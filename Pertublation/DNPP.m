@@ -1,5 +1,5 @@
 function dnpp = DNPP(X, x, pop, saveIdx)
-global it d
+global it d 
 global dnppCS moiCS rand_cauchy_dnpp
 
 for k = unique([x.I.idx, x.idx]); S(k) = 1; end
@@ -17,7 +17,6 @@ switch dnppCS
         end 
 
     case 1  % spherical ---------------------------------------------------
-        P = 0;
         L = x.pos;
         P = x.pos + x.phi(1) * S(k) * Mtx((x.prtInfo - x.pos), pop, saveIdx); 
         for k = setdiff(x.I.idx, x.idx)
@@ -25,7 +24,8 @@ switch dnppCS
         end 
         C = (x.pos + L + P)/3;
         R = norm(C - x.pos);
-        H = hipersphericalDist(C,R,d);
+        % H = hipersphericalDist(C,R,d);
+        H = HipersphericalDist(C,R,d);
         dnpp = H - x.pos;
 
     case 2  % standard ----------------------------------------------------
@@ -42,6 +42,7 @@ switch dnppCS
             q = normrnd(c,r);
             dnpp = dnpp + q - x.pos;
         end
+        
 
     case 4  % discrete ----------------------------------------------------
         nu = randi([0 1]); % U{0,1}
@@ -64,4 +65,5 @@ switch dnppCS
             dnpp = dnpp + q - x.pos;
         end
 end
+% dnpp = dnpp/numel(x.I.idx);
         

@@ -1,5 +1,5 @@
 function phi = AC(x,X,gb)   % ok
-global it itMax bornidx
+global it itMax
 global AC_CS
 global phi1 phi2 phi1Max phi1Min phi2Max phi2Min %(user defined)
 
@@ -8,7 +8,7 @@ global phi1 phi2 phi1Max phi1Min phi2Max phi2Min %(user defined)
             phi = [phi1 phi2];
 
         case 1 % rnd ------------------------------------------------------
-            if it == 1 || ismember(x.idx,bornidx)
+            if it == 1 ||
                 phi = rand(1,2).*([phi1Max phi2Max] - [phi1Min phi2Min]) + [phi1Min phi2Min];
             else
                 phi = X(x.idx,it-1).phi;

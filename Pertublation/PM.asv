@@ -1,5 +1,6 @@
-function pm = PM(pmCS,PM_cte,e,m,Sc,Fc,x,oldPm,gb)
-global it
+function pm = PM(x,oldPm,gb)
+global pmCS it
+global PMI_cte PMR_cte eR eI mR mI ScR ScI FcR FcI %(user defined)
 
 switch pmCS
     case 1 % cte ----------------------------------------------------------

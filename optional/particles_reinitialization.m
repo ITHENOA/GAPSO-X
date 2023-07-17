@@ -1,5 +1,5 @@
 function  [pop,X,gb] = particles_reinitialization(pop,X,gb,bound)
-global d Aidx it
+global d Aidx it reInitial
 
 if reInitial && all(std(pop.pb.pos,1) < 0.001)
     for i = Aidx
@@ -11,6 +11,7 @@ if reInitial && all(std(pop.pb.pos,1) < 0.001)
             end
         end
         if change
+            X(i,it+1).pos = posClamp(X(i,it+1).pos,bound);
             X(i,it+1).fit = f(X(i,it+1).pos);
             pop.pos(i,:,it+1) = X(i,it+1).pos;
             pop.fit(i,it+1) = X(i,it+1).fit;

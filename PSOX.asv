@@ -21,26 +21,26 @@ for it = 1:itMax
             x = X(i,it);
             % w1
             if ismember(x.idx,bornidx) && inertiaW1CS == 9
-                x.w1 = inertia_cte;
+                X(i,it).w1 = inertia_cte;
             else
-                x.w1 = W1(inertia_cte,gb,x,bound,pop,X,saveIdx);
+                X(i,it).w1 = W1(inertia_cte,gb,X(i,it),bound,pop,X,saveIdx);
             end
             % w2, w3
-            [x.w2, x.w3] = W23(X,x);
+            [X(i,it).w2, X(i,it).w3] = W23(X,X(i,it));
             % phi
-            x.phi = AC(x, X, gb);
-            % pm & PrtRnd
+            X(i,it).phi = AC(X(i,it), X, gb);
+            % pm & Pert-Rand
             if prtRndCS ~= 0
-                if ismember(x.idx,bornidx) % it == 1 || 
-                    x.pmR = PMR_cte;
+                if ismember(X(i,it).idx,bornidx) % it == 1 || 
+                    X(i,it).pmR = PMR_cte;
                 else
-                    x.pmR = PM(pmRCS,PMR_cte,eR,mR,ScR,FcR,x,X(i,it-1).pmR,gb);
+                    X(i,it).pmR = PM(pmRCS,PMR_cte,eR,mR,ScR,FcR,X(i,it),X(i,it-1).pmR,gb);
                 end
-                x.prtRnd = pertRnd(x.pos, x.pmR);
+                X(i,it).prtRnd = pertRnd(X(i,it).pos, X(i,it).pmR);
             else
-                x.prtRnd = pertRnd(x.pos, []);
+                X(i,it).prtRnd = pertRnd(X(i,it).pos, []);
             end
-            % Pert_Info
+            % pm & Pert_Info
             if prtInfCS ~= 0 || prtInfCS ~= 4
                 if ismember(x.idx,bornidx) % it == 1 || 
                     x.pmI = PMI_cte;
@@ -135,11 +135,11 @@ for it = 1:itMax
         end
     end
 
-    % act = bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1));
+    % bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1))
     if gb.fit(end) < -6.5; break; end
 end % END it
 toc
 disp("END")
 disp("f_counter = "+num2str(f_counter))
 disp("Final gb = "+num2str(gb.fit(end)))
-% disp("Actual : "+num2str(act))
+disp("Actual : -6.5367")

@@ -11,9 +11,13 @@ switch alpha_mtxCS2
         alpha = normrnd(0, sigma_alpha);
 
     case 2 % adaptive -----------------------------------------------------
-        % ir: is the number of improved particles in the last iteration divided by the population size.
-        repeat_idx = intersect(Aidx,saveIdx{it-1});
-        ir = sum([pop.fit(repeat_idx,it)] < [pop.fit(repeat_idx,it-1)]) / numel(repeat_idx);
-        sigma_alpha2 = z_alpha * ir/sqrt(d) + ro_alpha;
-        alpha = normrnd(0, sigma_alpha2);
+        if it==1
+             alpha = ini_alpha_mtx;
+        else
+            % ir: is the number of improved particles in the last iteration divided by the population size.
+            repeat_idx = intersect(Aidx,saveIdx{it-1});
+            ir = sum([pop.fit(repeat_idx,it)] < [pop.fit(repeat_idx,it-1)]) / numel(repeat_idx);
+            sigma_alpha2 = z_alpha * ir/sqrt(d) + ro_alpha;
+            alpha = normrnd(0, sigma_alpha2);
+        end
 end

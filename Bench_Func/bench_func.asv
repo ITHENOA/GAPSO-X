@@ -25,7 +25,7 @@ for i = 1:numel(X1)
     Z(i) = f([X1(i), X2(i)]);
 end
 act = min(min(Z));
-% 2D
+% 
 subplot(121); 
 contourf(X1, X2, Z);
 hold on
@@ -33,7 +33,7 @@ scatter(pos(:,1),pos(:,2),'MarkerEdgeColor',...
     'k','MarkerFaceColor',[0 .75 .75])
 title("it = "+num2str(it)+"  (gb = "+num2str(gb(end))+"/"+num2str(act)+")"+"  popSize = "+num2str(sizee))
 hold off
-% 3D
+
 subplot(122); 
 mesh(X1,X2,Z)
 hold on
