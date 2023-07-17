@@ -1,10 +1,9 @@
 function pm = PM(x,oldPm,gb)
-global pmCS2 it
+global pmCS it
 global PM_cte e m Sc Fc %(user defined)
 
-switch  pmCS2
+switch  pmCS
     case 1 % cte ----------------------------------------------------------
-        % disp("pm ==> cte")
         pm = PM_cte;
         
     case 2 % euclidean
@@ -17,7 +16,6 @@ switch  pmCS2
         end
 
     case 3 % obj.func -----------------------------------------------------
-        % disp("pm ==> obj.func")
         % m = (0,1]
         obj_distance = (x.lb.fit - x.fit)/x.lb.fit;
         if obj_distance == 0
@@ -27,7 +25,6 @@ switch  pmCS2
         end
 
     case 4 % success rate -------------------------------------------------
-        % disp("pm ==> success rate")
         % Sc = threshold (user defined)
         % Fc = threshold (user defined)
         if it < max(Sc,Fc)

@@ -113,6 +113,7 @@ phi2 = 1; % [0:2.5]
 % AC1
 phiMax = 0; % [phi1Max, phi2Max] [0:2.5, 0:2.5]
 phiMin = 2.5; % [phi1Min, phi2Min] [0:2.5, 0:2.5]
+rand_AC1 = rand(1,2); % bara hame zare ha ye random ???
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PERT-RAND %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  PRT-R
 global taw delta

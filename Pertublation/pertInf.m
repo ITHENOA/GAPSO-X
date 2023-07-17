@@ -1,8 +1,8 @@
 function perted = pertInf(vector,pm) % ok +2
-global pertInfCS
+global prtInfCS
 global lambda bt %(user defined)
 
-switch  pertInfCS
+switch  prtInfCS
     case 0 % None ---------------------------------------------------------
         perted = vector;
 

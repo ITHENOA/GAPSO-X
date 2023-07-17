@@ -4,28 +4,23 @@ global MtxCS
 
 switch MtxCS
     case 0 % None ---------------------------------------------------------
-        % disp("mtx ==> None")
         outVector = vector;
         
     case 1 % rnd diagonal -------------------------------------------------
-        % disp("mtx ==> rnd diagonal")
         mtx = rand(d,1).*eye(d);
         outVector = vector * mtx;
 
     case 2 % rnd linear ---------------------------------------------------
-        % disp("mtx ==> rnd linear")
         mtx = rand(1,1).*eye(d);
         outVector = vector * mtx;
 
     case 3 % exp map ------------------------------------------------------
-        % disp("mtx ==> exp map")
         alpha = alpha_mtx(pop, saveIdx); 
         A = rand(d)-0.5;
         mtx = eye(d) + (alpha * pi / 180 * (A - A'));
         outVector = vector * mtx;
 
     case 4 % Eul rot ------------------------------------------------------
-        % disp("mtx ==> Eul rot")
         alpha = alpha_mtx(pop, saveIdx);
         plain = randperm(d,2);
         vector(plain(1)) = vector(plain(1)) * cosd(alpha) - vector(plain(2)) * sind(alpha);
@@ -33,7 +28,6 @@ switch MtxCS
         outVector = vector;
 
     case 5 % Eul rot_all --------------------------------------------------
-        % disp("mtx ==> Eul rot_all")
         alpha = alpha_mtx(pop, saveIdx);
         for i=1:d-1
             for j = i+1:d
@@ -44,7 +38,6 @@ switch MtxCS
         outVector = vector;
 
     case 6 % increasing group based ---------------------------------------
-        % disp("mtx ==> increasing group based")
         gt = round((d-1)/(itMax - 1) * (it-1) +1);
         rand_group = rand(gt,1);
         rnd_idx = randperm(d);

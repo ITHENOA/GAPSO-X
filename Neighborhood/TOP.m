@@ -2,7 +2,7 @@ function [X,tree,rc]  = TOP(pop,X,tree,rc)
 
 global Aidx topTime_counter bornidx it deadidx
 global topCS rcdelCS2
-global k_topTime n_iniNei_top3 n_nei_born_top3 %(user defined)
+global k_top5 n_iniNei_top3 n_nei_born_top3 perc_top5_rcdel1 %(user defined)
 
 popSize = pop.size(it);
 switch topCS
@@ -162,13 +162,13 @@ switch topCS
             if size(rc,1) ~= 0
                 rc(find(prod(rc == [min(min(rc)) max(max(rc))] | rc == [max(max(rc)) min(min(rc))],2)),:) = [];
                 % every k iteration remove one random particle
-                if rem(it,k_topTime) == 0
+                if rem(it,k_top5) == 0
                     if rcdelCS2 == 0
                         topTime_counter = topTime_counter + 1;
                         n_del = popSize - topTime_counter;
                         if n_del > size(rc,1); n_del = size(rc,1); end
                     elseif rcdelCS2 == 1
-                        n_del = floor(size(rc,1) * .4);    % remove 40% of connections                     
+                        n_del = floor(size(rc,1) * perc_top5_rcdel1);    % remove 40% of connections                     
                         if size(rc,1) == 1; n_del = 1; end                  
                     else
                         error("rcdelCS2 = {0,1}")
