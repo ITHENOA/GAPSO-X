@@ -178,7 +178,6 @@ for j = 1:d
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 if bd~=inf && popCS~=0 && bd>initialPopSize; bd=initialPopSize; end
-
 if AC_CS==1
     if phi1Min>phi1Max
         tmp=phi1Min;
@@ -200,9 +199,10 @@ if AC_CS==1
     end
 end
 
+if (bd~=inf && bd>finalPopSize); bd=
 
 if initialPopSize > finalPopSize ||  (initialPopSize ~= inf && particles < initialPopSize)...
         || (bd~=inf && bd>finalPopSize) || (particlesToAdd~=inf && particlesToAdd>finalPopSize-initialPopSize)...
-        || (popCS==1 && (particles<initialPopSize || particles>finalPopSize))
+        || (phi1Min>phi1Max) || (phi2Min>phi2Max) || (popCS==1 && (particles<initialPopSize || particles>finalPopSize))
     flag=1;
 end
