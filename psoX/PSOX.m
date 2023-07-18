@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream:psoX/PSOX.m
 % clear;clc;close all;tic
 function final=PSOX(par,input)
 
+=======
+
+function finalGB=PSOX(par,input)
+input=K2H(par,input);
+>>>>>>> Stashed changes:PSOX.m
 run('Configuration.m')
 
 global inertiaW1CS prtRndCS prtInfCS inertia_cte 
