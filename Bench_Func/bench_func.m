@@ -1,10 +1,10 @@
-function act = bench_func(pos,gb,sizee)
+% function act = bench_func(pos,gb,sizee)
 % clear
 % clc
 global it
 % f = @(x) 3.*(1-x(:,1)).^2.*exp(-(x(:,1).^2)-(x(:,2)+1).^2)-10.*(x(:,1)./5-x(:,1).^3-x(:,2).^5).*exp(-x(:,1).^2-x(:,2).^2)-1./3.*exp(-(x(:,1)+1).^2-x(:,2).^2);
 % bound = [-3 3 ; -4 4];
-bound = [-10 10 ; -10 10];
+bound = [-100 100 ; -100 100];
 
 % n_random_sample = 20;
 % x1 = -3 + 6*rand(n_random_sample, 1);

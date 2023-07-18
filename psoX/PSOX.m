@@ -12,9 +12,9 @@ if flag
     return
 end
 
-logfile = fopen('PSOX_log.text','a');
-try
-    currentInfo(logfile)
+% logfile = fopen('PSOX_log.text','a');
+% try
+%     currentInfo(logfile)
     
     % Load initialize (pop, TOP, MOI)
     [pop, X, gb, tree, rc] = INITIALIZE(bound,ini_vel);
@@ -151,29 +151,30 @@ try
             end
         end
     
-        % act = bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1));
+        act = bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1));
         % if gb.fit(end) < -6.5; break; end
     end % END it
     final = gb.fit(end);
     time=toc;
-    fprintf(logfile,'\n--------------- SUCCESS --------------\n');
-    fprintf(logfile,'Global-Best = %f \nf_counter = %d \n',gb.fit(end),f_counter);
-    fprintf(logfile,'time = %d \n',time/60);
-catch err
-    fprintf(logfile,'\n--------------- ERROR --------------\n');
-    fprintf(logfile,'%s\n',err.message);
-    fprintf(logfile, 'Stack trace:\n');
-    for k = 1:length(err.stack)
-        fprintf(logfile, 'File: %s\n', err.stack(k).file);
-        fprintf(logfile, 'Function: %s\n', err.stack(k).name);
-        fprintf(logfile, 'Line: %d\n\n', err.stack(k).line);
-    end
-    fprintf(logfile, '\n');
-    final=inf;
-    f_counter=inf;
-end
-fprintf(logfile,'\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n');
-fclose(logfile);
+    
+%     fprintf(logfile,'\n--------------- SUCCESS --------------\n');
+%     fprintf(logfile,'Global-Best = %f \nf_counter = %d \n',gb.fit(end),f_counter);
+%     fprintf(logfile,'time = %d \n',time/60);
+% catch err
+%     fprintf(logfile,'\n--------------- ERROR --------------\n');
+%     fprintf(logfile,'%s\n',err.message);
+%     fprintf(logfile, 'Stack trace:\n');
+%     for k = 1:length(err.stack)
+%         fprintf(logfile, 'File: %s\n', err.stack(k).file);
+%         fprintf(logfile, 'Function: %s\n', err.stack(k).name);
+%         fprintf(logfile, 'Line: %d\n\n', err.stack(k).line);
+%     end
+%     fprintf(logfile, '\n');
+%     final=inf;
+%     f_counter=inf;
+% end
+% fprintf(logfile,'\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n');
+% fclose(logfile);
 
 
 % disp("END")
