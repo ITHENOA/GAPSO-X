@@ -1,8 +1,8 @@
-function w1 = W1(old_w1,gb,x,bound,pop,X,saveIdx)   % abv?
+function w1 = W1(old_w1,gb,x,bound,pop,X)   % abv?
 % need old_w1 : 4=self-regulating , 5=abv 
 % depend on i : 4=self-regulating , 6=desa , 7=rank , 8=success ,
 % 9=convergence | 5=abv
-global itMax it d Aidx
+global itMax it d Aidx repeatedPOP
 global inertiaW1CS
 global inertia_cte w1Max w1Min nu a_w1_cb b_w1_cb lambda_w1_abv
 
@@ -46,14 +46,13 @@ switch inertiaW1CS
         w1 = w1Max - (w1Max-w1Min) * rank/pop.size(it);
 
     case 8 % success-based ------------------------------------------------
-        repeated_idx = intersect(Aidx,saveIdx{it-1});
         sumS=0;
-        for r = repeated_idx
+        for r = repeatedPOP
             if X(r,it).pb.fit < X(r,it-1).pb.fit
                 sumS=sumS+1;
             end
         end
-        w1 = w1Min + (w1Max - w1Min) * sumS/numel(repeated_idx);
+        w1 = w1Min + (w1Max - w1Min) * sumS/numel(repeatedPOP);
          
     case 9 % convergence-based (cb) ---------------------------------------
         % fpp = X(x.idx,it-1).pb.fit - X(x.idx,it).pb.fit;
@@ -70,13 +69,12 @@ switch inertiaW1CS
         % end
         % w1 = 1 - abs((a_w1_cb-C)/(1+D)/(1+b_w1_cb));
         % 
-        repeated_idx = intersect(Aidx,saveIdx{it-1});
         sumS=0;
-        for r = repeated_idx
+        for r = repeatedPOP
             if X(r,it).pb.fit < X(r,it-1).pb.fit
                 sumS=sumS+1;
             end
         end
-        w1 = w1Min + (w1Max - w1Min) * sumS/numel(repeated_idx);
+        w1 = w1Min + (w1Max - w1Min) * sumS/numel(repeatedPOP);
 
 end

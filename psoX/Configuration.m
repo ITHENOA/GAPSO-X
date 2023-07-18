@@ -1,14 +1,12 @@
-function Configuration(par,input,bound)
+function flag = Configuration(par,input,bound)
 % rng(1)
-
+flag=0;
 global itMax f_counter best d
 
 % general
-itMax = 100;
+itMax = 50;
 f_counter = 0;
 best = 1;
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% POP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% POP
 global finalPopSize particles initialPopSize popTViterations particlesToAdd
@@ -176,4 +174,10 @@ global vmax
 vmax = zeros(1,d);
 for j = 1:d
     vmax(j) = (bound(j,2) - bound(j,1))/2;
+end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+if initialPopSize > finalPopSize ||  (initialPopSize ~= inf && particles < initialPopSize)...
+        || (bd~=inf && bd>finalPopSize) || (particlesToAdd~=inf && particlesToAdd>finalPopSize-initialPopSize)...
+        || (phi1Min>phi1Max) || (phi2Min>phi2Max) || (popCS==1 && (particles<initialPopSize || particles>finalPopSize))
+    flag=1;
 end
