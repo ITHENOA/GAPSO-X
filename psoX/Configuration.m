@@ -177,8 +177,32 @@ for j = 1:d
     vmax(j) = (bound(j,2) - bound(j,1))/2;
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+if bd~=inf && popCS~=0 && bd>initialPopSize; bd=initialPopSize; end
+
+if AC_CS==1
+    if phi1Min>phi1Max
+        tmp=phi1Min;
+        phi1Min=phi1Max;
+        phi1Max=tmp;
+    end
+    if phi2Min>phi2Max
+        tmp=phi2Min;
+        phi2Min=phi2Max;
+        phi2Max=tmp;
+    end
+    if phi1Min==phi1Max
+        phi1Min=.5;
+        phi1Max=2.5;
+    end
+    if phi2Min==phi2Max
+        phi2Min=.5;
+        phi2Max=2.5;
+    end
+end
+
+
 if initialPopSize > finalPopSize ||  (initialPopSize ~= inf && particles < initialPopSize)...
         || (bd~=inf && bd>finalPopSize) || (particlesToAdd~=inf && particlesToAdd>finalPopSize-initialPopSize)...
-        || (phi1Min>phi1Max) || (phi2Min>phi2Max) || (popCS==1 && (particles<initialPopSize || particles>finalPopSize))
+        || (popCS==1 && (particles<initialPopSize || particles>finalPopSize))
     flag=1;
 end
