@@ -64,7 +64,7 @@ for it=1:max_it
     else
         best.fit(it+1)=best.fit(it);
         best.index(it+1)=best.index(it);
-        best.pos(it+1,:)=best.pos(it,:);
+            best.pos(it+1,:)=best.pos(it,:);
     end
 end
 
