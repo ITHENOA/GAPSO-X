@@ -1,17 +1,10 @@
-% function [final,time] = PSOX(par,input)
-% bound = [-3 3;-4 4];
-% Configuration(par,input,bound)
-% run('Configuration.m')
-clear;clc;close all
+function [final,time] = PSOX(par,input)
 tic
-
 global inertiaW1CS prtRndCS prtInfCS inertia_cte bound
 global it itMax Aidx deadidx bornidx alpha
 global PMI_cte vmax PMR_cte pmICS pmRCS vClampCS
 global eI mI ScI FcI eR mR ScR FcR f_counter repeatedPOP MtxCS
 ini_vel = 0;
-
-load('for_test.mat');
 Configuration(par,input,bound)
 if flag
     final=inf;
@@ -22,6 +15,7 @@ end
 logfile = fopen('PSOX_log.text','a');
 try
     currentInfo(logfile)
+    
     % Load initialize (pop, TOP, MOI)
     [pop, X, gb, tree, rc] = INITIALIZE(bound,ini_vel);
     % saveIdx = cell(1,itMax);

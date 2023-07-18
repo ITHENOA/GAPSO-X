@@ -99,3 +99,408 @@ Function: Top_Floor
 Line: 37
 
 
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-random 
+topCS 
+    time-var 
+        rcdelCS2 
+moiCS 
+    rnd 
+dnppCS 
+    gaussian 
+prtInfCS 
+    None 
+pmICS 
+pmRCS 
+    obj.func 
+MtxCS 
+    exp-map 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    double exponential self adaptive 
+paramW2CS 
+    cte 
+paramW3CS 
+    rnd 
+vClampCS 
+    use 
+            vClampCS 
+            random between bound 
+unstuckCS 
+    dont use 
+reInitial 
+    dont use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=154 
+initialPopSize=4 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=3 
+popCS=2 
+pIntitTypeCS2=0 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=5 
+rcdelCS2=3 
+moiCS=3 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+topCS=5 
+rcdelCS2=3 
+moiCS=3 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+bt=1 
+prtInfCS=0 
+PMI_cte=Inf 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=1.000000e-01 
+eR=Inf 
+mR=6.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=0 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=3.323004e+01 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=7.133333e-01 
+phi1Min=1.326667e+00 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=7.133333e-01 
+phi1Min=1.326667e+00 
+phi2Max=1.480000e+00 
+phi2Min=1.710000e+00 
+AC_CS=3 
+taw=8.000000e-01 
+delta=8.000000e-01 
+prtRndCS=2 
+inertia_cte=Inf 
+w1Max=Inf 
+w1Min=Inf 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=6 
+w2_cte=5.816667e-01 
+w3_cte=Inf 
+paramW2CS=2 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=1 
+unstuckCS=0 
+reInitial=0 
+vmax=10 
+paramW2CS=10 
+paramW3CS=
+---------------------
+
+--------------- ERROR --------------
+Output argument "pm" (and possibly others) not assigned a value in the execution with "PM" function.
+Stack trace:
+File: C:\Users\hojja\Desktop\psox\psoX\PSOX.m
+Function: PSOX
+Line: 59
+
+File: C:\Users\hojja\Desktop\psox\second floor\second_floor.m
+Function: second_floor
+Line: 53
+
+File: C:\Users\hojja\Desktop\psox\first floor\Top_Floor.m
+Function: Top_Floor
+Line: 35
+
+
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-random 
+topCS 
+    time-var 
+        rcdelCS2 
+moiCS 
+    rnd 
+dnppCS 
+    gaussian 
+prtInfCS 
+    None 
+pmICS 
+pmRCS 
+    obj.func 
+MtxCS 
+    exp-map 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    double exponential self adaptive 
+paramW2CS 
+    cte 
+paramW3CS 
+    rnd 
+vClampCS 
+    use 
+            vClampCS 
+            random between bound 
+unstuckCS 
+    dont use 
+reInitial 
+    dont use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=76 
+initialPopSize=8 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=6 
+popCS=2 
+pIntitTypeCS2=0 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=5 
+rcdelCS2=3 
+moiCS=3 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+topCS=5 
+rcdelCS2=3 
+moiCS=3 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+bt=1 
+prtInfCS=0 
+PMI_cte=Inf 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=3.000000e-01 
+eR=Inf 
+mR=2.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=0 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=2.268150e+01 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=1.633333e+00 
+phi1Min=2.246667e+00 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=1.633333e+00 
+phi1Min=2.246667e+00 
+phi2Max=1.250000e+00 
+phi2Min=1.556667e+00 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=2 
+inertia_cte=Inf 
+w1Max=Inf 
+w1Min=Inf 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=6 
+w2_cte=6.122917e-01 
+w3_cte=Inf 
+paramW2CS=2 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=1 
+unstuckCS=0 
+reInitial=0 
+vmax=10 
+paramW2CS=10 
+paramW3CS=
+---------------------
+
+--------------- ERROR --------------
+Output argument "pm" (and possibly others) not assigned a value in the execution with "PM" function.
+Stack trace:
+File: C:\Users\hojja\Desktop\psox\psoX\PSOX.m
+Function: PSOX
+Line: 59
+
+File: C:\Users\hojja\Desktop\psox\second floor\second_floor.m
+Function: second_floor
+Line: 53
+
+File: C:\Users\hojja\Desktop\psox\first floor\Top_Floor.m
+Function: Top_Floor
+Line: 35
+
+
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+moiCS 
+    full 
+dnppCS 
+    standard 
+prtInfCS 
+    uniform 
+pmICS 
+    success rate 
+pmRCS 
+    obj.func 
+MtxCS 
+    exp-map 
+        alpha_mtxCS2 
+            adaptive 
+AC_CS 
+    rnd 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    convergence based 
+paramW2CS 
+    rnd 
+paramW3CS 
+    rnd 
+vClampCS 
+    dont use 
+unstuckCS 
+    use 
+reInitial 
+    dont use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=166 
+initialPopSize=2 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=4 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=5 
+rcdelCS2=2 
+moiCS=1 
+rand_cauchy_dnpp=Inf 
+dnppCS=2 
+topCS=5 
+rcdelCS2=2 
+moiCS=1 
+rand_cauchy_dnpp=Inf 
+dnppCS=2 
+bt=1 
+prtInfCS=4 
+PMI_cte=Inf 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=7.000000e-01 
+eR=Inf 
+mR=2.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=4 
+pmRCS=3 
+ini_alpha_mtx=26 
+sigma_alpha=Inf 
+z_alpha=32 
+ro_alpha=9.612903e-02 
+MtxCS=3 
+alpha_mtxCS2=2 
+phi1=Inf 
+phi2=Inf 
+phi1Max=2.093333e+00 
+phi1Min=1.633333e+00 
+z_alpha=32 
+ro_alpha=9.612903e-02 
+MtxCS=3 
+alpha_mtxCS2=2 
+phi1=Inf 
+phi2=Inf 
+phi1Max=2.093333e+00 
+phi1Min=1.633333e+00 
+phi2Max=2.323333e+00 
+phi2Min=5.600000e-01 
+AC_CS=1 
+taw=1 
+delta=1 
+prtRndCS=1 
+inertia_cte=4.980645e-01 
+w1Max=Inf 
+w1Min=Inf 
+nu=Inf 
+a_w1_cb=8.064516e-01 
+b_w1_cb=4.387097e-01 
+lambda_w1_abv=Inf 
+inertiaW1CS=9 
+w2_cte=Inf 
+w3_cte=Inf 
+paramW2CS=1 
+paramW3CS=1 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=1 
+reInitial=0 
+vmax=10 
+paramW2CS=10 
+paramW3CS=
+---------------------
