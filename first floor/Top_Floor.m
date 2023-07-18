@@ -18,10 +18,12 @@ component(13,1:2)=[0 1];  %unstuckCS
 component(14,1:2)=[0 1];  %reInitial
 
 npop=size(component,1);    %number of particels
-max_it=50;
+max_it=10;
 %% initialzation
 par.pos=zeros(npop,size(component,1),max_it+1);
 par.fit=zeros(npop,max_it+1);
+par.pos2=zeros(14,7,npop,max_it+1);
+par.fc=zeros(npop,max_it+1);
 component_size=sum(component~=inf,2);
 for i=1:npop
     flag=1;
@@ -32,7 +34,7 @@ for i=1:npop
         flag=answer_check(par.pos(i,:,1));
         if flag;    break;  end
     end
-    par.fit(i,1)=second_floor(par.pos(i,:,1));
+    [par.fit(i,1),par.pos2(:,:,i,1),par.fc(i,1)]=second_floor(par.pos(i,:,1));
     % par.fit(i,1)=rand;
 end
 best.fit=zeros(1,max_it+1);
@@ -53,7 +55,7 @@ for it=1:max_it
             flag=answer_check(par.pos(i,:,it+1));
             if flag;    break;  end
         end
-        par.fit(i,it+1)=second_floor(par.pos(i,:,it+1));
+        [par.fit(i,it+1),par.pos2(:,:,i,it+1),par.fc(i,it+1)]=second_floor(par.pos(i,:,it+1));
         % par.fit(i,it+1)=rand;
 
     end

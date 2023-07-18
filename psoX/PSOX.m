@@ -1,4 +1,4 @@
-function [final,time] = PSOX(par,input)
+function [final,f_counter] = PSOX(par,input)
 tic
 global inertiaW1CS prtRndCS prtInfCS inertia_cte bound
 global it itMax Aidx deadidx bornidx alpha
@@ -8,7 +8,7 @@ ini_vel = 0;
 Configuration(par,input,bound)
 if flag
     final=inf;
-    time=inf;
+    f_counter=inf;
     return
 end
 
@@ -170,7 +170,7 @@ catch err
     end
     fprintf(logfile, '\n');
     final=inf;
-    time=inf;
+    f_counter=inf;
 end
 fclose(logfile);
 % disp("END")
