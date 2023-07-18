@@ -22,16 +22,14 @@ if par(1)<3;popcs=par(1);
 else; popcs=2;end
 popCS = popcs; % $ [0 1 2]
 % pop0 1
-particles = input(input(1:2,1,1)~=inf,1,1); %  $ 
+particles = input(1,1); %  $ 
 % pop 1
-checkvec=input(2:4,3,1);
-finalPopSize = checkvec(checkvec~=inf); % $ [2:200]
-checkvec=[input(2,2,1),input(3,1,1),input(4,1,1)];
-initialPopSize = checkvec(checkvec~=inf); %  $ 
-popTViterations = input(2,4,1); % $ int[0:100]
+finalPopSize = input(1,3); % $ [2:200]
+initialPopSize = input(1,2); %  $ 
+popTViterations = input(1,4); % $ int[0:100]
 % pop2
 pIntitTypeCS2 = rem(par(1),10); % $ [0 1] (popCS=2)
-particlesToAdd = input(input(3:4,2,1)~=inf,1,1); % $ []  topCS=3 time-varing
+particlesToAdd = input(1,5); % $ []  topCS=3 time-varing
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  TOP
 global perc_top5_rcdel1 topTime_counter n_iniNei_top3 n_nei_born_top3 k_top5 bd
@@ -45,9 +43,9 @@ topCS = topcs; % $ [0 1 2 3 4 5]
 n_iniNei_top3 = 1;%cte  number of random neighbor for each particle
 n_nei_born_top3 = n_iniNei_top3 + 1;%cte  number of random neighbor for each newborn particle
 % top4
-bd = input(5,1,3); % $ [2 20]    % branching degree
+bd = input(3,1); % $ [2 20]    % branching degree
 % top5
-k_top5 = input(input(6:7,1,3)~=inf,1,3); % $ delete some connections evary k iterations                    
+k_top5 = input(3,2); % $ delete some connections evary k iterations                    
 rcdelCS2 = rem(par(3),10); % $ [0 1]
 topTime_counter = 1;%cte    %(rcdelCS2=0)
 perc_top5_rcdel1 = 0.4; %(rcdelCS2=1) remove percentage of allowed connections 
@@ -63,7 +61,7 @@ global rand_cauchy_dnpp
 global dnppCS % 0=rectangular, 1=spherical, 2=standard, 3=gaussian, 4=discrete, 5=cauchy gaussian
 % --------------------------
 dnppCS = par(2); % $ [0 1 2 3 4 5]
-rand_cauchy_dnpp = input(6,1,2); % $ 
+rand_cauchy_dnpp = input(2,1); % $ 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% PERT-INFO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  PRT-I
 global bt
@@ -81,27 +79,19 @@ global pmICS pmRCS % 1=cte, 2=euclidean, 3=obj.func, 4=success rate
 pmICS = rem(par(7),10); % $ [1 2 3 4]
 pmRCS = rem(par(6),10); % $ [1 2 3 4]
 % pm1
-PMI_cte = input(input(:,1,7)~=inf,1,7); % $ [0:1]   
-PMR_cte = input(input(:,1,6)~=inf,1,6); % $ [0:1]   
+PMI_cte = input(7,1); % $ [0:1]   
+PMR_cte = input(6,1); % $ [0:1]   
 % pm2
-checkvec=input(3+(0:2)*4,2,7);
-eI = checkvec(checkvec~=inf); % $ (0:1]
-checkvec=input(3+(0:2)*4,2,6);
-eR = checkvec(checkvec~=inf); % $ (0:1]
+eI = input(7,2); % $ (0:1]
+eR = input(6,3); % $ (0:1]
 % pm3
-checkvec=input(4+(0:2)*4,2,7);
-mI = checkvec(checkvec~=inf); % $ (0:1]
-checkvec=input(4+(0:2)*4,2,6);
-mR = checkvec(checkvec~=inf); % $ (0:1]
+mI = input(7,3);% $ (0:1]
+mR = input(6,4); % $ (0:1]
 % pm4
-checkvec=input(5+(0:2)*4,2,7);
-ScI = checkvec(checkvec~=inf); % $ int[1:50]
-checkvec=input(5+(0:2)*4,3,7);
-FcI = checkvec(checkvec~=inf); % $ int[1:50]
-checkvec=input(5+(0:2)*4,2,6);
-ScR = checkvec(checkvec~=inf); % $ int[1:50]
-checkvec=input(5+(0:2)*4,3,6);
-FcR = checkvec(checkvec~=inf); % $ int[1:50]
+ScI = input(7,4); % $ int[1:50]
+FcI = input(7,5); % $ int[1:50]
+ScR = input(6,5); % $ int[1:50]
+FcR = input(6,6); % $ int[1:50]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RRM(MTX) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  MTX
 global ini_alpha_mtx sigma_alpha z_alpha ro_alpha
@@ -113,16 +103,12 @@ else;mtxcs=floor(par(8)/10);end
 MtxCS = mtxcs; % $ [0 1 2 3 4 5 6]
 alpha_mtxCS2 = rem(par(8),10); % $ [0 1 2]
 % alp 0 2
-checkvec=[input(4+(0:2)*3,1,8) input(6+(0:2)*3,1,8)];
-ini_alpha_mtx = checkvec(checkvec~=inf); % $ int[0:40]
+ini_alpha_mtx = input(8,1); % $ int[0:40]
 % alp1
-checkvec=input(5+(0:2)*3,1,8);
-sigma_alpha =checkvec(checkvec~=inf); % $ [0.01:40]
+sigma_alpha =input(8,2); % $ [0.01:40]
 % alp2
-checkvec=input(6+(0:2)*3,2,8);
-z_alpha = checkvec(checkvec~=inf);  % $ int[1:40]
-checkvec=input(6+(0:2)*3,3,8);
-ro_alpha = checkvec(checkvec~=inf); % $ [0.01:0.9]
+z_alpha = input(8,3);  % $ int[1:40]
+ro_alpha = input(8,4); % $ [0.01:0.9]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% AC(phi) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  AC
 global phi1 phi2 phi1Max phi1Min phi2Max phi2Min
@@ -130,13 +116,13 @@ global AC_CS % 0=cte, 1=rnd, 2=time-var, 3=extrapolated
 % -----------------------
 AC_CS = par(5); % $ [0 1 2 3]
 % AC0 
-phi1 = input(1,1,5); % $ [0:2.5]
-phi2 = input(1,2,5); % $ [0:2.5]
+phi1 = input(5,1); % $ [0:2.5]
+phi2 = input(5,2); % $ [0:2.5]
 % AC1
-phi1Max = input(2,2,5); %  $  
-phi1Min = input(2,1,5); %  $ 
-phi2Max = input(2,4,5); %  $ 
-phi2Min = input(2,3,5); %  $ 
+phi1Max = input(5,4); %  $  
+phi1Min = input(5,3); %  $ 
+phi2Max = input(5,6); %  $ 
+phi2Min = input(5,5); %  $ 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PERT-RAND %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  PRT-R
 global taw delta
@@ -146,10 +132,9 @@ if par(6)==0;prcs=par(6);
 else;prcs=floor(par(6)/10);end
 prtRndCS = prcs; % $ [0 1 2]
 % prtR1
-checkvec=[input(2+(0:1)*4,2,6) input(3+(0:1)*4,3,6) input(4+(0:1)*4,3,6) input(5+(0:1)*4,4,6)];
-taw  = checkvec(checkvec~=inf);  % $ [0:1]
+taw  = input(6,2);  % $ [0:1]
 % prtR2
-delta = checkvec(checkvec~=inf);  % $ [0:1]
+delta = input(6,2);  % $ [0:1]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% W1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  W1
 global inertia_cte w1Max w1Min nu a_w1_cb b_w1_cb lambda_w1_abv
@@ -158,20 +143,17 @@ global inertiaW1CS % 0=cte, 1=linear-decreasing, 2=linear-increasing, 3=random, 
 % -------------------------------------
 inertiaW1CS = par(9); % $ [0 1 2 3 4 5 6 7 8 9]
 % 0 9
-checkvec=[input(1,1,9) input(10,1,9)];
-inertia_cte = checkvec(checkvec~=inf); % $ [0:0.9]
+inertia_cte = input(9,1); % $ [0:0.9]
 % 124578
-checkvec=[input(2,1,9) input(3,1,9) input(5,1,9) input(6,1,9) input(8,1,9) input(9,1,9)];
-w1Max = checkvec(checkvec~=inf); %  $ [0:0.9]
-checkvec=[input(2,2,9) input(3,2,9) input(5,2,9) input(6,2,9) input(8,2,9) input(9,2,9)];
-w1Min = checkvec(checkvec~=inf); %  $ [0:0.9] 
+w1Max = input(9,3); %  $ [0:0.9]
+w1Min = input(9,2); %  $ [0:0.9] 
 % 4
-nu = input(5,3,9); %  $ [0.1:1] rho
+nu = input(9,4); %  $ [0.1:1] rho
 % 5
-lambda_w1_abv = input(6,3,9); %  $ [0.1:1]
+lambda_w1_abv = input(9,5); %  $ [0.1:1]
 % 9
-a_w1_cb = input(10,2,9); %  $ [0:1] 
-b_w1_cb = input(10,3,9); %  $ [0:1] 
+a_w1_cb = input(9,6); %  $ [0:1] 
+b_w1_cb = input(9,7); %  $ [0:1] 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% W2 and W3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  W23
@@ -181,8 +163,8 @@ global paramW2CS paramW3CS % 0=w1, 1=rnd, 2=cte
 paramW2CS = par(10); %  $ [0 1 2]
 paramW3CS = par(11); %  $ [0 1 2]
 % 2
-w2_cte = input(3,1,10); % $  [0:1]
-w3_cte = input(3,1,11); %  $ [0:1]
+w2_cte = input(10,1); % $  [0:1]
+w3_cte = input(11,1); %  $ [0:1]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% unstuc reini %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global vClampCS vClampCS2 unstuckCS reInitial

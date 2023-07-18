@@ -1,4 +1,6 @@
-clear;clc;close all;tic
+% clear;clc;close all;tic
+function final=PSOX(par,input)
+
 run('Configuration.m')
 
 global inertiaW1CS prtRndCS prtInfCS inertia_cte 
@@ -143,3 +145,4 @@ disp("END")
 disp("f_counter = "+num2str(f_counter))
 disp("Final gb = "+num2str(gb.fit(end)))
 % disp("Actual : "+num2str(act))
+end

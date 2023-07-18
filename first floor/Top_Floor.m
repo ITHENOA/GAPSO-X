@@ -13,7 +13,7 @@ component(8,1:13)=[0 1 2 30 31 32 40 41 42 50 51 52 6]; %Mtx
 component(9,1:10)=[0 1 2 3 4 5 6 7 8 9];  %W1
 component(10,1:3)=[0 1 2];  %W2
 component(11,1:3)=[0 1 2];  %W3
-component(12,1:2)=[0 10 11];  %vClampCS
+component(12,1:3)=[0 10 11];  %vClampCS
 component(13,1:2)=[0 1];  %unstuckCS
 component(14,1:2)=[0 1];  %reInitial
 %ga prameters
@@ -34,5 +34,5 @@ for i=1:npop
         flag=answer_check(par.pos(i,:,1));
         if flag;    break;  end
     end
-%     pop.fit(i,1)=second_floor(par.pos(i,:,1));
+    pop.fit(i,1)=second_floor(par.pos(i,:,1));
 end
