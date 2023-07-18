@@ -45,11 +45,12 @@ function [y] = schwef_f(xx)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-d = length(xx);
+% d = length(xx);
+d = size(xx,2);
 sum = 0;
 for ii = 1:d
-	xi = xx(ii);
-	sum = sum + xi*sin(sqrt(abs(xi)));
+	xi = xx(:,ii);
+	sum = sum + xi.*sin(sqrt(abs(xi)));
 end
 
 y = 418.9829*d - sum;

@@ -151,15 +151,15 @@ try
             end
         end
     
-        % act = bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1),bound);
+        act = bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1),bound);
         % if gb.fit(end) < -6.5; break; end
     end % END it
-    final = gb.fit(end);
+    final = gb.fit(end)
     time=toc;
     
     fprintf(logfile,'\n--------------- SUCCESS --------------\n');
     fprintf(logfile,'Global-Best = %f \nf_counter = %d \n',gb.fit(end),f_counter);
-    fprintf(logfile,'time = %2f \n',time);
+    fprintf(logfile,'time = %d \n',time/60);
 catch err
     fprintf(logfile,'\n--------------- ERROR --------------\n');
     fprintf(logfile,'%s\n',err.message);
@@ -175,6 +175,7 @@ catch err
 end
 fprintf(logfile,'\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n');
 fclose(logfile);
+
 
 % disp("END")
 % disp("f_counter = "+num2str(f_counter))
