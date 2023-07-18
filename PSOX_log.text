@@ -1,0 +1,101 @@
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=62 
+initialPopSize=9 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=3 
+popCS=2 
+pIntitTypeCS2=0 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=5 
+rcdelCS2=2 
+moiCS=0 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=2 
+moiCS=0 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=3 
+PMI_cte=3.000000e-01 
+eI=Inf 
+mI=7.000000e-01 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=7.000000e-01 
+eR=Inf 
+mR=Inf 
+ScR=Inf 
+FcR=Inf 
+pmICS=3 
+pmRCS=1 
+ini_alpha_mtx=30 
+sigma_alpha=Inf 
+z_alpha=32 
+ro_alpha=2.109677e-01 
+MtxCS=3 
+alpha_mtxCS2=2 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=32 
+ro_alpha=2.109677e-01 
+MtxCS=3 
+alpha_mtxCS2=2 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=2 
+inertia_cte=Inf 
+w1Max=3.449462e-01 
+w1Min=3.449462e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=2 
+w2_cte=3.264583e-01 
+w3_cte=Inf 
+paramW2CS=2 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=1 
+unstuckCS=0 
+reInitial=1 
+vmax=3 
+paramW2CS=4 
+paramW3CS=
+--------------- ERROR --------------
+Unrecognized function or variable 'eR'.
+Stack trace:
+File: C:\Users\hojja\Desktop\psox\psoX\PSOX.m
+Function: PSOX
+Line: 47
+
+File: C:\Users\hojja\Desktop\psox\second floor\second_floor.m
+Function: second_floor
+Line: 53
+
+File: C:\Users\hojja\Desktop\psox\first floor\Top_Floor.m
+Function: Top_Floor
+Line: 37
+
+

@@ -1,4 +1,4 @@
-% function Configuration(par,input)
+function Configuration(par,input,bound)
 % rng(1)
 
 global itMax f_counter best d
@@ -7,11 +7,8 @@ global itMax f_counter best d
 itMax = 100;
 f_counter = 0;
 best = 1;
-ini_vel = 0;
 
-% Benchmark-Function
-d = 2; % dimansion 
-bound = [-3 3;-4 4];
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% POP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% POP
 global finalPopSize particles initialPopSize popTViterations particlesToAdd
