@@ -57,12 +57,12 @@ for i = Aidx
     if inertiaW1CS == 8 || inertiaW1CS == 9 % need previos iteration
         X(i,it).w1 = inertia_cte;
     else
-        X(i,it).w1 = W1(inertia_cte,gb,X(i,it),bound,pop,[],[]);
+        X(i,it).w1 = W1(inertia_cte,gb,X(i,it),bound,pop,[]);
     end
     % w2, w3
     [X(i,it).w2, X(i,it).w3] = W23([],X(i,it));
     % phi
-    X(i,it).phi = AC(X(i,it), [], gb);
+    X(i,it).phi = AC(X(i,it), gb);
     % pm & prt-R
     if prtRndCS ~= 0
         X(i,it).pmR = PMR_cte;

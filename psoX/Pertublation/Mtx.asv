@@ -1,9 +1,6 @@
 function outVector = Mtx(vector)
-global it 
-global MtxCS   
-global alpha
-global itMax
-global d
+global it itMax d
+global MtxCS alpha
 
 switch MtxCS
     case 0 % None ---------------------------------------------------------
