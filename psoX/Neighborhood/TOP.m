@@ -1,6 +1,6 @@
 function [X,tree,rc]  = TOP(pop,X,tree,rc) 
 
-global Aidx topTime_counter bornidx it deadidx
+global Aidx topTime_counter bornidx it deadidx repeatedPOP
 global topCS rcdelCS2
 global k_top5 n_iniNei_top3 n_nei_born_top3 perc_top5_rcdel1 %(user defined)
 
@@ -58,11 +58,10 @@ switch topCS
             end
 
         else % it > 1
-            repeat = setdiff(Aidx,bornidx);
 
             if numel(deadidx)==0 ; deadidx=0; end
-            for i = repeat
-                exept_i = setdiff(repeat,i);
+            for i = repeatedPOP
+                exept_i = setdiff(repeatedPOP,i);
                 rnd_neighbor = exept_i(randperm(numel(exept_i),1));
                 X(i,it).N.idx = [X(i,it-1).N.idx(X(i,it-1).N.idx ~= deadidx), rnd_neighbor];
             end
@@ -70,7 +69,7 @@ switch topCS
 
             if numel(bornidx) ~= 0 % (+)
                 for b = 1:numel(bornidx)
-                    neighbor = repeat(randperm(numel(repeat), n_nei_born_top3));
+                    neighbor = repeatedPOP(randperm(numel(repeatedPOP), n_nei_born_top3));
                     X(bornidx(b),it).N.idx = neighbor;
                     for n = 1:n_nei_born_top3
                         X(neighbor(n),it).N.idx = [X(neighbor(n),it).N.idx, bornidx(b)];
@@ -125,7 +124,7 @@ switch topCS
 
             % (if) dead exist remove and update (else) update
             if numel(deadidx)==0; deadidx=0; end
-            for i = setdiff(Aidx,bornidx)
+            for i = repeatedPOP
                 X(i,it).N.idx = X(i,it-1).N.idx(X(i,it-1).N.idx ~= deadidx);
             end
             if deadidx==0 ; deadidx=[]; end
@@ -140,26 +139,7 @@ switch topCS
                 end 
             end
 
-            % if numel(bornidx) ~= 0 % (+)
-            %     repeated_idx = setdiff(Aidx,bornidx);
-            %     s=0;
-            %     for i = repeated_idx
-            %         s = s + numel(X(i,it).N.idx);
-            %     end
-            %     C = floor(s / numel(repeated_idx)); % number of adding neighbor
-            %     for i = bornidx
-            %         while true  % ensure random neighbors not side by i
-            %             neighbors = repeated_idx(randperm(numel(repeated_idx),C));
-            %             if ~sum(abs(i - neighbors) == 1); break; end
-            %         end
-            %         X(i,it).N.idx = unique([X(i,it).N.idx, neighbors]);
-            %         for j = neighbors
-            %             rc = [rc ; [i j]]; % rc = [rc ; [i j]]; % update rc
-            %             X(j,it).N.idx = [X(j,it).N.idx i];
-            %         end
-            %     end
-            % end 
-                       
+
             if size(rc{1},1) ~= 0
                 rc{1}(find(prod(rc{1} == [min(min(rc{1})) max(max(rc{1}))] | rc{1} == [max(max(rc{1})) min(min(rc{1}))],2)),:) = [];
                 % every k iteration remove one random particle
@@ -186,23 +166,28 @@ switch topCS
                     end
                 end
             end
-
             if numel(bornidx) ~= 0 % (+)
-                repeated_idx = setdiff(Aidx,bornidx);
                 s=0;
-                for i = repeated_idx
+                for i = repeatedPOP
                     s = s + numel(X(i,it).N.idx);
                 end
-                C = floor(s / numel(repeated_idx)); % number of adding neighbor
+                C = floor(s / numel(repeatedPOP)); % number of adding neighbor
                 for i = bornidx
-                    while true  % ensure random neighbors not side by i
-                        neighbors = repeated_idx(randperm(numel(repeated_idx),C));
-                        if ~sum(abs(i - neighbors) == 1); break; end
-                    end
-                    X(i,it).N.idx = unique([X(i,it).N.idx, neighbors]);
-                    for j = neighbors
-                        rc{1} = [rc{1} ; [i j]]; % rc = [rc ; [i j]]; % update rc
-                        X(j,it).N.idx = [X(j,it).N.idx i];
+                    if C < numel(repeatedPOP)
+                        counter=0;
+                        while true  % ensure random neighbors not side by i
+                            counter=counter+1;
+                            neighbors = repeatedPOP(randperm(numel(repeatedPOP),C));
+                            if ~sum(abs(i - neighbors) == 1); break; end
+                            if counter > popSize*2;counter=0;break;end
+                        end
+                        if counter
+                            X(i,it).N.idx = unique([X(i,it).N.idx, neighbors]);
+                            for j = neighbors
+                                rc{1} = [rc{1} ; [i j]]; % rc = [rc ; [i j]]; % update rc
+                                X(j,it).N.idx = [X(j,it).N.idx i];
+                            end
+                        end
                     end
                 end
             end 

@@ -35,6 +35,7 @@ cs(1:size(vec,1),1:size(vec,2),11)=vec;
 c=zeros(nPar,mcl,nCom,nPop,maxIt+1);
 input=inf(nCom,nPar,nPop,maxIt+1);
 fits=zeros(nPop,maxIt+1);
+times=zeros(nPop,maxIt+1);
 for k=1:nPop
     for i=1:nCom
         for j=1:nPar
@@ -50,7 +51,7 @@ for k=1:nPop
             c(j,:,i,k,1)=[vec inf(1,mcl-c_size)];
         end
     end
-    fits(k,1)=PSOX(par,input(:,:,k,1));
+    [fits(k,1),times(k,1)]=PSOX(par,input(:,:,k,1));
 %     fits(k,1)=rand;
 end
 pop_in_this_it=c(:,:,:,:,1);
@@ -74,9 +75,9 @@ for it=1:maxIt
         input(:,:,2*i,it+1)=decoder(cs,next_pop(:,:,:,2*i));
         %function evaluation
 %         fits(2*i-1,it+1)=Pso_fitness(par,input(:,:,2*i-1,it+1));
-        fits(2*i-1,it+1)=rand;
+        [fits(2*i-1,it+1),times(2*i-1,it+1)]=PSOX(par,input(:,:,2*i-1,it+1));
 %         fits(2*i,it+1)=Pso_fitness(par,input(:,:,2*i,it+1));
-        fits(2*i,it+1)=rand;
+        [fits(2*i,it+1),times(2*i,it+1)]=PSOX(par,input(:,:,2*i,it+1));
     end
     if rem(nPop,2)
         next_pop=next_pop(:,:,:,1:end-1);

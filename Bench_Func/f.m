@@ -1,10 +1,12 @@
 function fit = f(x)
-global f_counter
+global f_counter bound d
 f_counter = f_counter + 1;
 % ff = @(x) 3.*(1-x(:,1)).^2.*exp(-(x(:,1).^2)-(x(:,2)+1).^2)-10.*(x(:,1)./5-x(:,1).^3-x(:,2).^5).*exp(-x(:,1).^2-x(:,2).^2)-1./3.*exp(-(x(:,1)+1).^2-x(:,2).^2);
 % fit = ff(x);
 
 fit = griewangk(x);
+bound = [-10 10;-10 10];
+d = size(bound,1);
 end
 function f = griewangk(population)
     % Griewangk's function for a matrix population
