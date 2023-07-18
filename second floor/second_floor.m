@@ -58,6 +58,7 @@ end
 pop_in_this_it=c(:,:,:,:,1);
 %% main
 for it=1:maxIt
+    it2=it
     next_pop=zeros(nPar,mcl,nCom,ceil(nPop/2)*2);
     for i=1:ceil(nPop/2)
         %selection
@@ -89,7 +90,12 @@ for it=1:maxIt
     pop_in_this_it=next_pop;
 end
 best_fit=min(min(fits));
+if best_fit==inf
+    r=1;
+    c=1;
+else
 [r,c]=find(fits==best_fit);
+end
 best_pos=input(:,:,r,c);
 best_fc=fc(r,c);
 % end

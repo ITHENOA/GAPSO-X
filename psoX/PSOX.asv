@@ -1,20 +1,21 @@
-function [final,time] = PSOX(par,input)
+function [final,f_counter] = PSOX(par,input)
 tic
 global inertiaW1CS prtRndCS prtInfCS inertia_cte bound
 global it itMax Aidx deadidx bornidx alpha
 global PMI_cte vmax PMR_cte pmICS pmRCS vClampCS
 global eI mI ScI FcI eR mR ScR FcR f_counter repeatedPOP MtxCS
 ini_vel = 0;
-Configuration(par,input,bound)
+flag = Configuration(par,input);
 if flag
     final=inf;
-    time=inf;
+    f_counter=inf;
     return
 end
 
-% logfile = fopen('PSOX_log.text','a');
-% try
-%     currentInfo(logfile)
+logfile = fopen('PSOX_log.text','a');
+try
+    currentInfo(logfile)
+    
     % Load initialize (pop, TOP, MOI)
     [pop, X, gb, tree, rc] = INITIALIZE(bound,ini_vel);
     % saveIdx = cell(1,itMax);
@@ -169,9 +170,12 @@ catch err
     end
     fprintf(logfile, '\n');
     final=inf;
-    time=inf;
+    f_counter=inf;
 end
+fprintf(logfile,'\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n');
 fclose(logfile);
+
+
 % disp("END")
 % disp("f_counter = "+num2str(f_counter))
 % disp("Final gb = "+num2str(gb.fit(end)))
