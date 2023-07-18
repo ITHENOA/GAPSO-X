@@ -1,8 +1,9 @@
-function flag = Configuration(par,input,bound)
+function flag = Configuration(par,input)
 % rng(1)
 flag=0;
-global itMax f_counter best d
-
+global itMax f_counter best d bound
+bound = [-10 10;-10 10];
+d = size(bound,1);
 % general
 itMax = 50;
 f_counter = 0;

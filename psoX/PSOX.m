@@ -5,7 +5,7 @@ global it itMax Aidx deadidx bornidx alpha
 global PMI_cte vmax PMR_cte pmICS pmRCS vClampCS
 global eI mI ScI FcI eR mR ScR FcR f_counter repeatedPOP MtxCS
 ini_vel = 0;
-Configuration(par,input,bound)
+flag = Configuration(par,input);
 if flag
     final=inf;
     f_counter=inf;
@@ -172,7 +172,10 @@ catch err
     final=inf;
     f_counter=inf;
 end
+fprintf(logfile,'\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n');
 fclose(logfile);
+
+
 % disp("END")
 % disp("f_counter = "+num2str(f_counter))
 % disp("Final gb = "+num2str(gb.fit(end)))
