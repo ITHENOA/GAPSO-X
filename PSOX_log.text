@@ -1,13 +1,64 @@
+
+--------------- ERROR --------------
+Unrecognized function or variable 'lofile'.
+Stack trace:
+File: C:\Users\hojja\Desktop\psox\psoX\currentInfo.m
+Function: currentInfo
+Line: 30
+
+File: C:\Users\hojja\Desktop\psox\psoX\PSOX.m
+Function: PSOX
+Line: 24
+
+
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-random 
+topCS 
+    time-var 
+        rcdelCS2 
+            main 
+moiCS 
+    rank 
+dnppCS 
+    spherical 
+prtInfCS 
+    levy 
+pmICS 
+    obj.func 
+pmRCS 
+    cte 
+MtxCS 
+    exp-map 
+        alpha_mtxCS2 
+            adaptive 
+AC_CS 
+    cte 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    self-regulating 
+paramW2CS 
+    rnd 
+paramW3CS 
+    rnd 
+vClampCS 
+    dont use 
+unstuckCS 
+    use 
+reInitial 
+    use 
 currentInfo
 ---------------------
 f_counter=0 
-itMax=100 
+itMax=50 
 d=2 
-finalPopSize=62 
-initialPopSize=9 
+finalPopSize=175 
+initialPopSize=2 
 particles=Inf 
 popTViterations=Inf 
-particlesToAdd=3 
+particlesToAdd=5 
 popCS=2 
 pIntitTypeCS2=0 
 perc_top5_rcdel1=4.000000e-01 
@@ -17,85 +68,75 @@ n_nei_born_top3=2
 k_top5=Inf 
 bd=Inf 
 topCS=5 
-rcdelCS2=2 
-moiCS=0 
+rcdelCS2=0 
+moiCS=2 
 rand_cauchy_dnpp=Inf 
-dnppCS=0 
+dnppCS=1 
 topCS=5 
-rcdelCS2=2 
-moiCS=0 
+rcdelCS2=0 
+moiCS=2 
 rand_cauchy_dnpp=Inf 
-dnppCS=0 
+dnppCS=1 
 bt=1 
-prtInfCS=3 
+prtInfCS=2 
 PMI_cte=3.000000e-01 
 eI=Inf 
-mI=7.000000e-01 
+mI=9.000000e-01 
 ScI=Inf 
 FcI=Inf 
-PMR_cte=7.000000e-01 
+PMR_cte=4.000000e-01 
 eR=Inf 
 mR=Inf 
 ScR=Inf 
 FcR=Inf 
 pmICS=3 
 pmRCS=1 
-ini_alpha_mtx=30 
+ini_alpha_mtx=9 
 sigma_alpha=Inf 
 z_alpha=32 
-ro_alpha=2.109677e-01 
+ro_alpha=4.884946e-01 
 MtxCS=3 
 alpha_mtxCS2=2 
-phi1=Inf 
-phi2=Inf 
+phi1=1.480000e+00 
+phi2=1.403333e+00 
 phi1Max=Inf 
 phi1Min=Inf 
 z_alpha=32 
-ro_alpha=2.109677e-01 
+ro_alpha=4.884946e-01 
 MtxCS=3 
 alpha_mtxCS2=2 
-phi1=Inf 
-phi2=Inf 
+phi1=1.480000e+00 
+phi2=1.403333e+00 
 phi1Max=Inf 
 phi1Min=Inf 
 phi2Max=Inf 
 phi2Min=Inf 
-AC_CS=2 
-taw=3.000000e-01 
-delta=3.000000e-01 
+AC_CS=0 
+taw=4.000000e-01 
+delta=4.000000e-01 
 prtRndCS=2 
 inertia_cte=Inf 
-w1Max=3.449462e-01 
-w1Min=3.449462e-01 
-nu=Inf 
+w1Max=1.631183e-01 
+w1Min=3.832258e-01 
+nu=4.870968e-01 
 a_w1_cb=Inf 
 b_w1_cb=Inf 
 lambda_w1_abv=Inf 
-inertiaW1CS=2 
-w2_cte=3.264583e-01 
+inertiaW1CS=4 
+w2_cte=Inf 
 w3_cte=Inf 
-paramW2CS=2 
+paramW2CS=1 
 paramW3CS=1 
-vClampCS=1 
-vClampCS2=1 
-unstuckCS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=1 
 reInitial=1 
-vmax=3 
-paramW2CS=4 
+vmax=10 
+paramW2CS=10 
 paramW3CS=
---------------- ERROR --------------
-Unrecognized function or variable 'eR'.
-Stack trace:
-File: C:\Users\hojja\Desktop\psox\psoX\PSOX.m
-Function: PSOX
-Line: 47
+---------------------
 
-File: C:\Users\hojja\Desktop\psox\second floor\second_floor.m
-Function: second_floor
-Line: 53
-
-File: C:\Users\hojja\Desktop\psox\first floor\Top_Floor.m
-Function: Top_Floor
-Line: 37
-
-
+--------------- SUCCESS --------------
+Global-Best = 0.022919 
+f_counter = 5706 
+time = 2.077780e-01 

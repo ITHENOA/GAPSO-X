@@ -6,6 +6,7 @@ rc(rc(:,1) == rc(:,2),:) = [];
 % removes nearby connections (4 <=> 5)
 rc(abs(rc(:,1) - rc(:,2)) == 1,:) = []; 
 % remove one of same connections (4 <=> 5) (5 <=> 4)
+if size(rc,1)==0; return; end
 i=1;
 while true  
     if sum(prod(rc(i,:) == rc(:,2:-1:1),2))

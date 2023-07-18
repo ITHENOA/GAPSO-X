@@ -1,4 +1,4 @@
-function output=K2H(par,input)
+function output = K2H(par,input)
 output=inf(16,4,11);
 %components
 component=inf(11,16);

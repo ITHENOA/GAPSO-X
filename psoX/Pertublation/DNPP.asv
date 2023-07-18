@@ -3,7 +3,7 @@ global it d
 global dnppCS moiCS rand_cauchy_dnpp
 
 for k = unique([x.I.idx, x.idx]); S{1}(k) = 1; end
-if moiCS == 2; S{1}(x.I.idx) = x.I.weight; end % MOI(RANKED)
+if moiCS == 2; S(x.I.idx) = x.I.weight; end % MOI(RANKED)
 
 dnpp = zeros(1,d);   
 switch dnppCS
@@ -30,8 +30,8 @@ switch dnppCS
 
     case 2  % standard ----------------------------------------------------
         for k = x.I.idx
-            q = (x.phi(1) * S{1}(x.idx) * x.prtInfo + x.phi(2) * S{1}(x.idx)...
-                * X(k,it).prtInfo ) / (x.phi(1) * S{1}(x.idx) + x.phi(2) * S{1}(x.idx));
+            q = (x.phi(1) * S{1}(x.idx) * x.prtInfo + x.phi(2) * S(x.idx)...
+                * X(k,it).prtInfo ) / (x.phi(1) * S(x.idx) + x.phi(2) * S(x.idx));
             dnpp = dnpp + q - x.pos;
         end
 
