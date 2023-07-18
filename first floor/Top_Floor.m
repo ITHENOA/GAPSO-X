@@ -34,7 +34,12 @@ for i=1:npop
         flag=answer_check(par.pos(i,:,1));
         if flag;    break;  end
     end
-    [par.fit(i,1),par.pos2(:,:,i,1),par.fc(i,1)]=second_floor(par.pos(i,:,1));
+%     [par.fit(i,1),par.pos2(:,:,i,1),par.fc(i,1)]=second_floor(par.pos(i,:,1));
+    [as1,as2,as3]=second_floor(par.pos(i,:,1)); 
+    par.fit(i,1)=as1;
+    par.fit(i,1)=as2;
+    par.fc(i,1)=as3;
+
     % par.fit(i,1)=rand;
 end
 best.fit=zeros(1,max_it+1);
@@ -55,7 +60,11 @@ for it=1:max_it
             flag=answer_check(par.pos(i,:,it+1));
             if flag;    break;  end
         end
-        [par.fit(i,it+1),par.pos2(:,:,i,it+1),par.fc(i,it+1)]=second_floor(par.pos(i,:,it+1));
+%         [par.fit(i,it+1),par.pos2(:,:,i,it+1),par.fc(i,it+1)]=second_floor(par.pos(i,:,it+1));
+        [as1,as2,as3]=second_floor(par.pos(i,:,it+1)); 
+        par.fit(i,1)=as1;
+        par.fit(i,1)=as2;
+        par.fc(i,1)=as3;
         % par.fit(i,it+1)=rand;
 
     end
