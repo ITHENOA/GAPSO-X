@@ -18,7 +18,7 @@ component(13,1:2)=[0 1];  %unstuckCS
 component(14,1:2)=[0 1];  %reInitial
 
 npop=size(component,1);    %number of particels
-max_it=10;
+max_it=5;
 %% initialzation
 par.pos=zeros(npop,size(component,1),max_it+1);
 par.fit=zeros(npop,max_it+1);

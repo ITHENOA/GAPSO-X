@@ -8,7 +8,7 @@ bound = [-5 5;-5 5];
 % bound = [-6 6;-6 6];
 d = size(bound,1);
 % general
-itMax = 100;
+itMax = 50;
 f_counter = 0;
 best = 1;
 

@@ -7,7 +7,7 @@ nDecoder=6;  %maximum number of decoder for each parameter
 nPop=20;    %number of population
 muP=0.02;   %mutation probability
 crP=0.5;    %cross over probability
-maxIt=10;  %maximum number of iterarion
+maxIt=5;  %maximum number of iterarion
 mcl=20;      %maximum choromosom length
 nCom=length(par); %number of component
 %% initialize

@@ -5071,3 +5071,12270 @@ vmax=5
 paramW2CS=5 
 paramW3CS=
 ---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.846775 
+f_counter = 1606 
+time = 3.685162 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=164 
+initialPopSize=3 
+particles=128 
+popTViterations=24 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.724728e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.948380 
+f_counter = 13120 
+time = 28.849901 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=85 
+initialPopSize=4 
+particles=46 
+popTViterations=65 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=2.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=28 
+FcR=18 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=1.674409e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=9.433333e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=9.433333e-01 
+phi1Min=1.000000e-01 
+phi2Max=8.666667e-01 
+phi2Min=7.900000e-01 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.754668 
+f_counter = 4071 
+time = 8.919417 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=137 
+initialPopSize=6 
+particles=54 
+popTViterations=69 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=16 
+FcR=38 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.039610e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+phi2Max=2.093333e+00 
+phi2Min=7.900000e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.933158 
+f_counter = 5005 
+time = 10.801981 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=164 
+initialPopSize=3 
+particles=128 
+popTViterations=24 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.724728e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.982719 
+f_counter = 11739 
+time = 23.994114 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=164 
+initialPopSize=3 
+particles=128 
+popTViterations=24 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.724728e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.958659 
+f_counter = 10915 
+time = 23.828924 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=169 
+initialPopSize=6 
+particles=38 
+popTViterations=57 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=7 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=1.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=8.000000e-01 
+eR=0 
+mR=0 
+ScR=29 
+FcR=46 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.158819e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=7.133333e-01 
+phi1Min=1.940000e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=7.133333e-01 
+phi1Min=1.940000e+00 
+phi2Max=7.133333e-01 
+phi2Min=3.300000e-01 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=7.143750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.734883 
+f_counter = 3010 
+time = 6.513142 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=85 
+initialPopSize=4 
+particles=46 
+popTViterations=65 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=2.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=28 
+FcR=18 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=1.674409e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=9.433333e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=9.433333e-01 
+phi1Min=1.000000e-01 
+phi2Max=8.666667e-01 
+phi2Min=7.900000e-01 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.891307 
+f_counter = 4071 
+time = 8.520481 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=164 
+initialPopSize=3 
+particles=128 
+popTViterations=24 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.724728e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.978619 
+f_counter = 12672 
+time = 25.867378 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=109 
+initialPopSize=4 
+particles=90 
+popTViterations=71 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=7 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=6.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=30 
+FcR=38 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.669374e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=4.066667e-01 
+phi1Min=8.666667e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=4.066667e-01 
+phi1Min=8.666667e-01 
+phi2Max=8.666667e-01 
+phi2Min=4.066667e-01 
+AC_CS=3 
+taw=5.000000e-01 
+delta=5.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.835417e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.868867 
+f_counter = 8666 
+time = 17.753248 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=163 
+initialPopSize=3 
+particles=131 
+popTViterations=20 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=9.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=8.000000e-01 
+eR=0 
+mR=0 
+ScR=37 
+FcR=43 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.740472e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=4.833333e-01 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=4.833333e-01 
+phi1Min=2.246667e+00 
+phi2Max=1.863333e+00 
+phi2Min=1.096667e+00 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=2.039583e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.987353 
+f_counter = 11897 
+time = 24.369374 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=108 
+initialPopSize=4 
+particles=93 
+popTViterations=67 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=7 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=2.000000e-01 
+eR=0 
+mR=0 
+ScR=33 
+FcR=41 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.685118e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=8.666667e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=8.666667e-01 
+phi2Max=7.900000e-01 
+phi2Min=3.300000e-01 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.983927 
+f_counter = 9009 
+time = 18.327651 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=85 
+initialPopSize=4 
+particles=46 
+popTViterations=63 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=6.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=6.000000e-01 
+eR=0 
+mR=0 
+ScR=21 
+FcR=12 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=4.103465e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=9.433333e-01 
+phi1Min=2.533333e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=9.433333e-01 
+phi1Min=2.533333e-01 
+phi2Max=1.096667e+00 
+phi2Min=6.366667e-01 
+AC_CS=3 
+taw=8.000000e-01 
+delta=8.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.835417e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.904480 
+f_counter = 3998 
+time = 8.226360 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=87 
+initialPopSize=8 
+particles=21 
+popTViterations=51 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=1.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=28 
+FcR=28 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=1.386480e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+phi2Max=2.323333e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.468750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.966331 
+f_counter = 1606 
+time = 3.352716 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=103 
+initialPopSize=4 
+particles=37 
+popTViterations=79 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=16 
+FcR=10 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.788583e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=2.400000e+00 
+phi1Min=1.766667e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=2.400000e+00 
+phi1Min=1.766667e-01 
+phi2Max=2.323333e+00 
+phi2Min=1.940000e+00 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.835417e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.950627 
+f_counter = 3570 
+time = 7.315645 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=148 
+initialPopSize=5 
+particles=56 
+popTViterations=72 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=6.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=26 
+FcR=36 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.732350e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=1.020000e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=1.020000e+00 
+phi2Max=7.133333e-01 
+phi2Min=5.600000e-01 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.971044 
+f_counter = 5295 
+time = 10.771865 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=103 
+initialPopSize=4 
+particles=37 
+popTViterations=79 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=16 
+FcR=10 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.788583e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=2.400000e+00 
+phi1Min=1.766667e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=2.400000e+00 
+phi1Min=1.766667e-01 
+phi2Max=2.323333e+00 
+phi2Min=1.940000e+00 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.835417e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.460146 
+f_counter = 3570 
+time = 7.423047 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=137 
+initialPopSize=6 
+particles=54 
+popTViterations=69 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=16 
+FcR=38 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.039610e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+phi2Max=2.093333e+00 
+phi2Min=7.900000e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.985637 
+f_counter = 5005 
+time = 10.291565 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=87 
+initialPopSize=8 
+particles=21 
+popTViterations=51 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=1.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=28 
+FcR=28 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=1.386480e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+phi2Max=2.323333e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.468750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.928262 
+f_counter = 1606 
+time = 3.354988 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=85 
+initialPopSize=4 
+particles=46 
+popTViterations=63 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=6.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=6.000000e-01 
+eR=0 
+mR=0 
+ScR=21 
+FcR=12 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=4.103465e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=9.433333e-01 
+phi1Min=2.533333e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=9.433333e-01 
+phi1Min=2.533333e-01 
+phi2Max=1.096667e+00 
+phi2Min=6.366667e-01 
+AC_CS=3 
+taw=8.000000e-01 
+delta=8.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.835417e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.967175 
+f_counter = 3998 
+time = 8.233413 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=68 
+initialPopSize=7 
+particles=32 
+popTViterations=40 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=3.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=7.094843e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=2.000000e-01 
+delta=2.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.570833e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.860822 
+f_counter = 2066 
+time = 4.363820 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=183 
+initialPopSize=4 
+particles=117 
+popTViterations=35 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=5.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=28 
+FcR=28 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.401724e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.016667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.016667e+00 
+phi2Max=2.323333e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=8.000000e-01 
+delta=8.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.835417e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.962560 
+f_counter = 9708 
+time = 20.034558 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=106 
+initialPopSize=4 
+particles=28 
+popTViterations=74 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=5.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=9.000000e-01 
+eR=0 
+mR=0 
+ScR=15 
+FcR=30 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=1.339248e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=7.133333e-01 
+phi1Min=1.173333e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=7.133333e-01 
+phi1Min=1.173333e+00 
+phi2Max=1.020000e+00 
+phi2Min=4.833333e-01 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=4.081250e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.337208 
+f_counter = 2551 
+time = 5.209179 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=164 
+initialPopSize=3 
+particles=128 
+popTViterations=24 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.724728e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.986223 
+f_counter = 11200 
+time = 22.981363 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=136 
+initialPopSize=3 
+particles=117 
+popTViterations=49 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=7 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=4.000000e-01 
+eR=0 
+mR=0 
+ScR=45 
+FcR=34 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.401724e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=8.666667e-01 
+phi1Min=2.016667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=8.666667e-01 
+phi1Min=2.016667e+00 
+phi2Max=1.633333e+00 
+phi2Min=6.366667e-01 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=4.591667e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.515442 
+f_counter = 10475 
+time = 21.689209 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=108 
+initialPopSize=4 
+particles=93 
+popTViterations=67 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=7 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=2.000000e-01 
+eR=0 
+mR=0 
+ScR=33 
+FcR=41 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.685118e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=8.666667e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=8.666667e-01 
+phi2Max=7.900000e-01 
+phi2Min=3.300000e-01 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.840229 
+f_counter = 8840 
+time = 18.359056 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=103 
+initialPopSize=4 
+particles=37 
+popTViterations=79 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=16 
+FcR=10 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.788583e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=2.400000e+00 
+phi1Min=1.766667e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=2.400000e+00 
+phi1Min=1.766667e-01 
+phi2Max=2.323333e+00 
+phi2Min=1.940000e+00 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.835417e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.994277 
+f_counter = 3570 
+time = 8.131369 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=137 
+initialPopSize=6 
+particles=54 
+popTViterations=69 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=16 
+FcR=38 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.039610e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+phi2Max=2.093333e+00 
+phi2Min=7.900000e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.769283 
+f_counter = 5005 
+time = 10.215844 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=87 
+initialPopSize=8 
+particles=21 
+popTViterations=51 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=1.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=28 
+FcR=28 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=1.386480e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+phi2Max=2.323333e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.468750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.960203 
+f_counter = 1606 
+time = 3.398352 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=108 
+initialPopSize=4 
+particles=93 
+popTViterations=67 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=7 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=2.000000e-01 
+eR=0 
+mR=0 
+ScR=33 
+FcR=41 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.685118e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=8.666667e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=8.666667e-01 
+phi2Max=7.900000e-01 
+phi2Min=3.300000e-01 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.867873 
+f_counter = 8840 
+time = 18.012788 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=164 
+initialPopSize=3 
+particles=128 
+popTViterations=24 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.724728e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.956682 
+f_counter = 12475 
+time = 25.426626 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=164 
+initialPopSize=3 
+particles=128 
+popTViterations=24 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.724728e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.964473 
+f_counter = 14323 
+time = 28.918940 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=148 
+initialPopSize=5 
+particles=56 
+popTViterations=72 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=6.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=26 
+FcR=36 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.732350e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=1.020000e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=1.020000e+00 
+phi2Max=7.133333e-01 
+phi2Min=5.600000e-01 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.911243 
+f_counter = 5364 
+time = 10.894614 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=68 
+initialPopSize=7 
+particles=32 
+popTViterations=40 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=3.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=7.094843e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=2.000000e-01 
+delta=2.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.570833e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.721750 
+f_counter = 2066 
+time = 4.334245 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=87 
+initialPopSize=8 
+particles=21 
+popTViterations=51 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=1.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=28 
+FcR=28 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=1.386480e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+phi2Max=2.323333e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.468750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.953814 
+f_counter = 1606 
+time = 3.328818 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=101 
+initialPopSize=4 
+particles=46 
+popTViterations=63 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=1 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=6.000000e-01 
+eR=0 
+mR=0 
+ScR=21 
+FcR=12 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=4.103465e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=2.170000e+00 
+phi1Min=2.533333e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=2.170000e+00 
+phi1Min=2.533333e-01 
+phi2Max=2.323333e+00 
+phi2Min=1.863333e+00 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.835417e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.239822 
+f_counter = 4057 
+time = 8.518071 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=87 
+initialPopSize=4 
+particles=37 
+popTViterations=79 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=3.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=16 
+FcR=10 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.788583e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.173333e+00 
+phi1Min=1.766667e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.173333e+00 
+phi1Min=1.766667e-01 
+phi2Max=1.096667e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=8.000000e-01 
+delta=8.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.835417e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.909441 
+f_counter = 3570 
+time = 7.239169 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=187 
+initialPopSize=3 
+particles=115 
+popTViterations=37 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=5.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=26 
+FcR=28 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.417469e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.093333e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.093333e+00 
+phi2Max=2.400000e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.529167e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.963696 
+f_counter = 10261 
+time = 21.285449 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=160 
+initialPopSize=4 
+particles=130 
+popTViterations=22 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=36 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.708984e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.170000e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.170000e+00 
+phi2Max=1.863333e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=2.243750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.969725 
+f_counter = 11813 
+time = 24.185637 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=146 
+initialPopSize=5 
+particles=55 
+popTViterations=69 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=6.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=27 
+FcR=37 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.732350e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=1.020000e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=1.020000e+00 
+phi2Max=7.133333e-01 
+phi2Min=5.600000e-01 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.877291 
+f_counter = 5465 
+time = 11.874806 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=139 
+initialPopSize=6 
+particles=55 
+popTViterations=72 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=15 
+FcR=37 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.039610e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+phi2Max=2.093333e+00 
+phi2Min=7.900000e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.892948 
+f_counter = 5195 
+time = 10.658568 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=87 
+initialPopSize=8 
+particles=21 
+popTViterations=51 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=1.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=28 
+FcR=28 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=1.386480e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+phi2Max=2.323333e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.468750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.786878 
+f_counter = 1606 
+time = 3.335614 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=164 
+initialPopSize=3 
+particles=128 
+popTViterations=24 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.724728e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.919281 
+f_counter = 11600 
+time = 24.268969 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=102 
+initialPopSize=4 
+particles=37 
+popTViterations=78 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=16 
+FcR=10 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.788583e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=2.400000e+00 
+phi1Min=1.766667e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=2.400000e+00 
+phi1Min=1.766667e-01 
+phi2Max=2.323333e+00 
+phi2Min=1.940000e+00 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.835417e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.436957 
+f_counter = 3548 
+time = 7.503532 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=138 
+initialPopSize=6 
+particles=54 
+popTViterations=70 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=16 
+FcR=38 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.039610e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+phi2Max=2.093333e+00 
+phi2Min=7.900000e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.839200 
+f_counter = 5100 
+time = 10.828367 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=151 
+initialPopSize=4 
+particles=101 
+popTViterations=47 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=32 
+FcR=26 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.394102e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.173333e+00 
+phi1Min=1.403333e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.173333e+00 
+phi1Min=1.403333e+00 
+phi2Max=2.323333e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=8.000000e-01 
+delta=8.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.835417e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.975030 
+f_counter = 8770 
+time = 18.340161 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=100 
+initialPopSize=3 
+particles=64 
+popTViterations=56 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=18 
+FcR=24 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=7.094843e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=1.020000e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=1.020000e+00 
+phi2Max=7.133333e-01 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.669020 
+f_counter = 5511 
+time = 11.419706 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=91 
+initialPopSize=7 
+particles=20 
+popTViterations=53 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=1.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=27 
+FcR=28 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=1.402224e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.093333e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.093333e+00 
+phi2Max=2.400000e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.162500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.803065 
+f_counter = 1534 
+time = 3.269603 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=160 
+initialPopSize=4 
+particles=129 
+popTViterations=22 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=35 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.708984e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.170000e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.170000e+00 
+phi2Max=1.863333e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=2.243750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.953236 
+f_counter = 11116 
+time = 22.637418 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=139 
+initialPopSize=6 
+particles=55 
+popTViterations=72 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=15 
+FcR=37 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.039610e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+phi2Max=2.093333e+00 
+phi2Min=7.900000e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.470837 
+f_counter = 5195 
+time = 10.705345 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=164 
+initialPopSize=3 
+particles=128 
+popTViterations=24 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.724728e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.989235 
+f_counter = 11976 
+time = 24.354553 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=146 
+initialPopSize=5 
+particles=55 
+popTViterations=69 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=6.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=27 
+FcR=37 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.732350e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=1.020000e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=1.020000e+00 
+phi2Max=7.133333e-01 
+phi2Min=5.600000e-01 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.790836 
+f_counter = 5105 
+time = 10.507357 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=87 
+initialPopSize=8 
+particles=21 
+popTViterations=51 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=1.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=28 
+FcR=28 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=1.386480e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+phi2Max=2.323333e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.468750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.937615 
+f_counter = 1606 
+time = 3.342031 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=87 
+initialPopSize=8 
+particles=21 
+popTViterations=51 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=1.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=1.000000e-01 
+eR=0 
+mR=0 
+ScR=28 
+FcR=28 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=1.386480e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.786667e+00 
+phi1Min=2.016667e+00 
+phi2Max=2.323333e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.468750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.995426 
+f_counter = 1606 
+time = 3.323527 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=160 
+initialPopSize=4 
+particles=130 
+popTViterations=22 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=36 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.708984e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.170000e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.170000e+00 
+phi2Max=1.863333e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=2.243750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.886531 
+f_counter = 10480 
+time = 21.674345 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=140 
+initialPopSize=6 
+particles=53 
+popTViterations=73 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=14 
+FcR=37 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.039610e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=4.066667e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=4.066667e-01 
+phi1Min=1.000000e-01 
+phi2Max=2.093333e+00 
+phi2Min=8.666667e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.974838 
+f_counter = 5023 
+time = 10.244350 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=66 
+initialPopSize=7 
+particles=33 
+popTViterations=37 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=3.000000e-01 
+eR=0 
+mR=0 
+ScR=36 
+FcR=41 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=7.094843e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.710000e+00 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=1.710000e+00 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.096667e+00 
+AC_CS=3 
+taw=2.000000e-01 
+delta=2.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.570833e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.739707 
+f_counter = 2067 
+time = 4.446157 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=139 
+initialPopSize=6 
+particles=47 
+popTViterations=84 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=3.000000e-01 
+eR=0 
+mR=0 
+ScR=11 
+FcR=37 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.149819e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=1.766667e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=1.766667e-01 
+phi2Max=2.016667e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.631250e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.750125 
+f_counter = 4665 
+time = 9.577787 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=103 
+initialPopSize=4 
+particles=45 
+popTViterations=67 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=20 
+FcR=10 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.686496e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=2.170000e+00 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=2.170000e+00 
+phi1Min=1.000000e-01 
+phi2Max=2.400000e+00 
+phi2Min=2.016667e+00 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.979167e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -327.979823 
+f_counter = 4040 
+time = 8.401886 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=164 
+initialPopSize=3 
+particles=128 
+popTViterations=24 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.724728e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.938029 
+f_counter = 10705 
+time = 22.038283 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=187 
+initialPopSize=3 
+particles=115 
+popTViterations=37 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=5.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=26 
+FcR=28 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.417469e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.093333e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.093333e+00 
+phi2Max=2.400000e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.529167e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.992749 
+f_counter = 10741 
+time = 21.836575 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=109 
+initialPopSize=4 
+particles=93 
+popTViterations=68 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=7 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=2.000000e-01 
+eR=0 
+mR=0 
+ScR=33 
+FcR=41 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.685118e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=8.666667e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=8.666667e-01 
+phi2Max=7.900000e-01 
+phi2Min=3.300000e-01 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.885047 
+f_counter = 8873 
+time = 18.150586 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=138 
+initialPopSize=6 
+particles=55 
+popTViterations=71 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=15 
+FcR=37 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.039610e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+phi2Max=2.093333e+00 
+phi2Min=7.900000e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.999346 
+f_counter = 5166 
+time = 10.539730 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=160 
+initialPopSize=4 
+particles=130 
+popTViterations=22 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=36 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.708984e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.170000e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.170000e+00 
+phi2Max=1.863333e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=2.243750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.878928 
+f_counter = 11680 
+time = 24.302531 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=164 
+initialPopSize=3 
+particles=128 
+popTViterations=24 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=34 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.724728e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.246667e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.937500e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.991742 
+f_counter = 14233 
+time = 28.710267 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=140 
+initialPopSize=6 
+particles=53 
+popTViterations=73 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=14 
+FcR=37 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.039610e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=4.066667e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=4.066667e-01 
+phi1Min=1.000000e-01 
+phi2Max=2.093333e+00 
+phi2Min=8.666667e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.837228 
+f_counter = 5023 
+time = 10.311353 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=160 
+initialPopSize=4 
+particles=130 
+popTViterations=22 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=36 
+FcR=40 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.708984e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.170000e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.170000e+00 
+phi2Max=1.863333e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=2.243750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.987470 
+f_counter = 10436 
+time = 21.560773 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=140 
+initialPopSize=6 
+particles=53 
+popTViterations=73 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=14 
+FcR=37 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.039610e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=4.066667e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=4.066667e-01 
+phi1Min=1.000000e-01 
+phi2Max=2.093333e+00 
+phi2Min=8.666667e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.947825 
+f_counter = 5123 
+time = 10.467294 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=138 
+initialPopSize=6 
+particles=55 
+popTViterations=71 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=15 
+FcR=37 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.039610e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+phi2Max=2.093333e+00 
+phi2Min=7.900000e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.890838 
+f_counter = 6007 
+time = 12.005215 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=138 
+initialPopSize=6 
+particles=55 
+popTViterations=71 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=15 
+FcR=37 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.039610e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=3.300000e-01 
+phi1Min=1.000000e-01 
+phi2Max=2.093333e+00 
+phi2Min=7.900000e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=3.775000e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.939125 
+f_counter = 5166 
+time = 10.601876 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=187 
+initialPopSize=3 
+particles=115 
+popTViterations=37 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=5.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=5.000000e-01 
+eR=0 
+mR=0 
+ScR=26 
+FcR=28 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=3.417469e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.093333e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.093333e+00 
+phi2Max=2.400000e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=1.529167e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.778285 
+f_counter = 9585 
+time = 19.817530 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    rnd 
+dnppCS 
+    spherical 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot_all 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    extrapolated 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    w1 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=100 
+d=2 
+finalPopSize=175 
+initialPopSize=2 
+particles=121 
+popTViterations=37 
+particlesToAdd=0 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=0 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+topCS=1 
+rcdelCS2=1 
+moiCS=3 
+rand_cauchy_dnpp=0 
+dnppCS=1 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=0 
+mI=0 
+ScI=0 
+FcI=0 
+PMR_cte=7.000000e-01 
+eR=0 
+mR=0 
+ScR=28 
+FcR=34 
+pmICS=1 
+pmRCS=4 
+ini_alpha_mtx=0 
+sigma_alpha=2.897913e+01 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.016667e+00 
+z_alpha=0 
+ro_alpha=0 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=0 
+phi2=0 
+phi1Max=5.600000e-01 
+phi1Min=2.016667e+00 
+phi2Max=2.323333e+00 
+phi2Min=7.133333e-01 
+AC_CS=3 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=0 
+w1Max=0 
+w1Min=0 
+nu=0 
+a_w1_cb=0 
+b_w1_cb=0 
+lambda_w1_abv=0 
+inertiaW1CS=3 
+w2_cte=2.243750e-01 
+w3_cte=0 
+paramW2CS=2 
+paramW3CS=0 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            main 
+moiCS 
+    rank 
+dnppCS 
+    gaussian 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    euclidean 
+MtxCS 
+    exp-map 
+        alpha_mtxCS2 
+            cte 
+AC_CS 
+    time-var 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    adaptive-based-on-velocity 
+paramW2CS 
+    w1 
+paramW3CS 
+    rnd 
+vClampCS 
+    use 
+            vClampCS 
+            random between bound 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=110 
+initialPopSize=4 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=5 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+bt=1 
+prtInfCS=1 
+PMI_cte=2.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=5.000000e-01 
+eR=5.000000e-01 
+mR=Inf 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=2 
+ini_alpha_mtx=7 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=2 
+inertia_cte=5.650538e-01 
+w1Max=3.449462e-01 
+w1Min=5.554839e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=4.290323e-01 
+inertiaW1CS=5 
+w2_cte=Inf 
+w3_cte=Inf 
+paramW2CS=0 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=1 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -328.864255 
+f_counter = 4346 
+time = 10.998690 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            main 
+moiCS 
+    rank 
+dnppCS 
+    gaussian 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    euclidean 
+MtxCS 
+    exp-map 
+        alpha_mtxCS2 
+            cte 
+AC_CS 
+    time-var 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    adaptive-based-on-velocity 
+paramW2CS 
+    w1 
+paramW3CS 
+    rnd 
+vClampCS 
+    use 
+            vClampCS 
+            random between bound 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=134 
+initialPopSize=4 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=3 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+bt=1 
+prtInfCS=1 
+PMI_cte=5.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=8.000000e-01 
+eR=7.000000e-01 
+mR=Inf 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=2 
+ini_alpha_mtx=27 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=8.000000e-01 
+delta=8.000000e-01 
+prtRndCS=2 
+inertia_cte=7.564516e-01 
+w1Max=2.588172e-01 
+w1Min=5.363441e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=6.612903e-01 
+inertiaW1CS=5 
+w2_cte=Inf 
+w3_cte=Inf 
+paramW2CS=0 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=1 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.633950 
+f_counter = 3863 
+time = 10.173778 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            main 
+moiCS 
+    rank 
+dnppCS 
+    gaussian 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    euclidean 
+MtxCS 
+    exp-map 
+        alpha_mtxCS2 
+            cte 
+AC_CS 
+    time-var 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    adaptive-based-on-velocity 
+paramW2CS 
+    w1 
+paramW3CS 
+    rnd 
+vClampCS 
+    use 
+            vClampCS 
+            random between bound 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=37 
+initialPopSize=7 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=2 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=7.000000e-01 
+eR=4.000000e-01 
+mR=Inf 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=2 
+ini_alpha_mtx=24 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=9.000000e-01 
+delta=9.000000e-01 
+prtRndCS=2 
+inertia_cte=3.736559e-01 
+w1Max=6.607527e-01 
+w1Min=2.205376e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=4.774194e-01 
+inertiaW1CS=5 
+w2_cte=Inf 
+w3_cte=Inf 
+paramW2CS=0 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=1 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -328.885947 
+f_counter = 1626 
+time = 3.796120 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            main 
+moiCS 
+    rank 
+dnppCS 
+    gaussian 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    euclidean 
+MtxCS 
+    exp-map 
+        alpha_mtxCS2 
+            cte 
+AC_CS 
+    time-var 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    adaptive-based-on-velocity 
+paramW2CS 
+    w1 
+paramW3CS 
+    rnd 
+vClampCS 
+    use 
+            vClampCS 
+            random between bound 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=146 
+initialPopSize=6 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=3 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+bt=1 
+prtInfCS=1 
+PMI_cte=5.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=3.000000e-01 
+eR=7.000000e-01 
+mR=Inf 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=2 
+ini_alpha_mtx=7 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=2 
+inertia_cte=5.172043e-01 
+w1Max=1.822581e-01 
+w1Min=2.396774e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=5.354839e-01 
+inertiaW1CS=5 
+w2_cte=Inf 
+w3_cte=Inf 
+paramW2CS=0 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=1 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -328.592155 
+f_counter = 4011 
+time = 11.026450 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            main 
+moiCS 
+    rank 
+dnppCS 
+    gaussian 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    euclidean 
+MtxCS 
+    exp-map 
+        alpha_mtxCS2 
+            cte 
+AC_CS 
+    time-var 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    adaptive-based-on-velocity 
+paramW2CS 
+    w1 
+paramW3CS 
+    rnd 
+vClampCS 
+    use 
+            vClampCS 
+            random between bound 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=55 
+initialPopSize=4 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=10 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+bt=1 
+prtInfCS=1 
+PMI_cte=1.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=3.000000e-01 
+eR=1 
+mR=Inf 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=2 
+ini_alpha_mtx=12 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=2.000000e-01 
+delta=2.000000e-01 
+prtRndCS=2 
+inertia_cte=5.554839e-01 
+w1Max=7.851613e-01 
+w1Min=4.502151e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=5.258065e-01 
+inertiaW1CS=5 
+w2_cte=Inf 
+w3_cte=Inf 
+paramW2CS=0 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=1 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -327.956343 
+f_counter = 2601 
+time = 5.645921 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            main 
+moiCS 
+    rank 
+dnppCS 
+    gaussian 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    euclidean 
+MtxCS 
+    exp-map 
+        alpha_mtxCS2 
+            cte 
+AC_CS 
+    time-var 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    adaptive-based-on-velocity 
+paramW2CS 
+    w1 
+paramW3CS 
+    rnd 
+vClampCS 
+    use 
+            vClampCS 
+            random between bound 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=74 
+initialPopSize=7 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=7 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+bt=1 
+prtInfCS=1 
+PMI_cte=5.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=8.000000e-01 
+eR=9.000000e-01 
+mR=Inf 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=2 
+ini_alpha_mtx=32 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=5.000000e-01 
+delta=5.000000e-01 
+prtRndCS=2 
+inertia_cte=6.224731e-01 
+w1Max=4.215054e-01 
+w1Min=4.119355e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=5.838710e-01 
+inertiaW1CS=5 
+w2_cte=Inf 
+w3_cte=Inf 
+paramW2CS=0 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=1 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.695612 
+f_counter = 3356 
+time = 7.923837 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            main 
+moiCS 
+    rank 
+dnppCS 
+    gaussian 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    euclidean 
+MtxCS 
+    exp-map 
+        alpha_mtxCS2 
+            cte 
+AC_CS 
+    time-var 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    adaptive-based-on-velocity 
+paramW2CS 
+    w1 
+paramW3CS 
+    rnd 
+vClampCS 
+    use 
+            vClampCS 
+            random between bound 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=109 
+initialPopSize=3 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=7 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+topCS=5 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=3 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=2.000000e-01 
+eR=5.000000e-01 
+mR=Inf 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=2 
+ini_alpha_mtx=33 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=3 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=2.000000e-01 
+delta=2.000000e-01 
+prtRndCS=2 
+inertia_cte=4.502151e-01 
+w1Max=2.301075e-01 
+w1Min=4.980645e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=4.483871e-01 
+inertiaW1CS=5 
+w2_cte=Inf 
+w3_cte=Inf 
+paramW2CS=0 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=1 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    best 
+dnppCS 
+    rectangular 
+prtInfCS 
+    levy 
+pmICS 
+    obj.func 
+pmRCS 
+    cte 
+MtxCS 
+    None 
+        alpha_mtxCS2 
+            cte 
+AC_CS 
+    rnd 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    rnd 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    use 
+reInitial 
+    dont use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=143 
+initialPopSize=4 
+particles=60 
+popTViterations=15 
+particlesToAdd=Inf 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=1 
+rcdelCS2=2 
+moiCS=0 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=1 
+rcdelCS2=2 
+moiCS=0 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=2 
+PMI_cte=6.000000e-01 
+eI=Inf 
+mI=9.000000e-01 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=8.000000e-01 
+eR=Inf 
+mR=Inf 
+ScR=Inf 
+FcR=Inf 
+pmICS=3 
+pmRCS=1 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=0 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=1.786667e+00 
+phi1Min=2.533333e-01 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=0 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=1.786667e+00 
+phi1Min=2.533333e-01 
+phi2Max=2.400000e+00 
+phi2Min=1.766667e-01 
+AC_CS=1 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=Inf 
+w1Max=Inf 
+w1Min=Inf 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=3 
+w2_cte=5.000000e-01 
+w3_cte=Inf 
+paramW2CS=2 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=1 
+reInitial=0 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.401762 
+f_counter = 3046 
+time = 6.731108 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    best 
+dnppCS 
+    rectangular 
+prtInfCS 
+    levy 
+pmICS 
+    obj.func 
+pmRCS 
+    cte 
+MtxCS 
+    None 
+        alpha_mtxCS2 
+            cte 
+AC_CS 
+    rnd 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    rnd 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    use 
+reInitial 
+    dont use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=125 
+initialPopSize=9 
+particles=41 
+popTViterations=55 
+particlesToAdd=Inf 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=1 
+rcdelCS2=2 
+moiCS=0 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=1 
+rcdelCS2=2 
+moiCS=0 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=2 
+PMI_cte=1.000000e-01 
+eI=Inf 
+mI=4.000000e-01 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=9.000000e-01 
+eR=Inf 
+mR=Inf 
+ScR=Inf 
+FcR=Inf 
+pmICS=3 
+pmRCS=1 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=0 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=1.786667e+00 
+phi1Min=1.096667e+00 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=0 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=1.786667e+00 
+phi1Min=1.096667e+00 
+phi2Max=2.093333e+00 
+phi2Min=9.433333e-01 
+AC_CS=1 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=Inf 
+w1Max=Inf 
+w1Min=Inf 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=3 
+w2_cte=4.285417e-01 
+w3_cte=Inf 
+paramW2CS=2 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=1 
+reInitial=0 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.618133 
+f_counter = 2101 
+time = 4.287364 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    time-var 
+topCS 
+    full 
+moiCS 
+    best 
+dnppCS 
+    rectangular 
+prtInfCS 
+    levy 
+pmICS 
+    obj.func 
+pmRCS 
+    cte 
+MtxCS 
+    None 
+        alpha_mtxCS2 
+            cte 
+AC_CS 
+    rnd 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    random 
+paramW2CS 
+    cte 
+paramW3CS 
+    rnd 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    use 
+reInitial 
+    dont use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=184 
+initialPopSize=8 
+particles=146 
+popTViterations=64 
+particlesToAdd=Inf 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=1 
+rcdelCS2=2 
+moiCS=0 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=1 
+rcdelCS2=2 
+moiCS=0 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=2 
+PMI_cte=4.000000e-01 
+eI=Inf 
+mI=8.000000e-01 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=6.000000e-01 
+eR=Inf 
+mR=Inf 
+ScR=Inf 
+FcR=Inf 
+pmICS=3 
+pmRCS=1 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=0 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=1.710000e+00 
+phi1Min=5.600000e-01 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=0 
+alpha_mtxCS2=0 
+phi1=Inf 
+phi2=Inf 
+phi1Max=1.710000e+00 
+phi1Min=5.600000e-01 
+phi2Max=5.600000e-01 
+phi2Min=2.533333e-01 
+AC_CS=1 
+taw=1 
+delta=1 
+prtRndCS=1 
+inertia_cte=Inf 
+w1Max=Inf 
+w1Min=Inf 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=3 
+w2_cte=6.225000e-01 
+w3_cte=Inf 
+paramW2CS=2 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=1 
+reInitial=0 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            percentage 
+moiCS 
+    rank 
+dnppCS 
+    rectangular 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    obj.func 
+MtxCS 
+    increasing-group-based 
+        alpha_mtxCS2 
+AC_CS 
+    time-var 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    self-regulating 
+paramW2CS 
+    cte 
+paramW3CS 
+    cte 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=97 
+initialPopSize=8 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=3 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=7 
+bd=Inf 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=1 
+PMI_cte=6.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=4.000000e-01 
+eR=Inf 
+mR=1 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=5.000000e-01 
+delta=5.000000e-01 
+prtRndCS=1 
+inertia_cte=6.129032e-01 
+w1Max=6.741935e-02 
+w1Min=6.798925e-01 
+nu=9.129032e-01 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=4 
+w2_cte=4.591667e-01 
+w3_cte=4.693750e-01 
+paramW2CS=2 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.965221 
+f_counter = 3516 
+time = 8.129957 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            percentage 
+moiCS 
+    rank 
+dnppCS 
+    rectangular 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    obj.func 
+MtxCS 
+    increasing-group-based 
+        alpha_mtxCS2 
+AC_CS 
+    time-var 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    self-regulating 
+paramW2CS 
+    cte 
+paramW3CS 
+    cte 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=109 
+initialPopSize=8 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=6 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=Inf 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=1 
+PMI_cte=2.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=6.000000e-01 
+eR=Inf 
+mR=3.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=1.631183e-01 
+w1Max=1.056989e-01 
+w1Min=6.703226e-01 
+nu=2.161290e-01 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=4 
+w2_cte=5.204167e-01 
+w3_cte=3.162500e-01 
+paramW2CS=2 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.973195 
+f_counter = 4567 
+time = 9.455193 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            percentage 
+moiCS 
+    rank 
+dnppCS 
+    rectangular 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    obj.func 
+MtxCS 
+    increasing-group-based 
+        alpha_mtxCS2 
+AC_CS 
+    time-var 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    self-regulating 
+paramW2CS 
+    cte 
+paramW3CS 
+    cte 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=87 
+initialPopSize=8 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=4 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=3 
+bd=Inf 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=1 
+PMI_cte=9.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=2.000000e-01 
+eR=Inf 
+mR=1.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=2.683871e-01 
+w1Max=5.841935e-01 
+w1Min=2.301075e-01 
+nu=4.483871e-01 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=4 
+w2_cte=6.122917e-01 
+w3_cte=4.795833e-01 
+paramW2CS=2 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.709088 
+f_counter = 3551 
+time = 7.063104 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            percentage 
+moiCS 
+    rank 
+dnppCS 
+    rectangular 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    obj.func 
+MtxCS 
+    increasing-group-based 
+        alpha_mtxCS2 
+AC_CS 
+    time-var 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    self-regulating 
+paramW2CS 
+    cte 
+paramW3CS 
+    cte 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=127 
+initialPopSize=9 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=5 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=4 
+bd=Inf 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=1 
+PMI_cte=4.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=4.000000e-01 
+eR=Inf 
+mR=4.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=4.215054e-01 
+w1Max=6.033333e-01 
+w1Min=3.353763e-01 
+nu=7.096774e-01 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=4 
+w2_cte=5.408333e-01 
+w3_cte=2.958333e-01 
+paramW2CS=2 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -328.476720 
+f_counter = 4923 
+time = 9.853468 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            percentage 
+moiCS 
+    rank 
+dnppCS 
+    rectangular 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    obj.func 
+MtxCS 
+    increasing-group-based 
+        alpha_mtxCS2 
+AC_CS 
+    time-var 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    self-regulating 
+paramW2CS 
+    cte 
+paramW3CS 
+    cte 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=107 
+initialPopSize=5 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=3 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=4 
+bd=Inf 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=7.000000e-01 
+eR=Inf 
+mR=7.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=5.841935e-01 
+w1Max=6.320430e-01 
+w1Min=3.258065e-01 
+nu=4.870968e-01 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=4 
+w2_cte=1.325000e-01 
+w3_cte=3.877083e-01 
+paramW2CS=2 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -328.163806 
+f_counter = 3600 
+time = 7.182313 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            percentage 
+moiCS 
+    rank 
+dnppCS 
+    rectangular 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    obj.func 
+MtxCS 
+    increasing-group-based 
+        alpha_mtxCS2 
+AC_CS 
+    time-var 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    self-regulating 
+paramW2CS 
+    cte 
+paramW3CS 
+    cte 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=82 
+initialPopSize=9 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=8 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=8 
+bd=Inf 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=1 
+PMI_cte=9.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=1 
+eR=Inf 
+mR=3.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=2.588172e-01 
+w1Max=3.162366e-01 
+w1Min=9.612903e-02 
+nu=6.129032e-01 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=4 
+w2_cte=7.960417e-01 
+w3_cte=6.837500e-01 
+paramW2CS=2 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.931652 
+f_counter = 3741 
+time = 8.096883 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            percentage 
+moiCS 
+    rank 
+dnppCS 
+    rectangular 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    obj.func 
+MtxCS 
+    increasing-group-based 
+        alpha_mtxCS2 
+AC_CS 
+    time-var 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    self-regulating 
+paramW2CS 
+    cte 
+paramW3CS 
+    cte 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=138 
+initialPopSize=7 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=2 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=6 
+bd=Inf 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=1 
+PMI_cte=7.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=3.000000e-01 
+eR=Inf 
+mR=1.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=1 
+delta=1 
+prtRndCS=1 
+inertia_cte=1.631183e-01 
+w1Max=6.320430e-01 
+w1Min=7.181720e-01 
+nu=3.129032e-01 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=4 
+w2_cte=3.468750e-01 
+w3_cte=4.183333e-01 
+paramW2CS=2 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -328.999334 
+f_counter = 2851 
+time = 5.857516 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            percentage 
+moiCS 
+    rank 
+dnppCS 
+    rectangular 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    obj.func 
+MtxCS 
+    increasing-group-based 
+        alpha_mtxCS2 
+AC_CS 
+    time-var 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    self-regulating 
+paramW2CS 
+    cte 
+paramW3CS 
+    cte 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=156 
+initialPopSize=7 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=4 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=5 
+bd=Inf 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=1 
+PMI_cte=9.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=5.000000e-01 
+eR=Inf 
+mR=2.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=6.000000e-01 
+delta=6.000000e-01 
+prtRndCS=1 
+inertia_cte=5.076344e-01 
+w1Max=5.650538e-01 
+w1Min=5.746237e-01 
+nu=5.161290e-01 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=4 
+w2_cte=1.529167e-01 
+w3_cte=7.143750e-01 
+paramW2CS=2 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.154691 
+f_counter = 4989 
+time = 10.076791 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            percentage 
+moiCS 
+    rank 
+dnppCS 
+    rectangular 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    obj.func 
+MtxCS 
+    increasing-group-based 
+        alpha_mtxCS2 
+AC_CS 
+    time-var 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    self-regulating 
+paramW2CS 
+    cte 
+paramW3CS 
+    cte 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=73 
+initialPopSize=3 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=5 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=Inf 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=1 
+PMI_cte=9.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=7.000000e-01 
+eR=Inf 
+mR=4.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=1 
+inertia_cte=5.172043e-01 
+w1Max=6.320430e-01 
+w1Min=3.449462e-01 
+nu=7.677419e-01 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=4 
+w2_cte=1.631250e-01 
+w3_cte=8.062500e-01 
+paramW2CS=2 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.193708 
+f_counter = 3140 
+time = 6.250215 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            percentage 
+moiCS 
+    rank 
+dnppCS 
+    rectangular 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    obj.func 
+MtxCS 
+    increasing-group-based 
+        alpha_mtxCS2 
+AC_CS 
+    time-var 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    self-regulating 
+paramW2CS 
+    cte 
+paramW3CS 
+    cte 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=53 
+initialPopSize=6 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=9 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=Inf 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=1 
+PMI_cte=8.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=7.000000e-01 
+eR=Inf 
+mR=2.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=1.000000e-01 
+delta=1.000000e-01 
+prtRndCS=1 
+inertia_cte=4.023656e-01 
+w1Max=6.990323e-01 
+w1Min=3.927957e-01 
+nu=6.709677e-01 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=4 
+w2_cte=8.062500e-01 
+w3_cte=5.918750e-01 
+paramW2CS=2 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.765868 
+f_counter = 2510 
+time = 5.405259 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    incrimental 
+        pIntitTypeCS2 
+            Init-horizontal 
+topCS 
+    time-var 
+        rcdelCS2 
+            percentage 
+moiCS 
+    rank 
+dnppCS 
+    rectangular 
+prtInfCS 
+    gauss 
+pmICS 
+    cte 
+pmRCS 
+    obj.func 
+MtxCS 
+    increasing-group-based 
+        alpha_mtxCS2 
+AC_CS 
+    time-var 
+prtRndCS 
+    rectangular 
+inertiaW1CS 
+    self-regulating 
+paramW2CS 
+    cte 
+paramW3CS 
+    cte 
+vClampCS 
+    use 
+            vClampCS 
+            fix to boundry 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=58 
+initialPopSize=8 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=9 
+popCS=2 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=2 
+bd=Inf 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=1 
+PMI_cte=6.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=8.000000e-01 
+eR=Inf 
+mR=5.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=1 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=7.000000e-01 
+delta=7.000000e-01 
+prtRndCS=1 
+inertia_cte=6.033333e-01 
+w1Max=2.683871e-01 
+w1Min=7.564516e-01 
+nu=6.129032e-01 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=4 
+w2_cte=4.081250e-01 
+w3_cte=5.816667e-01 
+paramW2CS=2 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+popCS 
+    cte 
+topCS 
+    ring 
+moiCS 
+    rank 
+dnppCS 
+    spherical 
+prtInfCS 
+    levy 
+pmICS 
+    success rate 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    time-var 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    linear-decreasing 
+paramW2CS 
+    rnd 
+paramW3CS 
+    cte 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=Inf 
+initialPopSize=Inf 
+particles=51 
+popTViterations=Inf 
+particlesToAdd=Inf 
+popCS=0 
+pIntitTypeCS2=0 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=0 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=1 
+topCS=0 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=1 
+bt=1 
+prtInfCS=2 
+PMI_cte=7.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=21 
+FcI=18 
+PMR_cte=6.000000e-01 
+eR=Inf 
+mR=Inf 
+ScR=41 
+FcR=15 
+pmICS=4 
+pmRCS=4 
+ini_alpha_mtx=Inf 
+sigma_alpha=1.906035e+01 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=4 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=4 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=2.000000e-01 
+delta=2.000000e-01 
+prtRndCS=2 
+inertia_cte=2.970968e-01 
+w1Max=6.416129e-01 
+w1Min=4.884946e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=1 
+w2_cte=Inf 
+w3_cte=6.020833e-01 
+paramW2CS=1 
+paramW3CS=2 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -328.360090 
+f_counter = 22553 
+time = 120.344551 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    cte 
+topCS 
+    ring 
+moiCS 
+    rank 
+dnppCS 
+    spherical 
+prtInfCS 
+    levy 
+pmICS 
+    success rate 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    time-var 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    linear-decreasing 
+paramW2CS 
+    rnd 
+paramW3CS 
+    cte 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=Inf 
+initialPopSize=Inf 
+particles=137 
+popTViterations=Inf 
+particlesToAdd=Inf 
+popCS=0 
+pIntitTypeCS2=0 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=0 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=1 
+topCS=0 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=1 
+bt=1 
+prtInfCS=2 
+PMI_cte=5.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=15 
+FcI=2 
+PMR_cte=3.000000e-01 
+eR=Inf 
+mR=Inf 
+ScR=20 
+FcR=34 
+pmICS=4 
+pmRCS=4 
+ini_alpha_mtx=Inf 
+sigma_alpha=2.913657e+01 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=4 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=4 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=8.000000e-01 
+delta=8.000000e-01 
+prtRndCS=2 
+inertia_cte=5.841935e-01 
+w1Max=7.181720e-01 
+w1Min=2.396774e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=1 
+w2_cte=Inf 
+w3_cte=3.672917e-01 
+paramW2CS=1 
+paramW3CS=2 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -329.998730 
+f_counter = 26853 
+time = 162.439031 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    cte 
+topCS 
+    ring 
+moiCS 
+    rank 
+dnppCS 
+    spherical 
+prtInfCS 
+    levy 
+pmICS 
+    success rate 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    time-var 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    linear-decreasing 
+paramW2CS 
+    rnd 
+paramW3CS 
+    cte 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=Inf 
+initialPopSize=Inf 
+particles=78 
+popTViterations=Inf 
+particlesToAdd=Inf 
+popCS=0 
+pIntitTypeCS2=0 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=0 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=1 
+topCS=0 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=1 
+bt=1 
+prtInfCS=2 
+PMI_cte=9.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=21 
+FcI=32 
+PMR_cte=3.000000e-01 
+eR=Inf 
+mR=Inf 
+ScR=42 
+FcR=16 
+pmICS=4 
+pmRCS=4 
+ini_alpha_mtx=Inf 
+sigma_alpha=1.465201e+01 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=4 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=4 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=5.000000e-01 
+delta=5.000000e-01 
+prtRndCS=2 
+inertia_cte=3.066667e-01 
+w1Max=7.947312e-01 
+w1Min=2.396774e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=1 
+w2_cte=Inf 
+w3_cte=7.654167e-01 
+paramW2CS=1 
+paramW3CS=2 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+
+--------------- SUCCESS --------------
+Global-Best = -328.990012 
+f_counter = 23903 
+time = 66.959478 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+popCS 
+    cte 
+topCS 
+    ring 
+moiCS 
+    rank 
+dnppCS 
+    spherical 
+prtInfCS 
+    levy 
+pmICS 
+    success rate 
+pmRCS 
+    success rate 
+MtxCS 
+    Eul-rot 
+        alpha_mtxCS2 
+            gauss 
+AC_CS 
+    time-var 
+prtRndCS 
+    noisy 
+inertiaW1CS 
+    linear-decreasing 
+paramW2CS 
+    rnd 
+paramW3CS 
+    cte 
+vClampCS 
+    dont use 
+unstuckCS 
+    dont use 
+reInitial 
+    use 
+currentInfo
+---------------------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=Inf 
+initialPopSize=Inf 
+particles=155 
+popTViterations=Inf 
+particlesToAdd=Inf 
+popCS=0 
+pIntitTypeCS2=0 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=0 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=1 
+topCS=0 
+rcdelCS2=0 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=1 
+bt=1 
+prtInfCS=2 
+PMI_cte=3.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=34 
+FcI=14 
+PMR_cte=7.000000e-01 
+eR=Inf 
+mR=Inf 
+ScR=19 
+FcR=15 
+pmICS=4 
+pmRCS=4 
+ini_alpha_mtx=Inf 
+sigma_alpha=3.473701e+00 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=4 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=4 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=8.000000e-01 
+delta=8.000000e-01 
+prtRndCS=2 
+inertia_cte=4.119355e-01 
+w1Max=6.990323e-01 
+w1Min=4.215054e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=1 
+w2_cte=Inf 
+w3_cte=5.918750e-01 
+paramW2CS=1 
+paramW3CS=2 
+vClampCS=0 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
