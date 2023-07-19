@@ -4,13 +4,17 @@ f_counter = f_counter + 1;
 % ff = @(x) 3.*(1-x(:,1)).^2.*exp(-(x(:,1).^2)-(x(:,2)+1).^2)-10.*(x(:,1)./5-x(:,1).^3-x(:,2).^5).*exp(-x(:,1).^2-x(:,2).^2)-1./3.*exp(-(x(:,1)+1).^2-x(:,2).^2);
 % fit = ff(x);
 
+fit = benchmark_func(x,9);
+bound = [-5 5;-5 5];
+d = size(bound,1);
+
 % fit = rosenbrock(x);
 % bound = [-6 6;-6 6];
 % d = size(bound,1);
 
-fit = shiftedAckleyFunction(x);
-bound = [-32 32;-32 32];
-d = size(bound,1);
+% fit = shiftedAckleyFunction(x);
+% bound = [-32 32;-32 32];
+% d = size(bound,1);
 
 % fit = schwef_f(x);
 % bound = [-100 100;-100 100];

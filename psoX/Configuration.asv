@@ -2,9 +2,9 @@ function flag = Configuration(par,input)
 % rng(1)
 flag=0;
 global itMax f_counter best d bound
-bound = [-5 5;-5 5];
+% bound = [-5 5;-5 5];
 % bound = [-32 32;-32 32];
-% bound = [-100 100;-100 100];
+bound = [-100 100;-100 100];
 % bound = [-6 6;-6 6];
 d = size(bound,1);
 % general

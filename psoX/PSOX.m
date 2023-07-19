@@ -150,8 +150,10 @@ try
                 X(i,it+1).pb.fit = pop.pb.fit(i);
             end
         end
-    
-        % act = bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1),bound);
+        % if it==100 %|| it==50 || it ==5
+        %     act = bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1),bound);
+        % end
+        
         % if gb.fit(end) < -6.5; break; end
     end % END it
     final = gb.fit(end);
