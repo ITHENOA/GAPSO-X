@@ -1,5 +1,5 @@
-function phi = AC(x,X,gb)   % ok
-global it itMax bornidx
+function phi = AC(x,gb)   % ok
+global it itMax
 global AC_CS
 global phi1 phi2 phi1Max phi1Min phi2Max phi2Min %(user defined)
 
@@ -8,11 +8,7 @@ global phi1 phi2 phi1Max phi1Min phi2Max phi2Min %(user defined)
             phi = [phi1 phi2];
 
         case 1 % rnd ------------------------------------------------------
-            if it == 1 || ismember(x.idx,bornidx)
-                phi = rand(1,2).*([phi1Max phi2Max] - [phi1Min phi2Min]) + [phi1Min phi2Min];
-            else
-                phi = X(x.idx,it-1).phi;
-            end
+            phi = rand(1,2).*([phi1Max phi2Max] - [phi1Min phi2Min]) + [phi1Min phi2Min];
 
         case 2 % time-var -------------------------------------------------
             phi(1) = 2.5 - it/itMax * 2;
@@ -20,6 +16,11 @@ global phi1 phi2 phi1Max phi1Min phi2Max phi2Min %(user defined)
 
         case 3 % extrapolated ---------------------------------------------
             phi(1) = exp(-(it/itMax));
-            A = abs(x.lb.fit - x.fit/gb.fit(it));%abs(x.lb.fit - x.fit/gb.fit(it)); %abs(gb - fx/gb);
+            A = abs((x.lb.fit - x.fit)/gb.fit(it));
             phi(2) = exp(phi(1) * A);
+            if phi(2) > phi2Max
+                phi(2) = phi2Max;
+            elseif phi(2) < phi2Min
+                phi(2) = phi2Min;
+            end
     end

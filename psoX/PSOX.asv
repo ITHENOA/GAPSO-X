@@ -7,10 +7,10 @@ global eI mI ScI FcI eR mR ScR FcR f_counter repeatedPOP MtxCS
 
 logfile = fopen('PSOX_log.text','a');
 try
-    f([]); % load 'bound' and 'd'
+    f([])' % load 'bound' and 'd'
     ini_vel = 0;
-    randAgain = Configuration(par,input);
-    if randAgain
+    flag = Configuration(par,input);
+    if flag
         final=inf;
         f_counter=inf;
         return
@@ -173,7 +173,7 @@ catch err
     final=inf;
     f_counter=inf;
 end
-fprintf(logfile,'\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(%d)%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n',time());
+fprintf(logfile,'\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n');
 fclose(logfile);
 
 % disp("END")
