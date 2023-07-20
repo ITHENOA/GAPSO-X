@@ -1,5 +1,5 @@
 function [best_fit,best_pos,best_fc]=second_floor(par)
-global logfile success fail rndAgain itMax_floor2
+global logfile
 % rng(0)
 % clc;clear;close all;
 % par=[1     0    50     0     3    14    22    41     8     1     0     0     0     1];
@@ -9,7 +9,7 @@ nDecoder=6;  %maximum number of decoder for each parameter
 nPop=20;    %number of population
 muP=0.02;   %mutation probability
 crP=0.5;    %cross over probability
-maxIt=itMax_floor2;  %maximum number of iterarion
+maxIt=5;  %maximum number of iterarion
 mcl=20;      %maximum choromosom length
 nCom=length(par); %number of component
 %% initialize
@@ -38,10 +38,8 @@ c=zeros(nPar,mcl,nCom,nPop,maxIt+1);
 input=inf(nCom,nPar,nPop,maxIt+1);
 fits=zeros(nPop,maxIt+1);
 fc=zeros(nPop,maxIt+1);
-%%%%%%%%%% HOJJAT
 fprintf(logfile,'Initialize Floor(2)');
 fprintf(logfile,'\n******************\n');
-%%%%%%%%%% HOJJAT
 for k=1:nPop
     for i=1:nCom
         for j=1:nPar
@@ -57,16 +55,8 @@ for k=1:nPop
             c(j,:,i,k,1)=[vec inf(1,mcl-c_size)];
         end
     end
-    %%%%%%%%%%%%% HOJJAT
-    % [fits(k,1),fc(k,1)]=PSOX(par,input(:,:,k,1));
-    results = PSOX(par,input(:,:,k,1));
-   if results.status==1; success=success+1; end
-    if results.status==0; fail=fail+1; end
-    if results.status==2; rndAgain=rndAgain+1; end
-    fc(k,1) = results.fCount;
-    fits(k,1) = results.eval;
-    % results.time = ??
-    %%%%%%%%%% HOJJAT
+    [fits(k,1),fc(k,1)]=PSOX(par,input(:,:,k,1));
+
 end
 pop_in_this_it=c(:,:,:,:,1);
 %% main
@@ -89,29 +79,9 @@ for it=1:maxIt
         input(:,:,2*i-1,it+1)=decoder(cs,next_pop(:,:,:,2*i-1));
         input(:,:,2*i,it+1)=decoder(cs,next_pop(:,:,:,2*i));
         %function evaluation
-        %%%%%%%%%%%%% HOJJAT
-        fprintf(logfile,'Floor(2) => it = %d, particle = %d/%d',it,2*i-1,nPop);
-        fprintf(logfile,'\n******************\n');
-        % [fits(2*i-1,it+1),fc(2*i-1,it+1)]=PSOX(par,input(:,:,2*i-1,it+1));
-        results = PSOX(par,input(:,:,2*i-1,it+1));
-        if results.status==1; success=success+1; end
-        if results.status==0; fail=fail+1; end
-        if results.status==2; rndAgain=rndAgain+1; end
-        fc(2*i-1,it+1) = results.fCount;
-        fits(2*i-1,it+1) = results.eval;
-        % results.time = ??
-
-        fprintf(logfile,'Floor(2) => it = %d, particle = %d/%d',it,2*i,nPop);
-        fprintf(logfile,'\n******************\n');
-        % [fits(2*i,it+1),fc(2*i,it+1)]=PSOX(par,input(:,:,2*i,it+1));
-        results = PSOX(par,input(:,:,2*i,it+1));
-        if results.status==1; success=success+1; end
-        if results.status==0; fail=fail+1; end
-        if results.status==2; rndAgain=rndAgain+1; end
-        fits(2*i,it+1) = results.fCount;
-        fc(2*i,it+1) = results.eval;
-        % results.time = ??
-        %%%%%%%%%% HOJJAT
+        [fits(2*i-1,it+1),fc(2*i-1,it+1)]=PSOX(par,input(:,:,2*i-1,it+1));
+        [fits(2*i,it+1),fc(2*i,it+1)]=PSOX(par,input(:,:,2*i,it+1));
+ 
     end
     if rem(nPop,2)
         next_pop=next_pop(:,:,:,1:end-1);

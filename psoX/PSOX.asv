@@ -1,23 +1,26 @@
-function [final,f_counter] = PSOX(par,input)
+function results = PSOX(par,input)
 tic
-global inertiaW1CS prtRndCS prtInfCS inertia_cte bound
+global inertiaW1CS prtRndCS prtInfCS inertia_cte bound logfile
 global it itMax Aidx deadidx bornidx alpha
 global PMI_cte vmax PMR_cte pmICS pmRCS vClampCS
 global eI mI ScI FcI eR mR ScR FcR f_counter repeatedPOP MtxCS
 
-logfile = fopen('PSOX_log.text','a');
 try
-    f([])' % load 'bound' and 'd'
+    f([]); f_counter=0; % load 'bound' and 'd'
     ini_vel = 0;
-    flag = Configuration(par,input);
-    if flag
-        final=inf;
-        f_counter=inf;
+    randAgain = psoxConfiguration(par,input);
+    if randAgain
+        results.eval = inf;
+        results.time = toc;
+        results.fCount = f_counter;
+        results.status = 2;
+        % final=inf;
+        % f_counter=inf;
         return
     end
-    currentInfo(logfile)
+    Logger(logfile)
 
-    % Load initialize (pop, TOP, MOI)
+    % Load initialize
     [pop, X, gb, tree, rc] = INITIALIZE(bound,ini_vel);
     % saveIdx = cell(1,itMax);
     
@@ -53,7 +56,7 @@ try
                     x.prtRnd = pertRnd(x.pos, []);
                 end
                 % pmI & Pert_Info
-                if prtInfCS ~= 0 || prtInfCS ~= 4
+                if ~ismember(prtInfCS,[0,4])
                     if ismember(x.idx,bornidx) % it == 1 || 
                         x.pmI = PMI_cte;
                     else
@@ -154,8 +157,14 @@ try
 
         % if gb.fit(end) < -6.5; break; end
     end % END it
-    final = gb.fit(end);
-    time=toc;
+
+    results.gb = gb.fit(end);
+    results.time = toc;
+    results.fCount = f_counter;
+    results.status = 1;
+
+    % final = gb.fit(end);
+    % time=toc;
     % Log
     fprintf(logfile,'\n--------------- SUCCESS --------------\n');
     fprintf(logfile,'Global-Best = %f \nf_counter = %d \n',gb.fit(end),f_counter);
@@ -170,11 +179,16 @@ catch err
         fprintf(logfile, 'Line: %d\n\n', err.stack(k).line);
     end
     fprintf(logfile, '\n');
-    final=inf;
-    f_counter=inf;
+
+    results.eva = gb.fit(end);
+    results.time = toc;
+    results.fCount = inf;
+    results.status = 0;
+
+    % final=inf;
+    % f_counter=inf;
 end
-fprintf(logfile,'\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n');
-fclose(logfile);
+fprintf(logfile,'\n ======================== %s ======================== \n\n',datetime);
 
 % disp("END")
 % disp("f_counter = "+num2str(f_counter))

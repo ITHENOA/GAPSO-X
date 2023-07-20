@@ -1,4 +1,4 @@
-function currentInfo(logfile)
+function Logger(logfile)
 global itMax f_counter d
 global finalPopSize particles initialPopSize popTViterations particlesToAdd
 global popCS % 0=cte, 1=time-var, 2=incrimental
@@ -27,157 +27,160 @@ global paramW2CS paramW3CS % 0=w1, 1=rnd, 2=cte
 global vClampCS vClampCS2 unstuckCS reInitial
 global vmax
 
-fprintf(logfile,'(popCS) => ');
+fprintf(logfile,'PSOX');
+fprintf(logfile,'\n******************\n');
+
+fprintf(logfile,' (popCS) => ');
 switch popCS
-    case 0; fprintf(logfile,'cte \n'); 
-    case 1; fprintf(logfile,'time-var \n'); 
+    case 0; fprintf(logfile,'cte'); 
+    case 1; fprintf(logfile,'time-var'); 
     case 2; fprintf(logfile,'incrimental '); 
         fprintf(logfile,'{pIntitTypeCS2 = ');
         switch pIntitTypeCS2
-            case 0; fprintf(logfile,'Init-random} \n');
-            case 1; fprintf(logfile,'Init-horizontal} \n');
+            case 0; fprintf(logfile,'Init-random}');
+            case 1; fprintf(logfile,'Init-horizontal}');
         end
 end
 
-fprintf(logfile,'(topCS) => ');
+fprintf(logfile,'\n (topCS) => ');
 switch topCS
-    case 0; fprintf(logfile,'ring \n'); 
-    case 1; fprintf(logfile,'full \n'); 
-    case 2; fprintf(logfile,'von \n'); 
-    case 3; fprintf(logfile,'rnd \n'); 
-    case 4; fprintf(logfile,'hierarchical \n'); 
+    case 0; fprintf(logfile,'ring'); 
+    case 1; fprintf(logfile,'full'); 
+    case 2; fprintf(logfile,'von'); 
+    case 3; fprintf(logfile,'rnd'); 
+    case 4; fprintf(logfile,'hierarchical'); 
     case 5; fprintf(logfile,'time-var '); 
         fprintf(logfile,'{rcdelCS2 = ');
         switch rcdelCS2
-            case 0; fprintf(logfile,'main} \n');
-            case 1; fprintf(logfile,'percentage} \n');
+            case 0; fprintf(logfile,'main}');
+            case 1; fprintf(logfile,'percentage}');
         end
 end
 
-fprintf(logfile,'(moiCS) => ');
+fprintf(logfile,'\n (moiCS) => ');
 switch moiCS
-    case 0; fprintf(logfile,'best \n'); 
-    case 1; fprintf(logfile,'full \n'); 
-    case 2; fprintf(logfile,'rank \n'); 
-    case 3; fprintf(logfile,'rnd \n'); 
+    case 0; fprintf(logfile,'best'); 
+    case 1; fprintf(logfile,'full'); 
+    case 2; fprintf(logfile,'rank'); 
+    case 3; fprintf(logfile,'rnd'); 
 end
 
-fprintf(logfile,'(dnppCS) => ');
+fprintf(logfile,'\n (dnppCS) => ');
 switch dnppCS
-    case 0; fprintf(logfile,'rectangular \n'); 
-    case 1; fprintf(logfile,'spherical \n'); 
-    case 2; fprintf(logfile,'standard \n'); 
-    case 3; fprintf(logfile,'gaussian \n'); 
-    case 4; fprintf(logfile,'discrete \n');
-    case 5; fprintf(logfile,'cauchy gaussian \n');
+    case 0; fprintf(logfile,'rectangular'); 
+    case 1; fprintf(logfile,'spherical'); 
+    case 2; fprintf(logfile,'standard'); 
+    case 3; fprintf(logfile,'gaussian'); 
+    case 4; fprintf(logfile,'discrete');
+    case 5; fprintf(logfile,'cauchy gaussian');
 end
 
-fprintf(logfile,'(prtInfCS) => ');
+fprintf(logfile,'\n (prtInfCS) => ');
 switch prtInfCS
-    case 0; fprintf(logfile,'None \n'); 
-    case 1; fprintf(logfile,'gauss \n'); 
-    case 2; fprintf(logfile,'levy \n'); 
-    case 3; fprintf(logfile,'cauchy \n'); 
-    case 4; fprintf(logfile,'uniform \n');
+    case 0; fprintf(logfile,'None'); 
+    case 1; fprintf(logfile,'gauss'); 
+    case 2; fprintf(logfile,'levy'); 
+    case 3; fprintf(logfile,'cauchy'); 
+    case 4; fprintf(logfile,'uniform');
 end
 
-fprintf(logfile,'(pmICS) => ');
+fprintf(logfile,'\n (pmICS) => ');
 switch pmICS
-    case 1; fprintf(logfile,'cte \n'); 
-    case 2; fprintf(logfile,'euclidean \n'); 
-    case 3; fprintf(logfile,'obj.func \n'); 
-    case 4; fprintf(logfile,'success-rate \n'); 
+    case 1; fprintf(logfile,'cte'); 
+    case 2; fprintf(logfile,'euclidean'); 
+    case 3; fprintf(logfile,'obj.func'); 
+    case 4; fprintf(logfile,'success-rate'); 
 end
 
-fprintf(logfile,'(pmRCS) => ');
+fprintf(logfile,'\n (pmRCS) => ');
 switch pmRCS
-    case 1; fprintf(logfile,'cte \n'); 
-    case 2; fprintf(logfile,'euclidean \n'); 
-    case 3; fprintf(logfile,'obj.func \n'); 
-    case 4; fprintf(logfile,'success-rate \n');
+    case 1; fprintf(logfile,'cte'); 
+    case 2; fprintf(logfile,'euclidean'); 
+    case 3; fprintf(logfile,'obj.func'); 
+    case 4; fprintf(logfile,'success-rate');
 end
 
-fprintf(logfile,'(MtxCS) => ');
+fprintf(logfile,'\n (MtxCS) => ');
 switch MtxCS
-    case 0; fprintf(logfile,'None \n'); 
-    case 1; fprintf(logfile,'rnd-diagonal \n'); 
-    case 2; fprintf(logfile,'rnd-linear \n'); 
+    case 0; fprintf(logfile,'None'); 
+    case 1; fprintf(logfile,'rnd-diagonal'); 
+    case 2; fprintf(logfile,'rnd-linear'); 
     case 3; fprintf(logfile,'exp-map '); 
     case 4; fprintf(logfile,'Eul-rot ');
     case 5; fprintf(logfile,'Eul-rot-all ');
-    case 6; fprintf(logfile,'increasing-group-based \n');    
+    case 6; fprintf(logfile,'increasing-group-based');    
 end
 if ismember(MtxCS,[3,4,5])
     fprintf(logfile,'{alpha_mtxCS2 = ');
     switch alpha_mtxCS2
-        case 0; fprintf(logfile,'cte} \n');
-        case 1; fprintf(logfile,'gauss} \n');
-        case 2; fprintf(logfile,'adaptive} \n');
+        case 0; fprintf(logfile,'cte}');
+        case 1; fprintf(logfile,'gauss}');
+        case 2; fprintf(logfile,'adaptive}');
     end
 end
 
-fprintf(logfile,'(AC_CS) => ');
+fprintf(logfile,'\n (AC_CS) => ');
 switch AC_CS
-    case 0; fprintf(logfile,'cte \n'); 
-    case 1; fprintf(logfile,'rnd \n'); 
-    case 2; fprintf(logfile,'time-var \n'); 
-    case 3; fprintf(logfile,'extrapolated \n'); 
+    case 0; fprintf(logfile,'cte'); 
+    case 1; fprintf(logfile,'rnd'); 
+    case 2; fprintf(logfile,'time-var'); 
+    case 3; fprintf(logfile,'extrapolated'); 
 end
 
-fprintf(logfile,'(prtRndCS) => ');
+fprintf(logfile,'\n (prtRndCS) => ');
 switch prtRndCS
-    case 0; fprintf(logfile,'None \n'); 
-    case 1; fprintf(logfile,'rectangular \n'); 
-    case 2; fprintf(logfile,'noisy \n'); 
+    case 0; fprintf(logfile,'None'); 
+    case 1; fprintf(logfile,'rectangular'); 
+    case 2; fprintf(logfile,'noisy'); 
 end
 
-fprintf(logfile,'(inertiaW1CS) => ');
+fprintf(logfile,'\n (inertiaW1CS) => ');
 switch inertiaW1CS
-    case 0; fprintf(logfile,'cte \n'); 
-    case 1; fprintf(logfile,'linear-decreasing \n'); 
-    case 2; fprintf(logfile,'linear-increasing \n'); 
-    case 3; fprintf(logfile,'random \n'); 
-    case 4; fprintf(logfile,'self-regulating \n');
-    case 5; fprintf(logfile,'adaptive-based-on-velocity \n');
-    case 6; fprintf(logfile,'double-exponential-self-adaptive \n'); 
-    case 7; fprintf(logfile,'ranked-based \n'); 
-    case 8; fprintf(logfile,'success-based \n'); 
-    case 9; fprintf(logfile,'convergence-based \n');
+    case 0; fprintf(logfile,'cte'); 
+    case 1; fprintf(logfile,'linear-decreasing'); 
+    case 2; fprintf(logfile,'linear-increasing'); 
+    case 3; fprintf(logfile,'random'); 
+    case 4; fprintf(logfile,'self-regulating');
+    case 5; fprintf(logfile,'adaptive-based-on-velocity');
+    case 6; fprintf(logfile,'double-exponential-self-adaptive'); 
+    case 7; fprintf(logfile,'ranked-based'); 
+    case 8; fprintf(logfile,'success-based'); 
+    case 9; fprintf(logfile,'convergence-based');
 end
 
-fprintf(logfile,'(paramW2CS) => ');
+fprintf(logfile,'\n (paramW2CS) => ');
 switch paramW2CS
-    case 0; fprintf(logfile,'w1 \n'); 
-    case 1; fprintf(logfile,'rnd \n'); 
-    case 2; fprintf(logfile,'cte \n'); 
+    case 0; fprintf(logfile,'w1'); 
+    case 1; fprintf(logfile,'rnd'); 
+    case 2; fprintf(logfile,'cte'); 
 end
-fprintf(logfile,'(paramW3CS) => ');
+fprintf(logfile,'\n (paramW3CS) => ');
 switch paramW3CS
-    case 0; fprintf(logfile,'w1 \n'); 
-    case 1; fprintf(logfile,'rnd \n'); 
-    case 2; fprintf(logfile,'cte \n'); 
+    case 0; fprintf(logfile,'w1'); 
+    case 1; fprintf(logfile,'rnd'); 
+    case 2; fprintf(logfile,'cte'); 
 end
-fprintf(logfile,'(vClampCS) => ');
+fprintf(logfile,'\n (vClampCS) => ');
 switch vClampCS
-    case 0; fprintf(logfile,'dont-use \n'); 
+    case 0; fprintf(logfile,'dont-use'); 
     case 1; fprintf(logfile,'use '); 
         fprintf(logfile,'{vClampCS = ');
         switch vClampCS2
-            case 0; fprintf(logfile,'fix-to-boundry} \n'); 
-            case 1; fprintf(logfile,'random-between-bound} \n'); 
+            case 0; fprintf(logfile,'fix-to-boundry}'); 
+            case 1; fprintf(logfile,'random-between-bound}'); 
         end      
 end
 
-fprintf(logfile,'(unstuckCS) => ');
+fprintf(logfile,'\n (unstuckCS) => ');
 switch unstuckCS
-    case 0; fprintf(logfile,'dont-use \n'); 
-    case 1; fprintf(logfile,'use \n'); 
+    case 0; fprintf(logfile,'dont-use'); 
+    case 1; fprintf(logfile,'use'); 
 end
 
-fprintf(logfile,'(reInitial) => ');
+fprintf(logfile,'\n (reInitial) => ');
 switch reInitial
-    case 0; fprintf(logfile,'dont-use \n'); 
-    case 1; fprintf(logfile,'use \n'); 
+    case 0; fprintf(logfile,'dont-use'); 
+    case 1; fprintf(logfile,'use'); 
 end
 
 
@@ -204,5 +207,3 @@ fprintf(logfile,'w1Min=%d \nnu=%d \na_w1_cb=%d \nb_w1_cb=%d \nlambda_w1_abv=%d \
     w1Min, nu, a_w1_cb, b_w1_cb, lambda_w1_abv, inertiaW1CS, w2_cte, w3_cte);
 fprintf(logfile,'paramW3CS=%d \nvClampCS=%d \nvClampCS2=%d \nunstuckCS=%d \nreInitial=%d \nvmax=%d \nparamW2CS=%d \n',...
     paramW3CS, vClampCS, vClampCS2, unstuckCS, reInitial, vmax, paramW2CS);
-
-fprintf(logfile,'\n---------------------\n');
