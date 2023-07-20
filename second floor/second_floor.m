@@ -60,7 +60,7 @@ for k=1:nPop
     %%%%%%%%%%%%% HOJJAT
     % [fits(k,1),fc(k,1)]=PSOX(par,input(:,:,k,1));
     results = PSOX(par,input(:,:,k,1));
-   if results.status==1; success=success+1; end
+    if results.status==1; success=success+1; end
     if results.status==0; fail=fail+1; end
     if results.status==2; rndAgain=rndAgain+1; end
     fc(k,1) = results.fCount;

@@ -1,4 +1,4 @@
-clc;clear;close all
+clc;clear;close all;tic
 global itMax_floor1 itMax_floor2 itMax_psox
 
 % floor 1
@@ -12,3 +12,5 @@ itMax_psox = 50;
 
 % run code
 run("Top_Floor.m")
+
+toc

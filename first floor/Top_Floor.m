@@ -1,6 +1,7 @@
 %%%%%%%%%% HOJJAT
 global logfile success fail rndAgain itMax_floor1
 logfile = fopen('GAPSOX_log.text','w');
+fprintf(logfile,'\n ======================== %s ======================== \n\n',datetime);
 [success,fail,rndAgain]=deal(0);
 %%%%%%%%%% HOJJAT
 %% prameters
