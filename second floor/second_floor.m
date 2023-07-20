@@ -76,9 +76,7 @@ for it=1:maxIt
         input(:,:,2*i-1,it+1)=decoder(cs,next_pop(:,:,:,2*i-1));
         input(:,:,2*i,it+1)=decoder(cs,next_pop(:,:,:,2*i));
         %function evaluation
-%         [fits(2*i-1,it+1),fc(2*i-1,it+1)]=PSOX(par,input(:,:,2*i-1,it+1));
         [fits(2*i-1,it+1),fc(2*i-1,it+1)]=PSOX(par,input(:,:,2*i-1,it+1));
-%         [fits(2*i,it+1),fc(2*i,it+1)]=PSOX(par,input(:,:,2*i,it+1));
         [fits(2*i,it+1),fc(2*i,it+1)]=PSOX(par,input(:,:,2*i,it+1));
  
     end
