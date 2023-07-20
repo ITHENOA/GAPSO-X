@@ -4,31 +4,31 @@ global inertiaW1CS prtRndCS prtInfCS inertia_cte bound
 global it itMax Aidx deadidx bornidx alpha
 global PMI_cte vmax PMR_cte pmICS pmRCS vClampCS
 global eI mI ScI FcI eR mR ScR FcR f_counter repeatedPOP MtxCS
-ini_vel = 0;
-flag = Configuration(par,input);
-if flag
-    final=inf;
-    f_counter=inf;
-    return
-end
 
 logfile = fopen('PSOX_log.text','a');
 try
+    f([]); % load 'bound' and 'd'
+    ini_vel = 0;
+    randAgain = Configuration(par,input);
+    if randAgain
+        final=inf;
+        f_counter=inf;
+        return
+    end
     currentInfo(logfile)
-    
+
     % Load initialize (pop, TOP, MOI)
     [pop, X, gb, tree, rc] = INITIALIZE(bound,ini_vel);
     % saveIdx = cell(1,itMax);
     
-    for it = 1:itMax
+    for it = 1:itMax %%%%%%%%%%%%%%%%%%% Main Loop %%%%%%%%%%%%%%%%%%%%%%%%
         % saveIdx{it} = Aidx;
-        
-    
-        %%%%%%%%%%%%%%%%%%%%%%%%%%% update TOP MOI %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if it > 1  
+            % Update Topology
             [X,tree,rc]  = TOP(pop,X,tree,rc);
+            % Update Model Of Influence
             X = MOI(X);
-    
+            % Find{'w1','w2','w3','phi','pm-I','prt-I','pm-R','prt-R'}
             for i = Aidx
                 x = X(i,it);
                 % w1
@@ -41,7 +41,7 @@ try
                 [x.w2, x.w3] = W23(X,x);
                 % phi
                 x.phi = AC(x, gb);
-                % pm & PrtRnd
+                % pmR & PrtRnd
                 if prtRndCS ~= 0
                     if ismember(x.idx,bornidx) % it == 1 || 
                         x.pmR = PMR_cte;
@@ -52,7 +52,7 @@ try
                 else
                     x.prtRnd = pertRnd(x.pos, []);
                 end
-                % Pert_Info
+                % pmI & Pert_Info
                 if prtInfCS ~= 0 || prtInfCS ~= 4
                     if ismember(x.idx,bornidx) % it == 1 || 
                         x.pmI = PMI_cte;
@@ -63,12 +63,11 @@ try
                 else
                     x.prtInfo = pertInf(pop.pb.pos(i,:), []);
                 end
-    
+                % save informstions
                 X(i,it) = x;
-                x=[];
             end
         end 
-        
+        % alpha-mtx
         if ismember(MtxCS,[3,4,5])
             alpha = alpha_mtx(pop);
         end
@@ -80,9 +79,7 @@ try
             %%%%%%%%%%%%%%%%%%%%% prepare next generation %%%%%%%%%%%%%%%%%%%%%
             % Update Velocity 
             X(i,it+1).v = X(i,it).w1 * X(i,it).v + X(i,it).w2 * X(i,it).dnpp + X(i,it).w3 * X(i,it).prtRnd;
-            if vClampCS
-                X(i,it+1).v = velClamp(X(i,it+1).v,vmax);
-            end
+            if vClampCS; X(i,it+1).v = velClamp(X(i,it+1).v,vmax); end
             % Update Position 
             X(i,it+1).pos = X(i,it).pos + X(i,it+1).v; 
             % check bound
@@ -118,7 +115,6 @@ try
         [pop, X, gb] = particles_reinitialization(pop, X, gb, bound);
         
         %%%%%%%%%%%%%%%%%%%%%%%%%% Update Population %%%%%%%%%%%%%%%%%%%%%%%%%%
-        
         pop = POP(pop,bound,gb);  % +1 | +1,-1 | -1 | +particlesToAdd
         repeatedPOP = setdiff(Aidx,bornidx);
         if numel(deadidx) ~= 0 || numel(bornidx) ~= 0  % have (+ | -)
@@ -150,15 +146,17 @@ try
                 X(i,it+1).pb.fit = pop.pb.fit(i);
             end
         end
-        if it==100 || it==50 || it ==5
-            act = bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1),bound);
-        end
+
+        % PLOT
+        % if it==100 || it==50 || it ==5
+        %     act = bench_func(pop.pos(Aidx,:,it+1),gb.fit,pop.size(it+1),bound);
+        % end
 
         % if gb.fit(end) < -6.5; break; end
     end % END it
-    final = gb.fit(end)
+    final = gb.fit(end);
     time=toc;
-    
+    % Log
     fprintf(logfile,'\n--------------- SUCCESS --------------\n');
     fprintf(logfile,'Global-Best = %f \nf_counter = %d \n',gb.fit(end),f_counter);
     fprintf(logfile,'time = %2f \n',time);
@@ -175,7 +173,7 @@ catch err
     final=inf;
     f_counter=inf;
 end
-fprintf(logfile,'\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n');
+fprintf(logfile,'\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(%d)%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n',time());
 fclose(logfile);
 
 % disp("END")

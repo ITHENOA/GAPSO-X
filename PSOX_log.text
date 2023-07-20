@@ -1,0 +1,215 @@
+
+--------------- ERROR --------------
+Not enough input arguments.
+Stack trace:
+File: C:\Users\ITHENOA_PC\Desktop\GAPSO-X\psoX\PSOX.m
+Function: PSOX
+Line: 12
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(popCS) => incrimental {pIntitTypeCS2 = Init-random} 
+(topCS) => time-var {rcdelCS2 = percentage} 
+(moiCS) => rank 
+(dnppCS) => rectangular 
+(prtInfCS) => levy 
+(pmICS) => success-rate 
+(pmRCS) => success-rate 
+(MtxCS) => Eul-rot-all {alpha_mtxCS2 = gauss} 
+(AC_CS) => time-var 
+(prtRndCS) => rectangular 
+(inertiaW1CS) => cte 
+(paramW2CS) => w1 
+(paramW3CS) => cte 
+(vClampCS) => use {vClampCS = fix-to-boundry} 
+(unstuckCS) => dont-use 
+(reInitial) => use 
+
+----------PARAMs-----------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=139 
+initialPopSize=6 
+particles=Inf 
+popTViterations=Inf 
+particlesToAdd=6 
+popCS=2 
+pIntitTypeCS2=0 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=5 
+rcdelCS2=1 
+moiCS=2 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=2 
+PMI_cte=4.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=37 
+FcI=46 
+PMR_cte=5.000000e-01 
+eR=Inf 
+mR=Inf 
+ScR=9 
+FcR=8 
+pmICS=4 
+pmRCS=4 
+ini_alpha_mtx=Inf 
+sigma_alpha=4.418346e+00 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=5 
+alpha_mtxCS2=1 
+phi1=Inf 
+phi2=Inf 
+phi1Max=Inf 
+phi1Min=Inf 
+phi2Max=Inf 
+phi2Min=Inf 
+AC_CS=2 
+taw=1 
+delta=1 
+prtRndCS=1 
+inertia_cte=8.425806e-01 
+w1Max=Inf 
+w1Min=Inf 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=0 
+w2_cte=Inf 
+w3_cte=2.958333e-01 
+paramW2CS=0 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=
+---------------------
+(popCS) => cte 
+(topCS) => ring 
+(moiCS) => full 
+(dnppCS) => standard 
+(prtInfCS) => levy 
+(pmICS) => euclidean 
+(pmRCS) => cte 
+(MtxCS) => increasing-group-based 
+(AC_CS) => extrapolated 
+(prtRndCS) => noisy 
+(inertiaW1CS) => success-based 
+(paramW2CS) => w1 
+(paramW3CS) => rnd 
+(vClampCS) => use {vClampCS = fix-to-boundry} 
+(unstuckCS) => dont-use 
+(reInitial) => use 
+
+----------PARAMs-----------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=Inf 
+initialPopSize=Inf 
+particles=125 
+popTViterations=Inf 
+particlesToAdd=Inf 
+popCS=0 
+pIntitTypeCS2=0 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=Inf 
+topCS=0 
+rcdelCS2=2 
+moiCS=1 
+rand_cauchy_dnpp=Inf 
+dnppCS=2 
+topCS=0 
+rcdelCS2=2 
+moiCS=1 
+rand_cauchy_dnpp=Inf 
+dnppCS=2 
+bt=1 
+prtInfCS=2 
+PMI_cte=3.000000e-01 
+eI=8.000000e-01 
+mI=Inf 
+ScI=Inf 
+FcI=Inf 
+PMR_cte=2.000000e-01 
+eR=Inf 
+mR=Inf 
+ScR=Inf 
+FcR=Inf 
+pmICS=2 
+pmRCS=1 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=1.863333e+00 
+phi1Min=2.246667e+00 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=6 
+alpha_mtxCS2=6 
+phi1=Inf 
+phi2=Inf 
+phi1Max=1.863333e+00 
+phi1Min=2.246667e+00 
+phi2Max=1.786667e+00 
+phi2Min=4.833333e-01 
+AC_CS=3 
+taw=3.000000e-01 
+delta=3.000000e-01 
+prtRndCS=2 
+inertia_cte=5.937634e-01 
+w1Max=8.330108e-01 
+w1Min=2.588172e-01 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=8 
+w2_cte=Inf 
+w3_cte=Inf 
+paramW3CS=1 
+vClampCS=1 
+vClampCS2=0 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=0 
+vClampCS=
+---------------------

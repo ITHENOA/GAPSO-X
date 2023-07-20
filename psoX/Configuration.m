@@ -1,13 +1,14 @@
-function flag = Configuration(par,input)
-% rng(1)
-flag=0;
+function randAgain = Configuration(par,input)
+
 global itMax f_counter best d bound
-bound = [-5 5;-5 5];
+randAgain=0;
+% bound = [-5 5;-5 5];
 % bound = [-32 32;-32 32];
 % bound = [-100 100;-100 100];
 % bound = [-6 6;-6 6];
-d = size(bound,1);
-% general
+% d = size(bound,1);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% general param %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 itMax = 50;
 f_counter = 0;
 best = 1;
@@ -165,7 +166,7 @@ paramW3CS = par(11); %  $ [0 1 2]
 w2_cte = input(10,1); % $  [0:1]
 w3_cte = input(11,1); %  $ [0:1]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%% unstuc reini %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% optional %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global vClampCS vClampCS2 unstuckCS reInitial
 if par(12)==0;vcs=par(12);
 else;vcs=1;end
@@ -179,6 +180,7 @@ vmax = zeros(1,d);
 for j = 1:d
     vmax(j) = (bound(j,2) - bound(j,1))/2;
 end
+if numel(vmax)==0; error("vmax=[]"); end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 if bd~=inf && popCS~=0 && bd>initialPopSize; bd=initialPopSize; end
 
@@ -207,5 +209,5 @@ end
 if initialPopSize > finalPopSize ||  (initialPopSize ~= inf && particles < initialPopSize)...
         || (bd~=inf && bd>finalPopSize) || (particlesToAdd~=inf && particlesToAdd>finalPopSize-initialPopSize)...
         || (popCS==1 && (particles<initialPopSize || particles>finalPopSize))
-    flag=1;
+    randAgain=1;
 end
