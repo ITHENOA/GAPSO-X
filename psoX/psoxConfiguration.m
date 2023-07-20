@@ -1,18 +1,11 @@
-function randAgain = Configuration(par,input)
-
-global itMax f_counter best d bound
+function randAgain = psoxConfiguration(par,input)
+% rng(0)
+global itMax best d bound itMax_psox
 randAgain=0;
-% bound = [-5 5;-5 5];
-% bound = [-32 32;-32 32];
-% bound = [-100 100;-100 100];
-% bound = [-6 6;-6 6];
-% d = size(bound,1);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% general param %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-itMax = 50;
-f_counter = 0;
+itMax = itMax_psox;
 best = 1;
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% POP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% POP
 global finalPopSize particles initialPopSize popTViterations particlesToAdd
 global popCS % 0=cte, 1=time-var, 2=incrimental

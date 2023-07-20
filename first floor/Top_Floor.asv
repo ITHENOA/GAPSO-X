@@ -1,8 +1,8 @@
-%%%%%%%%%% HOJJAT
-global logfile success fail rndAgain itMax_floor1
+clc;clear;close all;
+global logfile success fail rndAgain
+% rng(0)
 logfile = fopen('GAPSOX_log.text','w');
-[success,fail,rndAgain]=deal(0);
-%%%%%%%%%% HOJJAT
+[success,fail,rndAgain
 %% prameters
 %components
 component=inf(14,14);
@@ -22,7 +22,7 @@ component(13,1:2)=[0 1];  %unstuckCS
 component(14,1:2)=[0 1];  %reInitial
 
 npop=size(component,1);    %number of particels
-max_it=itMax_floor1;
+max_it=5;
 %% initialzation
 par.pos=zeros(npop,size(component,1),max_it+1);
 par.fit=zeros(npop,max_it+1);
@@ -90,12 +90,6 @@ for it=1:max_it
         best.pos(it+1,:)=best.pos(it,:);
     end
 end
-%%%%%%%%%% HOJJAT
-fprintf(logfile,"\n**********************************");
-fprintf(logfile,"\n**********************************");
-fprintf(logfile,"\n************** END ***************");
-fprintf(logfile,"\n**********************************");
-fprintf(logfile,"\n**********************************");
-fprintf(logfile,"\n n_success = %d \n n_fail = %d \n n_rndAgain = %d",success,fail,rndAgain);
-fclose(logfile);
-%%%%%%%%%% HOJJAT
+
+
+
