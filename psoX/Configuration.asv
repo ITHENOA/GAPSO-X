@@ -1,17 +1,17 @@
-function randAgain = Configuration(par,input)
-
+function flag = Configuration(par,input)
+% rng(1)
+flag=0;
 global itMax f_counter best d bound
-randAgain=0;
 % bound = [-5 5;-5 5];
 % bound = [-32 32;-32 32];
-% bound = [-100 100;-100 100];
+bound = [-100 100;-100 100];
 % bound = [-6 6;-6 6];
-% d = size(bound,1);
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%% general param %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-itMax = 50;
+d = size(bound,1);
+% general
+itMax = 100;
 f_counter = 0;
 best = 1;
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% POP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% POP
 global finalPopSize particles initialPopSize popTViterations particlesToAdd
 global popCS % 0=cte, 1=time-var, 2=incrimental
@@ -145,34 +145,34 @@ inertiaW1CS = par(9); % $ [0 1 2 3 4 5 6 7 8 9]
 inertia_cte = input(9,1); % $ [0:0.9]
 % 124578
 w1Max = input(9,3); %  $ [0:0.9]
-w1Min = input(9,2); % [0:0.9] 
+w1Min = input(9,2); %  $ [0:0.9] 
 % 4
-nu = input(9,4); % [0.1:1] rho
+nu = input(9,4); %  $ [0.1:1] rho
 % 5
-lambda_w1_abv = input(9,5); % [0.1:1]
+lambda_w1_abv = input(9,5); %  $ [0.1:1]
 % 9
-a_w1_cb = input(9,6); %  [0:1] 
-b_w1_cb = input(9,7); %  [0:1] 
+a_w1_cb = input(9,6); %  $ [0:1] 
+b_w1_cb = input(9,7); %  $ [0:1] 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% W2 and W3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  W23
 global w2_cte w3_cte
 global paramW2CS paramW3CS % 0=w1, 1=rnd, 2=cte
 % ------------------------
-paramW2CS = par(10); % [0 1 2]
-paramW3CS = par(11); % [0 1 2]
+paramW2CS = par(10); %  $ [0 1 2]
+paramW3CS = par(11); %  $ [0 1 2]
 % 2
-w2_cte = input(10,1); % [0:1]
-w3_cte = input(11,1); % [0:1]
+w2_cte = input(10,1); % $  [0:1]
+w3_cte = input(11,1); %  $ [0:1]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% unstuc reini %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global vClampCS vClampCS2 unstuckCS reInitial
 if par(12)==0;vcs=par(12);
 else;vcs=1;end
-vClampCS = vcs; % 
+vClampCS = vcs;% $ 
 vClampCS2= rem(par(12),10);
-unstuckCS = par(13); % 
-reInitial = par(14); % 
+unstuckCS = par(13);% $ 
+reInitial = par(14);% $ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global vmax
 vmax = zeros(1,d);
@@ -207,5 +207,5 @@ end
 if initialPopSize > finalPopSize ||  (initialPopSize ~= inf && particles < initialPopSize)...
         || (bd~=inf && bd>finalPopSize) || (particlesToAdd~=inf && particlesToAdd>finalPopSize-initialPopSize)...
         || (popCS==1 && (particles<initialPopSize || particles>finalPopSize))
-    randAgain=1;
+    flag=1;
 end
