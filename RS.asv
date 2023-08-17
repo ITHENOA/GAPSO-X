@@ -66,14 +66,12 @@ while true
             break
         end
     end
-
     % Stop Condition 2 : Max Iteration
     if i == maxIterations
         % disp('Reach to Max Iteration.')
         % fprintf('Iterarion = %d \n', maxIterations)
         break
     end
-    
 end
 % fprintf('Final Optimal = %d', f(X(end,:)))
 result.pos = X(end,:);
