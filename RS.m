@@ -4,7 +4,7 @@ function result = RS(f, x0, bound, direction_shrinker, nCompareForStop, maxItera
 x = x0;
 % Input Controller
 if nargin < 2, error('Not enough input arguments. (At least 2)'); end
-if nargin < 3, bound = ones(length(x), 1)*[-inf inf]; end
+% if nargin < 3, bound = ones(length(x), 1)*[-inf inf]; end
 if nargin < 4, direction_shrinker = 1;	end
 if nargin < 5, nCompareForStop = 10;	end
 if nargin < 6, maxIterations = 50;	end
