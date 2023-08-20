@@ -43,18 +43,22 @@ fprintf(logfile,'Initialize Floor(2)');
 fprintf(logfile,'\n******************\n');
 %%%%%%%%%% HOJJAT
 %% creating selection probabilty matrix (spm)
-rim=zeros(nCom,nPar);
-% rim= resolotion information matrix
+dim_res=zeros(1,nCom*nPar);
+bound=zeros(nCom*nPar,2);
+counter=0;
 for i=1:nCom
     for j=1:nPar
         if cs(j,3,i)~=0
-            rim(i,j)=cs(j,3,i);
+            counter=counter+1;
+            dim_res(1,counter)=cs(j,3,i);
+            bound(counter,:)=cs(j,1:2,i);
         end
     end
 end
-handle=rim';
-dim_res=(handle(handle~=0))';
-[grid,spm] = prepare(bound,dim_res)
+dim_res=dim_res(1:counter);
+x0=zeros(1,length(dim_res));
+bound=bound(1:counter,:);
+[grid,spm] = prepare(bound,dim_res);
 
 % for i=1:length(dim_res)-1
 %     for j=i+1:length(dim_res)
@@ -66,6 +70,7 @@ dim_res=(handle(handle~=0))';
 
 %% creating choromosom
 for k=1:nPop
+    counter=0;
     for i=1:nCom
         for j=1:nPar
             vec=[];
@@ -73,7 +78,9 @@ for k=1:nPop
             while c_size>0
                 vec=randi([0,1],1,c_size);  %binary coding
                 if sum(vec)>0
+                    counter=counter+1;
                     input(i,j,k,1)=decoder_C(cs(j,:,i),vec);    %binary to real
+                    x0(counter)=input(i,j,k,1);
                     break;
                 end
             end
@@ -82,10 +89,10 @@ for k=1:nPop
     end
     %%%%%%%%%%%%% HOJJAT
     % [fits(k,1),fc(k,1)]=PSOX(par,input(:,:,k,1));
-    results = PSOX(par,input(:,:,k,1));
+    % results = PSOX(par,input(:,:,k,1));
 
-    result_rs = RS(f, x0, bound, direction_shrinker, nCompareForStop, maxIterations, tolerance);
-    spm = bitBlocker(spm,result_rs.pos,bound,dm_res,grid);
+    result_rs = RS(x0, bound, 50, 5, 50, 1e-6, input(:,:,k,1),par);
+    spm = bitBlocker(spm,result_rs.pos,bound,dim_res,grid);
     
     if results.status==1; success=success+1; end
     if results.status==0; fail=fail+1; end

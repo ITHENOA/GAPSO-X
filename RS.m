@@ -1,4 +1,4 @@
-function result = RS(f, x0, bound, direction_shrinker, nCompareForStop, maxIterations, tolerance)
+function result = RS(x0, bound, direction_shrinker, nCompareForStop, maxIterations, tolerance,input,par)
 % v2
 
 x = x0;
@@ -11,7 +11,9 @@ if nargin < 6, maxIterations = 50;	end
 if nargin < 7, tolerance = 1e-6;	end
 
 % Parameters
-fx = f(x);
+%%%% Kamran
+% fx = f(x);
+fx = f(x,input,par);
 dim = size(bound,1);
 bias = zeros(1,dim);  % Bias
 X(1,:) = x;
@@ -28,7 +30,9 @@ while true
     dx = 2*rand(1,dim)-1 / direction_shrinker;  % [-1, 1]   % /50 -> just direction
     % dx = randn(size(x))*(bound(:,1)-bound(:,2))/50
     Xnew = x + bias + dx;
-    fXnew = f(Xnew);
+    %%%%%%%% kamran
+%     fXnew = f(Xnew);
+    fXnew = f(Xnew,input,par);
     if fXnew < fx % Forward
         if ~isinrange(x + bias + dx,bound); i=i-1; continue; end
         x = Xnew;
@@ -36,7 +40,9 @@ while true
         bias = a * bias + b * dx;
     else % Backward
         Xnew = x + bias - dx;
-        fXnew = f(Xnew);
+        %%%%%%% kamran
+%         fXnew = f(Xnew);
+        fXnew = f(Xnew,input,par);
         if fXnew < fx
             if ~isinrange(x + bias - dx,bound); i=i-1; continue; end
             x = Xnew;
@@ -75,6 +81,8 @@ while true
     end
     
 end
-% fprintf('Final Optimal = %d', f(X(end,:)))
+%%%%%% kamran
+%%%% fprintf('Final Optimal = %d', f(X(end,:)))
+% fprintf('Final Optimal = %d', f(X(end,:),input,par))
 result.pos = X(end,:);
 result.fit = fx;

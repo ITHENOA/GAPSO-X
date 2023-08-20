@@ -1,7 +1,44 @@
 
- ======================== 18-Aug-2023 18:07:20 ======================== 
+ ======================== 21-Aug-2023 00:31:52 ======================== 
 
 Initialize Floor(1)
 ******************
 Initialize Floor(2)
 ******************
+
+--------------- ERROR --------------
+Not enough input arguments.
+Stack trace:
+File: C:\Users\Kamran\Desktop\GAPSO-X\f.m
+Function: f
+Line: 2
+
+File: C:\Users\Kamran\Desktop\GAPSO-X\psoX\PSOX.m
+Function: PSOX
+Line: 9
+
+File: C:\Users\Kamran\Desktop\GAPSO-X\f.m
+Function: f
+Line: 12
+
+File: C:\Users\Kamran\Desktop\GAPSO-X\RS.m
+Function: RS
+Line: 16
+
+File: C:\Users\Kamran\Desktop\GAPSO-X\second floor\second_floor_bb.m
+Function: second_floor_bb
+Line: 94
+
+File: C:\Users\Kamran\Desktop\GAPSO-X\first floor\Top_Floor.m
+Function: Top_Floor
+Line: 47
+
+File: D:\Matlab\toolbox\matlab\lang\run.m
+Function: run
+Line: 91
+
+File: C:\Users\Kamran\Desktop\GAPSO-X\GAPSOX.m
+Function: GAPSOX
+Line: 14
+
+
