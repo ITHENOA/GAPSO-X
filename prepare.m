@@ -1,4 +1,4 @@
-function [grid,spm] = prepare(bound,resolution)
+function [x,grid,spm] = prepare(bound,resolution)
 
 dim = size(bound,1);
 x = cell(1,dim);

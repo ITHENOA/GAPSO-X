@@ -10,7 +10,7 @@ for i = 1:dim-1
         dist1 = exp(-((grid{i,j}' - center(i))/sigma(i)).^2); % Gaussian   X'??
         dist2 = exp(-((grid{j,i}' - center(j))/sigma(j)).^2); % Gaussian   Y'??
         dist{i,j} = dist1 .* dist2;
-        prob{i,j} = prob{i,j} - dist{i,j};
-        prob{i,j}(prob{i,j} < 0) = 0;
+        prob{i,j} = prob{i,j} - dist{i,j}; 
+        prob{i,j}(prob{i,j} < 0) = 0;     
     end
 end

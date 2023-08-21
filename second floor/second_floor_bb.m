@@ -58,7 +58,7 @@ end
 dim_res=dim_res(1:counter);
 x0=zeros(1,length(dim_res));
 bound=bound(1:counter,:);
-[grid,spm] = prepare(bound,dim_res);
+[dimSpace,grid,spm] = prepare(bound,dim_res);
 
 % for i=1:length(dim_res)-1
 %     for j=i+1:length(dim_res)
@@ -91,14 +91,14 @@ for k=1:nPop
     % [fits(k,1),fc(k,1)]=PSOX(par,input(:,:,k,1));
     % results = PSOX(par,input(:,:,k,1));
 
-    result_rs = RS(x0, bound, 50, 5, 50, 1e-6, input(:,:,k,1),par);
+    result_rs = RS(x0, bound, 50, 5, 50, 1e-6, input(:,:,k,1),par,dimSpace);
     spm = bitBlocker(spm,result_rs.pos,bound,dim_res,grid);
     
-    if results.status==1; success=success+1; end
-    if results.status==0; fail=fail+1; end
-    if results.status==2; rndAgain=rndAgain+1; end
-    fc(k,1) = results.fCount;
-    fits(k,1) = results.eval;
+    % if results.status==1; success=success+1; end
+    % if results.status==0; fail=fail+1; end
+    % if results.status==2; rndAgain=rndAgain+1; end
+    % fc(k,1) = results.fCount;
+    fits(k,1) = result_rs;  % ??
     % results.time = ??
     %%%%%%%%%% HOJJAT
 end

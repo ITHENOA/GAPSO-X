@@ -1,4 +1,4 @@
-function result = RS(x0, bound, direction_shrinker, nCompareForStop, maxIterations, tolerance,input,par)
+function result = RS(x0, bound, direction_shrinker, nCompareForStop, maxIterations, tolerance,input,par,dimSpace)
 % v2
 
 x = x0;
@@ -29,9 +29,8 @@ while true
     % Random Vector
     dx = 2*rand(1,dim)-1 / direction_shrinker;  % [-1, 1]   % /50 -> just direction
     % dx = randn(size(x))*(bound(:,1)-bound(:,2))/50
-    Xnew = x + bias + dx;
-    %%%%%%%% kamran
-%     fXnew = f_rs(Xnew);
+    % Xnew = x + bias + dx;
+    Xnew = posNearby(x + bias + dx,dimSpace);
     fXnew = f_rs(Xnew,input,par);
     if fXnew < fx % Forward
         if ~isinrange(x + bias + dx,bound); i=i-1; continue; end
@@ -39,9 +38,8 @@ while true
         fx = fXnew;
         bias = a * bias + b * dx;
     else % Backward
-        Xnew = x + bias - dx;
-        %%%%%%% kamran
-%         fXnew = f_rs(Xnew);
+        % Xnew = x + bias - dx;
+        Xnew = posNearby(x + bias - dx,dimSpace);
         fXnew = f_rs(Xnew,input,par);
         if fXnew < fx
             if ~isinrange(x + bias - dx,bound); i=i-1; continue; end
@@ -68,7 +66,7 @@ while true
         % if n <tolerance
         if flag
             % disp('Converged.')
-            % fprintf_rs('Iterarion = %d \n',i)
+            % fprintf('Iterarion = %d \n',i)
             break
         end
     end
@@ -76,13 +74,12 @@ while true
     % Stop Condition 2 : Max Iteration
     if i == maxIterations
         % disp('Reach to Max Iteration.')
-        % fprintf_rs('Iterarion = %d \n', maxIterations)
+        % fprintf('Iterarion = %d \n', maxIterations)
         break
     end
     
 end
 %%%%%% kamran
-%%%% fprintf_rs('Final Optimal = %d', f_rs(X(end,:)))
-% fprintf_rs('Final Optimal = %d', f_rs(X(end,:),input,par))
+% fprintf('Final Optimal = %d', f_rs(X(end,:),input,par))
 result.pos = X(end,:);
 result.fit = fx;
