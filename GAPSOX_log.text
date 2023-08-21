@@ -1,24 +1,133 @@
 
- ======================== 21-Aug-2023 00:31:52 ======================== 
+ ======================== 21-Aug-2023 10:47:11 ======================== 
 
 Initialize Floor(1)
 ******************
 Initialize Floor(2)
 ******************
-
+PSOX
+******************
+ (popCS) => time-var
+ (topCS) => full
+ (moiCS) => full
+ (dnppCS) => rectangular
+ (prtInfCS) => levy
+ (pmICS) => success-rate
+ (pmRCS) => obj.func
+ (MtxCS) => rnd-linear
+ (AC_CS) => extrapolated
+ (prtRndCS) => rectangular
+ (inertiaW1CS) => random
+ (paramW2CS) => w1
+ (paramW3CS) => cte
+ (vClampCS) => use {vClampCS = random-between-bound}
+ (unstuckCS) => dont-use
+ (reInitial) => use
+----------PARAMs-----------
+f_counter=0 
+itMax=50 
+d=2 
+finalPopSize=144 
+initialPopSize=8 
+particles=70 
+popTViterations=56 
+particlesToAdd=Inf 
+popCS=1 
+pIntitTypeCS2=1 
+perc_top5_rcdel1=4.000000e-01 
+topTime_counter=1 
+n_iniNei_top3=1 
+n_nei_born_top3=2 
+k_top5=Inf 
+bd=8 
+topCS=1 
+rcdelCS2=4 
+moiCS=1 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+topCS=1 
+rcdelCS2=4 
+moiCS=1 
+rand_cauchy_dnpp=Inf 
+dnppCS=0 
+bt=1 
+prtInfCS=2 
+PMI_cte=6.000000e-01 
+eI=Inf 
+mI=Inf 
+ScI=8 
+FcI=44 
+PMR_cte=6.000000e-01 
+eR=Inf 
+mR=5.000000e-01 
+ScR=Inf 
+FcR=Inf 
+pmICS=4 
+pmRCS=3 
+ini_alpha_mtx=Inf 
+sigma_alpha=Inf 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=2 
+alpha_mtxCS2=2 
+phi1=Inf 
+phi2=Inf 
+phi1Max=1.940000e+00 
+phi1Min=1.480000e+00 
+z_alpha=Inf 
+ro_alpha=Inf 
+MtxCS=2 
+alpha_mtxCS2=2 
+phi1=Inf 
+phi2=Inf 
+phi1Max=1.940000e+00 
+phi1Min=1.480000e+00 
+phi2Max=1.940000e+00 
+phi2Min=1.173333e+00 
+AC_CS=3 
+taw=4.000000e-01 
+delta=4.000000e-01 
+prtRndCS=1 
+inertia_cte=Inf 
+w1Max=Inf 
+w1Min=Inf 
+nu=Inf 
+a_w1_cb=Inf 
+b_w1_cb=Inf 
+lambda_w1_abv=Inf 
+inertiaW1CS=3 
+w2_cte=Inf 
+w3_cte=7.858333e-01 
+paramW3CS=2 
+vClampCS=1 
+vClampCS2=1 
+unstuckCS=0 
+reInitial=1 
+vmax=5 
+paramW2CS=5 
+paramW3CS=0 
+vClampCS=
 --------------- ERROR --------------
-Not enough input arguments.
+Distribution name 'Stable' is unrecognized.
 Stack trace:
-File: C:\Users\Kamran\Desktop\GAPSO-X\f.m
-Function: f
-Line: 2
+File: D:\Matlab\toolbox\shared\statslib\makedist.m
+Function: makedist
+Line: 78
+
+File: C:\Users\Kamran\Desktop\GAPSO-X\psoX\Pertublation\pertInf.m
+Function: pertInf
+Line: 19
+
+File: C:\Users\Kamran\Desktop\GAPSO-X\psoX\INITIALIZE.m
+Function: INITIALIZE
+Line: 76
 
 File: C:\Users\Kamran\Desktop\GAPSO-X\psoX\PSOX.m
 Function: PSOX
-Line: 9
+Line: 24
 
-File: C:\Users\Kamran\Desktop\GAPSO-X\f.m
-Function: f
+File: C:\Users\Kamran\Desktop\GAPSO-X\f_rs.m
+Function: f_rs
 Line: 12
 
 File: C:\Users\Kamran\Desktop\GAPSO-X\RS.m

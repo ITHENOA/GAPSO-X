@@ -12,8 +12,8 @@ if nargin < 7, tolerance = 1e-6;	end
 
 % Parameters
 %%%% Kamran
-% fx = f(x);
-fx = f(x,input,par);
+% fx = f_rs(x);
+fx = f_rs(x,input,par);
 dim = size(bound,1);
 bias = zeros(1,dim);  % Bias
 X(1,:) = x;
@@ -31,8 +31,8 @@ while true
     % dx = randn(size(x))*(bound(:,1)-bound(:,2))/50
     Xnew = x + bias + dx;
     %%%%%%%% kamran
-%     fXnew = f(Xnew);
-    fXnew = f(Xnew,input,par);
+%     fXnew = f_rs(Xnew);
+    fXnew = f_rs(Xnew,input,par);
     if fXnew < fx % Forward
         if ~isinrange(x + bias + dx,bound); i=i-1; continue; end
         x = Xnew;
@@ -41,8 +41,8 @@ while true
     else % Backward
         Xnew = x + bias - dx;
         %%%%%%% kamran
-%         fXnew = f(Xnew);
-        fXnew = f(Xnew,input,par);
+%         fXnew = f_rs(Xnew);
+        fXnew = f_rs(Xnew,input,par);
         if fXnew < fx
             if ~isinrange(x + bias - dx,bound); i=i-1; continue; end
             x = Xnew;
@@ -68,7 +68,7 @@ while true
         % if n <tolerance
         if flag
             % disp('Converged.')
-            % fprintf('Iterarion = %d \n',i)
+            % fprintf_rs('Iterarion = %d \n',i)
             break
         end
     end
@@ -76,13 +76,13 @@ while true
     % Stop Condition 2 : Max Iteration
     if i == maxIterations
         % disp('Reach to Max Iteration.')
-        % fprintf('Iterarion = %d \n', maxIterations)
+        % fprintf_rs('Iterarion = %d \n', maxIterations)
         break
     end
     
 end
 %%%%%% kamran
-%%%% fprintf('Final Optimal = %d', f(X(end,:)))
-% fprintf('Final Optimal = %d', f(X(end,:),input,par))
+%%%% fprintf_rs('Final Optimal = %d', f_rs(X(end,:)))
+% fprintf_rs('Final Optimal = %d', f_rs(X(end,:),input,par))
 result.pos = X(end,:);
 result.fit = fx;
