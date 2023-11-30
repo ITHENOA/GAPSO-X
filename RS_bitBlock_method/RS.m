@@ -82,4 +82,4 @@ end
 %%%%%% kamran
 % fprintf('Final Optimal = %d', f_rs(X(end,:),input,par))
 result.pos = X(end,:);
-result.fit = fx;
+result.eval = fx;

@@ -3,7 +3,8 @@ global moiCS Aidx it
 
 switch moiCS
     case 0  % best of neighborhood ----------------------------------------
-        for i = Aidx
+        % for i = Aidx
+        parfor i = Aidx
             if ismember(i, X(i,it).N.idx) % i is in his own neighborhood
                 id = find(i == X(i,it).N.idx);
                 if i ~= X(i,it).N.idx(1)  % i isnt best of his own neighborhood
@@ -30,7 +31,8 @@ switch moiCS
         [X(Aidx,it).I] = deal(X(Aidx,it).N); % I <== N.(pos & fit & idx & size)
 
     case 2 % Weighted Ranking ---------------------------------------------
-        for i = Aidx
+        % for i = Aidx
+        parfor i = Aidx
             lowerPart=2^(X(i,it).N.size)-1;
             upperPart=zeros(1,X(i,it).N.size);
             for j=0:X(i,it).N.size-1
@@ -43,7 +45,8 @@ switch moiCS
         
 
     case 3 % Random Informant ---------------------------------------------
-        for i = Aidx
+        % for i = Aidx
+        parfor i = Aidx
             n=2; % number of neighbor for i
             if X(i,it).N.size < 2; n=1; end
             idx = randperm(X(i,it).N.size,n);

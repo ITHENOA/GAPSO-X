@@ -1,10 +1,10 @@
 function randAgain = psoxConfiguration(par,input)
 % rng(0)
-global itMax best d bound itMax_psox
+global itMax best d bound itmaxpso
 randAgain=0;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% general param %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-itMax = itMax_psox;
+itMax = itmaxpso;
 best = 1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% POP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% POP
 global finalPopSize particles initialPopSize popTViterations particlesToAdd

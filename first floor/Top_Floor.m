@@ -1,9 +1,29 @@
 %%%%%%%%%% HOJJAT
-global logfile success fail rndAgain itMax_floor1
+global logfile success fail rndAgain itmax1 hh
 logfile = fopen('GAPSOX_log.text','w');
 fprintf(logfile,'\n ======================== %s ======================== \n\n',datetime);
 [success,fail,rndAgain]=deal(0);
 %%%%%%%%%% HOJJAT
+clear;clc;close all
+c=-1;
+a=0;
+while true
+    a=a+1;
+    % for b = 1:10
+    if c == -1
+        c=c+1;
+        aa(c+1)=rand;
+        hh(1,1:2) = [c c];
+        hh(2,1:2) = [aa(c+1) aa(c+1)]; 
+    else
+        c=c+1;
+        aa(c+1)=rand;
+        hh(1,1:2) = [c-1 c];
+        hh(2,1:2) = [aa(c) aa(c+1)]; 
+    end
+pause(.5)
+    % end
+end
 %% prameters
 %components
 component=inf(14,14);
@@ -23,7 +43,7 @@ component(13,1:2)=[0 1];  %unstuckCS
 component(14,1:2)=[0 1];  %reInitial
 
 npop=size(component,1);    %number of particels
-max_it=itMax_floor1;
+max_it=itmax1;
 %% initialzation
 par.pos=zeros(npop,size(component,1),max_it+1);
 par.fit=zeros(npop,max_it+1);
@@ -35,6 +55,7 @@ fprintf(logfile,'Initialize Floor(1)');
 fprintf(logfile,'\n******************\n');
 %%%%%%%%%% HOJJAT
 for i=1:npop
+    1
     flag=1;
     while true
         for j=1:size(component,1)
@@ -43,11 +64,11 @@ for i=1:npop
         flag=answer_check(par.pos(i,:,1));
         if flag;    break;  end
     end
-%     [par.fit(i,1),par.pos2(:,:,i,1),par.fc(i,1)]=second_floor(par.pos(i,:,1));
-    [as1,as2,as3]=second_floor_bb(par.pos(i,:,1)); 
-    par.fit(i,1)=as1;
-    par.pos2(:,:,i,1)=as2;
-    par.fc(i,1)=as3;
+    [par.fit(i,1),par.pos2(:,:,i,1),par.fc(i,1)]=second_floor(par.pos(i,:,1));
+    % [as1,as2,as3]=second_floor_bb(par.pos(i,:,1)); 
+    % par.fit(i,1)=as1;
+    % par.pos2(:,:,i,1)=as2;
+    % par.fc(i,1)=as3;
 
     % par.fit(i,1)=rand;
 end
@@ -56,7 +77,7 @@ best.index=zeros(1,max_it+1);
 best.pos=zeros(max_it,size(component,1));
 [best.fit(1,1),best.index(1,1)]=min(par.fit(:,1));
 best.pos(1,:)=par.pos(best.index(1),:,1);
-
+%% Main
 for it=1:max_it
     it1=it
     for i=1:npop

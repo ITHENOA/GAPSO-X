@@ -7,13 +7,15 @@ global k_top5 n_iniNei_top3 n_nei_born_top3 perc_top5_rcdel1 %(user defined)
 popSize = pop.size(it);
 switch topCS
     case 0 % ring  --------------------------------------------------------
-        for i =Aidx
+        % for i = Aidx
+        parfor i = Aidx
             X(i,it).N.idx = ringTop(i);
         end
 
     case 1 % full ---------------------------------------------------------
         shuffle = sort(Aidx);
-        for i = Aidx
+        % for i = Aidx
+        parfor i = Aidx
             X(i,it).N.idx = setdiff(shuffle,i);
         end
 
@@ -45,7 +47,8 @@ switch topCS
 
     case 3 % random -------------------------------------------------------
         if it == 1
-            for i = Aidx; X(i,it).N.idx=[]; end
+            % for i = Aidx; X(i,it).N.idx=[]; end
+            parfor i = Aidx; X(i,it).N.idx=[]; end
             for i = Aidx
                 exept_i = setdiff(Aidx,i);
                 neighbor = exept_i(randperm(numel(Aidx)-1,n_iniNei_top3));
@@ -87,7 +90,8 @@ switch topCS
             end
             tree = Top_hierarchical_update(tree,pop.pb.fit);
         end
-        for i = Aidx
+        % for i = Aidx
+        parfor i = Aidx
             X(i,it).N.idx = Top_hierarchical_neighborhood(tree,i);
         end
 
@@ -95,7 +99,8 @@ switch topCS
         if it == 1
             % TOP(full) 
             shuffle = sort(Aidx);
-            for i = Aidx
+            % for i = Aidx
+            parfor i = Aidx
                 X(i,it).N.idx = setdiff(shuffle,i);
             end
             % rc = fix_ring_connection(Aidx);
@@ -113,7 +118,8 @@ switch topCS
             
         else % it > 1
 
-            for i=bornidx; X(i,it).N.idx=[]; end
+            % for i=bornidx; X(i,it).N.idx=[]; end
+            parfor i=bornidx; X(i,it).N.idx=[]; end
 
             % if(-) : update rc
             if numel(deadidx)~=0
@@ -133,7 +139,8 @@ switch topCS
                 % ensure keep ring
                 % if(-) ex) del=2: (1 <=> 3)
                 % if(+) ex) born=21: (1 <!=> 20) => (1 <=> 21) & (21 <=> 20)
-                for i = Aidx
+                parfor i = Aidx
+                % for i = Aidx
                     trust_ring = ringTop(i);
                     X(i,it).N.idx = unique([X(i,it).N.idx, trust_ring]);
                 end 
@@ -194,7 +201,7 @@ switch topCS
         end
 end
 
-for i = Aidx % ok for 0 1 2 3 4? 5
+for i = Aidx
     X(i,it).N.pos = pop.pos(X(i,it).N.idx,:,it);
     X(i,it).N.fit = pop.fit(X(i,it).N.idx,it);
     X(i,it).N.size = numel(X(i,it).N.idx);

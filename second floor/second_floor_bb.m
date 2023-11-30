@@ -1,5 +1,5 @@
 function [best_fit,best_pos,best_fc]=second_floor_bb(par)
-global logfile success fail rndAgain itMax_floor2
+global logfile success fail rndAgain itmax2
 % rng(0)
 % clc;clear;close all;
 % par=[1     0    50     0     3    14    22    41     8     1     0     0     0     1];
@@ -9,7 +9,7 @@ nDecoder=6;  %maximum number of decoder for each parameter
 nPop=20;    %number of population
 muP=0.02;   %mutation probability
 crP=0.5;    %cross over probability
-maxIt=itMax_floor2;  %maximum number of iterarion
+maxIt=itmax2;  %maximum number of iterarion
 mcl=20;      %maximum choromosom length
 nCom=length(par); %number of component
 %% initialize
@@ -98,7 +98,7 @@ for k=1:nPop
     % if results.status==0; fail=fail+1; end
     % if results.status==2; rndAgain=rndAgain+1; end
     % fc(k,1) = results.fCount;
-    fits(k,1) = result_rs;  % ??
+    fits(k,1) = result_rs.eval;  % ??
     % results.time = ??
     %%%%%%%%%% HOJJAT
 end

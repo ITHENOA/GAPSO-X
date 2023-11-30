@@ -1,14 +1,19 @@
 clc;clear;close all;tic
-global itMax_floor1 itMax_floor2 itMax_psox
+global itmax1 itmax2 itmaxpso
+
+% add to path
+addpath('psoX\','./psoX/Neighborhood/',"psoX\optional\",...
+    "psoX\Other_Functions\","psoX\Pertublation\","psoX\Swarm_Weight\");
+addpath('Bench_Func\','first floor\','RS_bitBlock_method\','second floor\');
 
 % floor 1
-itMax_floor1 = 1;
+itmax1 = 1;
 
 % floor 2
-itMax_floor2 = 1;
+itmax2 = 1;
 
 % PSOX
-itMax_psox = 50;
+itmaxpso = 50;
 
 % run code
 run("Top_Floor.m")
